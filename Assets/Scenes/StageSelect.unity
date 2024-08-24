@@ -245,8 +245,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1978186769
-  m_SortingLayer: 1
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 94532d9a52f3380449533e8f1d83c380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -371,6 +371,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -384,6 +392,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3139586222574375252, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139586222574375252, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     - target: {fileID: 3594424657360720860, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
       propertyPath: m_Name
       value: LevelButton2 (2)
@@ -766,8 +782,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1978186769
-  m_SortingLayer: 1
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 94532d9a52f3380449533e8f1d83c380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -847,6 +863,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -860,6 +884,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3139586222574375252, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139586222574375252, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     - target: {fileID: 3594424657360720860, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
       propertyPath: m_Name
       value: LevelButton2 (1)
@@ -1101,8 +1133,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1978186769
-  m_SortingLayer: 1
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 356df33166b2f8f4190f4a15e8c72f9b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1185,8 +1217,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: c386232ce1fdc4241bbe9f7364835e09, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1558,6 +1590,14 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.8396226
       objectReference: {fileID: 0}
+    - target: {fileID: 5817426428065545940, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817426428065545940, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     - target: {fileID: 7900478775301821399, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.71
@@ -1816,8 +1856,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1978186769
-  m_SortingLayer: 1
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 94532d9a52f3380449533e8f1d83c380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2058,7 +2098,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1978186769
+  m_SortingLayerID: 240486309
   m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!224 &1467681178
@@ -2142,8 +2182,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1978186769
-  m_SortingLayer: 1
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 6
   m_Sprite: {fileID: 21300000, guid: 94532d9a52f3380449533e8f1d83c380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2356,6 +2396,14 @@ PrefabInstance:
     - target: {fileID: 2871266724148650686, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2575,8 +2623,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1978186769
-  m_SortingLayer: 1
+  m_SortingLayerID: -460994799
+  m_SortingLayer: 3
   m_SortingOrder: 7
   m_Sprite: {fileID: 21300000, guid: 94532d9a52f3380449533e8f1d83c380, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2659,8 +2707,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 981802649
-  m_SortingLayer: -1
+  m_SortingLayerID: -1248162819
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 32ad1c3f52e965f4a862f4b8d23cff17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2740,6 +2788,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8920838944030587961, guid: 1abdb6ca5f3fcc64e8eb6cdcd0904069, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2753,6 +2809,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3139586222574375252, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139586222574375252, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
+      objectReference: {fileID: 0}
     - target: {fileID: 3594424657360720860, guid: 6eddd2ac8f7da2f4e8dbe3ad75461bb5, type: 3}
       propertyPath: m_Name
       value: LevelButton2
@@ -2829,6 +2893,14 @@ PrefabInstance:
     - target: {fileID: 5817426428065545940, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
       propertyPath: m_Color.r
       value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817426428065545940, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5817426428065545940, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -460994799
       objectReference: {fileID: 0}
     - target: {fileID: 7900478775301821399, guid: 6518e95fe53d1c346bb25da8d0409a63, type: 3}
       propertyPath: m_LocalPosition.x
