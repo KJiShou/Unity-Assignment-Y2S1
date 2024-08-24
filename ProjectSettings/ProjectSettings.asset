@@ -4,7 +4,11 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 26
+<<<<<<< HEAD
   productGUID: 58c4640986552354fb9d873426b85c91
+=======
+  productGUID: 0b73e30e9881fa64583b3149746c849e
+>>>>>>> TestCombime
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -13,7 +17,11 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
+<<<<<<< HEAD
   productName: MenuScene
+=======
+  productName: Assignment
+>>>>>>> TestCombime
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -563,6 +571,7 @@ PlayerSettings:
   webGLMemoryGeometricGrowthStep: 0.2
   webGLMemoryGeometricGrowthCap: 96
   webGLPowerPreference: 2
+<<<<<<< HEAD
   scriptingDefineSymbols:
     Android: UNITY_POST_PROCESSING_STACK_V2
     EmbeddedLinux: UNITY_POST_PROCESSING_STACK_V2
@@ -577,6 +586,9 @@ PlayerSettings:
     WebGL: UNITY_POST_PROCESSING_STACK_V2
     XboxOne: UNITY_POST_PROCESSING_STACK_V2
     tvOS: UNITY_POST_PROCESSING_STACK_V2
+=======
+  scriptingDefineSymbols: {}
+>>>>>>> TestCombime
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
@@ -608,14 +620,22 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
+<<<<<<< HEAD
   metroPackageName: MenuScene
+=======
+  metroPackageName: Assignment
+>>>>>>> TestCombime
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
+<<<<<<< HEAD
   metroApplicationDescription: MenuScene
+=======
+  metroApplicationDescription: Assignment
+>>>>>>> TestCombime
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
@@ -684,11 +704,19 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
+<<<<<<< HEAD
   cloudProjectId: 1b5bf661-f900-44ee-a006-8184e5403441
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: MenuScene
   organizationId: lee-lap-yhin
+=======
+  cloudProjectId: 4e16e703-e75a-403d-ab71-692ec32bd369
+  framebufferDepthMemorylessMode: 0
+  qualitySettingsNames: []
+  projectName: Assignment
+  organizationId: zwzenre
+>>>>>>> TestCombime
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

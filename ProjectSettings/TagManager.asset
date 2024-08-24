@@ -45,8 +45,18 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: UI
+<<<<<<< HEAD
     uniqueID: 2316780527
     locked: 0
   - name: Text
     uniqueID: 2477201269
+=======
+    uniqueID: 1594907375
+    locked: 0
+  - name: Text
+    uniqueID: 3291223795
+    locked: 0
+  - name: Background
+    uniqueID: 3778050311
+>>>>>>> TestCombime
     locked: 0
