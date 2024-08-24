@@ -41,12 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 3046804477
+    locked: 0
+  - name: Spaceship
+    uniqueID: 4126653999
+    locked: 0
   - name: UI
-    uniqueID: 1594907375
+    uniqueID: 3833972497
     locked: 0
   - name: Text
-    uniqueID: 3291223795
-    locked: 0
-  - name: Background
-    uniqueID: 3778050311
+    uniqueID: 240486309
     locked: 0
