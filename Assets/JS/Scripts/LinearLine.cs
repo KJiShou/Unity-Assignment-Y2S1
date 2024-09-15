@@ -1,4 +1,5 @@
 using TMPro;
+using TS.DoubleSlider;
 using UnityEngine;
 
 public class LineRendererLinear : MonoBehaviour
@@ -13,13 +14,42 @@ public class LineRendererLinear : MonoBehaviour
     public float yMax = 10f;  // Maximum y value
     public TMP_Text slopeText;  // Reference to the TMP_Text for the slope (m)
     public TMP_Text interceptText;  // Reference to the TMP_Text for the intercept (c)
+    [SerializeField] private DoubleSlider _slider;
+
+    // Portal prefabs
+    public GameObject startPortalPrefab; // Assign in Inspector
+    public GameObject endPortalPrefab;   // Assign in Inspector
+
+    // Portal instances
+    private GameObject startPortalInstance;
+    private GameObject endPortalInstance;
+
+    void Awake()
+    {
+        _slider.OnValueChanged.AddListener(SliderDouble_ValueChanged);
+    }
+
     void Start()
     {
         lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = numPoints;
+
+        // Instantiate portals
+        if (startPortalPrefab != null)
+        {
+            startPortalInstance = Instantiate(startPortalPrefab);
+        }
+        if (endPortalPrefab != null)
+        {
+            endPortalInstance = Instantiate(endPortalPrefab);
+        }
+
+        // Initial draw
+        UpdateEquationValues();
     }
 
-    void Update() {
+    void Update()
+    {
         UpdateEquationValues();
     }
 
@@ -37,6 +67,27 @@ public class LineRendererLinear : MonoBehaviour
         }
 
         lineRenderer.SetPositions(positions);
+
+        // Update portal positions
+        if (startPortalInstance != null)
+        {
+            // If LineRenderer uses local positions, convert to world positions
+            Vector3 startWorldPosition = positions[0];
+            if (!lineRenderer.useWorldSpace)
+            {
+                startWorldPosition = transform.TransformPoint(positions[0]);
+            }
+            startPortalInstance.transform.position = startWorldPosition;
+        }
+        if (endPortalInstance != null)
+        {
+            Vector3 endWorldPosition = positions[numPoints - 1];
+            if (!lineRenderer.useWorldSpace)
+            {
+                endWorldPosition = transform.TransformPoint(positions[numPoints - 1]);
+            }
+            endPortalInstance.transform.position = endWorldPosition;
+        }
     }
 
     public void UpdateEquationValues()
@@ -62,5 +113,11 @@ public class LineRendererLinear : MonoBehaviour
 
         // Redraw the line after updating values
         DrawLinearEquation();
+    }
+
+    private void SliderDouble_ValueChanged(float min, float max)
+    {
+        xStart = min;
+        xEnd = max;
     }
 }
