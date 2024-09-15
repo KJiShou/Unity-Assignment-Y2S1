@@ -181,7 +181,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 1e688fc7c6dc479479b4a419edffe130, type: 3}
       propertyPath: m_SortingLayer
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 1e688fc7c6dc479479b4a419edffe130, type: 3}
       propertyPath: m_SortingOrder
@@ -189,7 +189,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3626916397498700004, guid: 1e688fc7c6dc479479b4a419edffe130, type: 3}
       propertyPath: m_SortingLayerID
-      value: 981802649
+      value: -460994799
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: 1e688fc7c6dc479479b4a419edffe130, type: 3}
       propertyPath: m_LocalScale.x
@@ -323,7 +323,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -460994799
   m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 292311002, guid: 6cff1fc51230be24082d7125386947a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -332,7 +332,7 @@ SpriteRenderer:
   m_Size: {x: 0.024, y: 0.024}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &230270751
@@ -1594,7 +1594,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -1978186769
+  m_SortingLayerID: -460994799
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &2019262458
