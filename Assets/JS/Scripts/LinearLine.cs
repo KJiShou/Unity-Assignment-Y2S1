@@ -120,4 +120,19 @@ public class LineRendererLinear : MonoBehaviour
         xStart = min;
         xEnd = max;
     }
+
+    public void DestroyEquationAndPortals()
+    {
+        // Destroy portals
+        if (startPortalInstance != null)
+        {
+            Destroy(startPortalInstance);
+            startPortalInstance = null;
+        }
+        if (endPortalInstance != null)
+        {
+            Destroy(endPortalInstance);
+            endPortalInstance = null;
+        }
+    }
 }
