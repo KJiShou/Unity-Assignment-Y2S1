@@ -79,4 +79,26 @@ public class SlotContainer : MonoBehaviour
         CreateNewSlot();
         image.transform.SetParent(slots[slots.Count - 1].transform, false);
     }
+
+    public void ResetSlots()
+    {
+        // Clear all existing slots and their children
+        foreach (var slot in slots)
+        {
+            // Destroy all children of the slot (including any portal containers or other elements)
+            foreach (Transform child in slot.transform)
+            {
+                Destroy(child.gameObject);  // Destroy each child (including portal containers)
+            }
+
+            // Destroy the slot itself
+            Destroy(slot);
+        }
+
+        slots.Clear();  // Clear the list of slots
+
+        // Create one new slot
+        CreateNewSlot();
+        Debug.Log("All slots and their children cleared, one new slot created.");
+    }
 }
