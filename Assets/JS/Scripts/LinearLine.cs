@@ -23,6 +23,7 @@ public class LineRendererLinear : MonoBehaviour
     // Portal instances
     private GameObject startPortalInstance;
     private GameObject endPortalInstance;
+    private GameObject portalContainer; // We'll create a new container for each line's portals
 
     void Awake()
     {
@@ -31,17 +32,31 @@ public class LineRendererLinear : MonoBehaviour
 
     void Start()
     {
-        lineRenderer = GetComponent<LineRenderer>();
         lineRenderer.positionCount = numPoints;
 
-        // Instantiate portals
+        // Create a new container for the portals for this line
+        portalContainer = new GameObject("PortalContainer");
+        portalContainer.transform.SetParent(this.transform);
+
+        GameObject targetParent = GameObject.Find("Equation UI");
+        if (targetParent != null)
+        {
+            // Set the portalContainer to be a child of the specific Canvas or parent
+            portalContainer.transform.SetParent(targetParent.transform, false);
+        }
+        else
+        {
+            Debug.LogError("MainCanvas not found. Please make sure you have a Canvas named 'MainCanvas'.");
+        }
+
+        // Instantiate portals under the PortalContainer
         if (startPortalPrefab != null)
         {
-            startPortalInstance = Instantiate(startPortalPrefab);
+            startPortalInstance = Instantiate(startPortalPrefab, portalContainer.transform);
         }
         if (endPortalPrefab != null)
         {
-            endPortalInstance = Instantiate(endPortalPrefab);
+            endPortalInstance = Instantiate(endPortalPrefab, portalContainer.transform);
         }
 
         // Initial draw
@@ -110,6 +125,9 @@ public class LineRendererLinear : MonoBehaviour
         {
             Debug.LogError("Invalid input for intercept (c). Make sure it's a valid number.");
         }
+        if(lineRenderer == null) {
+            Destroy(transform.gameObject);
+        }
 
         // Redraw the line after updating values
         DrawLinearEquation();
@@ -119,5 +137,25 @@ public class LineRendererLinear : MonoBehaviour
     {
         xStart = min;
         xEnd = max;
+    }
+
+    public void DestroyEquationAndPortals()
+    {
+        // Destroy portals
+        if (startPortalInstance != null)
+        {
+            Destroy(startPortalInstance);
+            startPortalInstance = null;
+        }
+        if (endPortalInstance != null)
+        {
+            Destroy(endPortalInstance);
+            endPortalInstance = null;
+        }
+         if (lineRenderer != null)
+        {
+            Destroy(lineRenderer); // Completely remove the LineRenderer component
+            lineRenderer = null;
+        }
     }
 }

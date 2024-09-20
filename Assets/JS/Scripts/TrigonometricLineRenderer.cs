@@ -2,21 +2,24 @@ using TMPro;
 using TS.DoubleSlider;
 using UnityEngine;
 
-public class QuadraticLineRenderer : MonoBehaviour
+public class TrigonometricLineRenderer : MonoBehaviour
 {
     public LineRenderer lineRenderer;
-    public int numPoints = 50;
+    public int numPoints = 100; // Increased for smoothness of the curves
     public float xStart = -10f;
     public float xEnd = 10f;
-    public float a = 1f;  // Coefficient for x^2
-    public float b = 1f;  // Coefficient for x
-    public float c = 0f;  // Constant term
+    public float amplitude = 1f;  // Coefficient for the amplitude (A)
+    public float frequency = 1f;  // Coefficient for the frequency (B)
+    public float phaseShift = 0f; // Coefficient for the phase shift (C)
     public float yMin = -10f; // Minimum y value
     public float yMax = 10f;  // Maximum y value
-    public TMP_Text aText;  // Reference to the TMP_Text for coefficient a
-    public TMP_Text bText;  // Reference to the TMP_Text for coefficient b
-    public TMP_Text cText;  // Reference to the TMP_Text for constant c
+    public TMP_Text amplitudeText;  // Reference to the TMP_Text for amplitude (A)
+    public TMP_Text frequencyText;  // Reference to the TMP_Text for frequency (B)
+    public TMP_Text phaseShiftText; // Reference to the TMP_Text for phase shift (C)
     [SerializeField] private DoubleSlider _slider;
+
+    public enum TrigFunction { Sine, Cosine, Tangent }
+    public TrigFunction trigFunction = TrigFunction.Sine;  // Enum to choose between sin, cos, tan
 
     // Portal prefabs
     public GameObject startPortalPrefab; // Assign in Inspector
@@ -39,6 +42,7 @@ public class QuadraticLineRenderer : MonoBehaviour
         // Create a new container for the portals for this line
         portalContainer = new GameObject("PortalContainer");
         portalContainer.transform.SetParent(this.transform);
+        
         GameObject targetParent = GameObject.Find("Equation UI");
         if (targetParent != null)
         {
@@ -68,7 +72,7 @@ public class QuadraticLineRenderer : MonoBehaviour
         UpdateEquationValues();
     }
 
-    public void DrawQuadraticEquation()
+    public void DrawTrigEquation()
     {
         Vector3[] positions = new Vector3[numPoints];
         float xStep = (xEnd - xStart) / (numPoints - 1);
@@ -76,7 +80,22 @@ public class QuadraticLineRenderer : MonoBehaviour
         for (int i = 0; i < numPoints; i++)
         {
             float x = xStart + i * xStep;
-            float y = a * x * x + b * x + c;  // y = ax^2 + bx + c (quadratic equation)
+            float y = 0f;
+
+            // Determine which trigonometric function to use
+            switch (trigFunction)
+            {
+                case TrigFunction.Sine:
+                    y = amplitude * Mathf.Sin(frequency * x + phaseShift); // y = A * sin(Bx + C)
+                    break;
+                case TrigFunction.Cosine:
+                    y = amplitude * Mathf.Cos(frequency * x + phaseShift); // y = A * cos(Bx + C)
+                    break;
+                case TrigFunction.Tangent:
+                    y = amplitude * Mathf.Tan(frequency * x + phaseShift); // y = A * tan(Bx + C)
+                    break;
+            }
+
             y = Mathf.Clamp(y, yMin, yMax); // Clamp the y value within min and max limits
             positions[i] = new Vector3(x, y, 0);
         }
@@ -108,31 +127,31 @@ public class QuadraticLineRenderer : MonoBehaviour
     public void UpdateEquationValues()
     {
         // Try to parse the TMP_Text fields as floats
-        if (float.TryParse(aText.text, out float parsedA))
+        if (float.TryParse(amplitudeText.text, out float parsedA))
         {
-            a = parsedA;
+            amplitude = parsedA;
         }
         else
         {
-            Debug.LogError("Invalid input for coefficient a. Make sure it's a valid number.");
+            Debug.LogError("Invalid input for amplitude (A). Make sure it's a valid number.");
         }
 
-        if (float.TryParse(bText.text, out float parsedB))
+        if (float.TryParse(frequencyText.text, out float parsedB))
         {
-            b = parsedB;
+            frequency = parsedB;
         }
         else
         {
-            Debug.LogError("Invalid input for coefficient b. Make sure it's a valid number.");
+            Debug.LogError("Invalid input for frequency (B). Make sure it's a valid number.");
         }
 
-        if (float.TryParse(cText.text, out float parsedC))
+        if (float.TryParse(phaseShiftText.text, out float parsedC))
         {
-            c = parsedC;
+            phaseShift = parsedC;
         }
         else
         {
-            Debug.LogError("Invalid input for constant c. Make sure it's a valid number.");
+            Debug.LogError("Invalid input for phase shift (C). Make sure it's a valid number.");
         }
 
         if(lineRenderer == null) 
@@ -140,8 +159,8 @@ public class QuadraticLineRenderer : MonoBehaviour
             Destroy(transform.gameObject);
         }
 
-        // Redraw the quadratic line after updating values
-        DrawQuadraticEquation();
+        // Redraw the trigonometric line after updating values
+        DrawTrigEquation();
     }
 
     private void SliderDouble_ValueChanged(float min, float max)
