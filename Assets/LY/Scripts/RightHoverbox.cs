@@ -6,13 +6,16 @@ using UnityEngine.EventSystems;
 public class RightHoverbox : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Transform camera;
-    public float scrollSpeed = 2.0f;
+    private float scrollSpeed = 300;
     private bool isHovered;
+    private Rigidbody2D rb;
+
+
 
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = camera.GetComponent<Rigidbody2D>();
     }
 
 
@@ -21,6 +24,7 @@ public class RightHoverbox : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         Debug.Log("Hovering!");
         isHovered = true;
+        rb.velocity = new Vector2(0.5f, 0);
     }
 
 
@@ -31,6 +35,7 @@ public class RightHoverbox : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         Debug.Log("No longer hovering!");
         isHovered = false;
+        rb.velocity = new Vector2(0, 0);
     }
 
 
@@ -40,7 +45,7 @@ public class RightHoverbox : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     {
         if (isHovered)
         {
-            camera.transform.Translate(Vector3.right * scrollSpeed * Time.deltaTime);
+            rb.AddForce(Vector3.right * scrollSpeed * Time.deltaTime);
         }
     }
 }
