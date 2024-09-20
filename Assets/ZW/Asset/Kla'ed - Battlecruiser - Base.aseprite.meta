@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9839b5417ed96b644a0129e4e3e3fa70
+guid: 7da9f44f8e332184bad8d3c140975c1f
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Asteroid 01 - Base
+  - name: Kla'ed - Battlecruiser - Base
     originalName: 
-    pivot: {x: 0.5, y: 0.5}
-    alignment: 0
+    pivot: {x: 0.5, y: -0.3068182}
+    alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 38
-      height: 33
-    spriteID: 0e8fce7aba8c8cc4f884fc3af7dac042
+      width: 72
+      height: 88
+    spriteID: eb68c46cd6a5b5a4dbddcb5ceb260d2f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -144,25 +144,25 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 924424858
-    name: Asteroid 01 - Base
+    guid: 474834422
+    name: Kla'ed - Battlecruiser - Base
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Asteroid 01 - Base
+    - name: Kla'ed - Battlecruiser - Base
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 29
-        y: 31
-        width: 38
-        height: 33
-      spriteId: 0e8fce7aba8c8cc4f884fc3af7dac042
+        x: 28
+        y: 27
+        width: 72
+        height: 88
+      spriteId: eb68c46cd6a5b5a4dbddcb5ceb260d2f
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 96, y: 96}
+  canvasSize: {x: 128, y: 128}
