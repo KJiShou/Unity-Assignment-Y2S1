@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class AsteroidBehavior : MonoBehaviour
+public class AsteroidMovement : MonoBehaviour
 {
     public float initialRotationSpeed = 10f;  // Initial rotation speed (slow)
     public float hitRotationSpeedMultiplier = 3f;  // Multiplier for rotation speed when hit
