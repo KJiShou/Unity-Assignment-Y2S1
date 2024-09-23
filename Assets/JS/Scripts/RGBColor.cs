@@ -15,6 +15,10 @@ public class RGBColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        redSlider.value = GameManager.Instance.spaceshipColor.r;
+        greenSlider.value = GameManager.Instance.spaceshipColor.g;
+        blueSlider.value = GameManager.Instance.spaceshipColor.b;
+        
         // Add listeners to detect when slider values change
         redSlider.onValueChanged.AddListener(delegate { ChangeColor(); });
         greenSlider.onValueChanged.AddListener(delegate { ChangeColor(); });
@@ -33,6 +37,7 @@ public class RGBColor : MonoBehaviour
         g = greenSlider.value;
         b = blueSlider.value;
         // Assign the new color to the Image component
-        spaceship.color = new Color(r, g, b);
+        GameManager.Instance.spaceshipColor = new Color(r, g, b);
+        spaceship.color = GameManager.Instance.spaceshipColor;
     }
 }

@@ -10,9 +10,10 @@ public class MainEquationButton : MonoBehaviour
     private Animator animator; // Animator to handle animations
 
     public bool isMenuOpen = false; // A flag to track if the menu is open or closed
-
+    private Animator buttonAnimator;
     void Start()
     {
+        buttonAnimator = GetComponent<Animator>();
         if (button != null)
         {
             button.onClick.AddListener(OnButtonClick);
@@ -39,14 +40,18 @@ public class MainEquationButton : MonoBehaviour
         {
             // If the menu is currently open, play the 'Close' animation and close it
             animator.SetTrigger("Close");
+            buttonAnimator.SetTrigger("Close");
             animator.ResetTrigger("Open");
+            buttonAnimator.ResetTrigger("Open");
         }
         else
         {
             // If the menu is currently closed, open it and play the 'Open' animation
             targetObject.SetActive(true); // Enable the target object
             animator.SetTrigger("Open");
+            buttonAnimator.SetTrigger("Open");
             animator.ResetTrigger("Close");
+            buttonAnimator.ResetTrigger("Close");
 
         }
 

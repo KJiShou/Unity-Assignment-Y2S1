@@ -112,12 +112,13 @@ public class FontManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         // Revert text color
         currentText.color = defaultColor;
-
+        targetObject.GetComponent<SnapToItem>().NameLabel = null;
         // Revert font if the pointer is not over the text
         if (!IsPointerOverText())
         {
             currentText.font = defaultFontAsset;
             currentText.ForceMeshUpdate();
+            
         }
 
         // Close the slider (assuming you have an animation)

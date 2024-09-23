@@ -9,48 +9,49 @@ public class ChangeSpaceShip : MonoBehaviour
     [SerializeField]
     Sprite[] imageList;
     public Image image;
-    private static int position = 0;
     private int backup;
-    private float backupR;
-    private float backupG;
-    private float backupB;
+    private float backupR = 1;
+    private float backupG = 1;
+    private float backupB = 1;
     void Start() {
-        backup = position;
-        backupR = RGBColor.r;
-        backupG = RGBColor.g;
-        backupB = RGBColor.b;
-        image.sprite = imageList[position];
+        backup = GameManager.Instance.spaceshipIndex;
+        backupR = GameManager.Instance.spaceshipColor.r;
+        backupG = GameManager.Instance.spaceshipColor.g;
+        backupB = GameManager.Instance.spaceshipColor.b;
+        image.sprite = imageList[GameManager.Instance.spaceshipIndex];
+        image.color = GameManager.Instance.spaceshipColor;
     }
     public void leftImage() {
-        if (position>0) {
-            position--;
-            image.sprite = imageList[position];
-            image.color = new Color(RGBColor.r, RGBColor.g, RGBColor.b);
+        if (GameManager.Instance.spaceshipIndex>0) {
+            GameManager.Instance.spaceshipIndex--;
+            image.sprite = imageList[GameManager.Instance.spaceshipIndex];
+            image.color = GameManager.Instance.spaceshipColor;
         }else {
-            position = imageList.Length-1;
-            image.sprite = imageList[position];
-            image.color = new Color(RGBColor.r, RGBColor.g, RGBColor.b);
+            GameManager.Instance.spaceshipIndex = imageList.Length-1;
+            image.sprite = imageList[GameManager.Instance.spaceshipIndex];
+            image.color = GameManager.Instance.spaceshipColor;
         }
     }
 
     public void rightImage() {
-        if (position<imageList.Length-1) {
-            position++;
-            image.sprite = imageList[position];
-            image.color = new Color(RGBColor.r, RGBColor.g, RGBColor.b);
+        if (GameManager.Instance.spaceshipIndex<imageList.Length-1) {
+            GameManager.Instance.spaceshipIndex++;
+            image.sprite = imageList[GameManager.Instance.spaceshipIndex];
+            image.color = GameManager.Instance.spaceshipColor;
         }else{
-            position = 0;
-            image.sprite = imageList[position];
-            image.color = new Color(RGBColor.r, RGBColor.g, RGBColor.b);
+            GameManager.Instance.spaceshipIndex = 0;
+            image.sprite = imageList[GameManager.Instance.spaceshipIndex];
+            image.color = GameManager.Instance.spaceshipColor;
         }
     }
 
     public void cancel() {
         
-        position = backup;
+        GameManager.Instance.spaceshipIndex = backup;
         RGBColor.r = backupR;
         RGBColor.g = backupG;
         RGBColor.b = backupB;
+        GameManager.Instance.spaceshipColor = new Color(RGBColor.r, RGBColor.g, RGBColor.b);
         SceneManager.LoadScene("Main");
     }
 
