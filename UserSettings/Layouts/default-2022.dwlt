@@ -342,9 +342,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: e8faffff
-      m_LastClickedID: -1304
-      m_ExpandedIDs: ecfaffffeefaffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 30f5ffff7ef7ffffeefaffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -763,9 +763,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 527.3911, y: 380.395, z: -4.103715}
+    m_Target: {x: 2.3051603, y: 7.2361584, z: 0.13556328}
     speed: 2
-    m_Value: {x: 527.3911, y: 380.395, z: -4.103715}
+    m_Value: {x: 2.4298007, y: 7.570653, z: 0.12794495}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -815,9 +815,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 440.09564
+    m_Target: 16.167793
     speed: 2
-    m_Value: 440.09564
+    m_Value: 16.929626
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1276,7 +1276,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/JS/Prefab
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1284,15 +1284,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 78
   m_LastFolders:
-  - Assets/JS/Prefab
+  - Assets/Scenes
   m_LastFoldersGridSize: 78
   m_LastProjectPath: D:\JiShou\Unity\Space\Unity-Assignment-Y2S1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 186.99985}
-    m_SelectedIDs: 48870000
-    m_LastClickedID: 34632
+    scrollPos: {x: 0, y: 420}
+    m_SelectedIDs: a0870000
+    m_LastClickedID: 34720
     m_ExpandedIDs: 00000000928500009485000096850000988500009a8500009c8500009e85000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
