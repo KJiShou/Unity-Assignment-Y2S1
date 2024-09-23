@@ -43,7 +43,7 @@ public class TrigonometricLineRenderer : MonoBehaviour
         portalContainer = new GameObject("PortalContainer");
         portalContainer.transform.SetParent(this.transform);
         
-        GameObject targetParent = GameObject.Find("Equation UI");
+        GameObject targetParent = GameObject.Find("Equation UI Set");
         if (targetParent != null)
         {
             // Set the portalContainer to be a child of the specific Canvas or parent

@@ -33,7 +33,7 @@ public class ButtonController : MonoBehaviour
         }
         else
         {
-            Debug.LogError("DeleteButtonHandler: No Button component found on this GameObject.");
+            Debug.Log("DeleteButtonHandler: No Button component found on this GameObject.");
         }
     }
 

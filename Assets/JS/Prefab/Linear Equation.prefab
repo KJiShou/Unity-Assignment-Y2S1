@@ -598,7 +598,7 @@ MonoBehaviour:
   contentPanel: {fileID: 2059484720337613550}
   sampleListItem: {fileID: 9111626109046943967}
   HLG: {fileID: 8355615294361316847}
-  NameLabel: {fileID: 5754492399635280167}
+  NameLabel: {fileID: 0}
   ItemNames:
   - 0
   - 1
