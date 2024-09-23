@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Children:
   - {fileID: 3}
   - {fileID: 5}
-  - {fileID: 13}
+  - {fileID: 14}
   m_Position:
     serializedVersion: 2
     x: 0
@@ -26,10 +26,14 @@ MonoBehaviour:
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
 <<<<<<< HEAD
+  controlID: 98
+=======
+<<<<<<< HEAD
   controlID: 110
 =======
   controlID: 44
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -39,6 +43,17 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
+<<<<<<< HEAD
+  m_EditorHideFlags: 1
+  m_Script: {fileID: 12019, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
+  m_TitleContent:
+    m_Text: Inspector
+    m_Image: {fileID: -2667387946076563598, guid: 0000000000000000d000000000000000, type: 0}
+=======
   m_EditorHideFlags: 0
   m_Script: {fileID: 12071, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -59,14 +74,20 @@ MonoBehaviour:
 =======
     m_Text: Game
     m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+>>>>>>> origin/zwtest
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 316
+    x: 1497
     y: 73
+<<<<<<< HEAD
+    width: 422
+    height: 966
+=======
     width: 1204
     height: 634
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -77,6 +98,21 @@ MonoBehaviour:
     m_LastAppliedPresetName: Default
     m_SaveData: []
     m_OverlaysVisible: 1
+<<<<<<< HEAD
+  m_ObjectsLockedBeforeSerialization: []
+  m_InstanceIDsLockedBeforeSerialization: 
+  m_PreviewResizer:
+    m_CachedPref: -160
+    m_ControlHash: -371814159
+    m_PrefName: Preview_InspectorPreview
+  m_LastInspectedObjectInstanceID: -1
+  m_LastVerticalScrollValue: 0
+  m_GlobalObjectId: 
+  m_InspectorMode: 0
+  m_LockTracker:
+    m_IsLocked: 0
+  m_PreviewWindow: {fileID: 0}
+=======
 <<<<<<< HEAD
   m_LockTracker:
     m_IsLocked: 0
@@ -147,6 +183,7 @@ MonoBehaviour:
   m_XRRenderMode: 0
   m_RenderTexture: {fileID: 0}
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -165,10 +202,14 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+    width: 381
+=======
+<<<<<<< HEAD
     width: 252.8
     height: 722.8
 =======
     width: 316
+>>>>>>> origin/zwtest
     height: 987
 >>>>>>> origin/main
   m_MinSize: {x: 201, y: 221}
@@ -205,7 +246,7 @@ MonoBehaviour:
     height: 701.8
 =======
     y: 73
-    width: 315
+    width: 380
     height: 966
 >>>>>>> origin/main
   m_SerializedDataModeController:
@@ -221,6 +262,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
+      m_SelectedIDs: e8ecffff
+      m_LastClickedID: -4888
+      m_ExpandedIDs: b6f5ffff10f7ffff28f9ffff5c890000
+      m_RenameOverlay:
+        m_UserAcceptedRename: 0
+        m_Name: 
+        m_OriginalName: 
+=======
 <<<<<<< HEAD
       m_SelectedIDs: 028c0000
       m_LastClickedID: 35842
@@ -238,6 +288,7 @@ MonoBehaviour:
         m_Name: EventSystem
         m_OriginalName: EventSystem
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -245,13 +296,17 @@ MonoBehaviour:
           width: 0
           height: 0
 <<<<<<< HEAD
+        m_UserData: 0
+=======
+<<<<<<< HEAD
         m_UserData: -53802
 =======
         m_UserData: 36140
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 3}
       m_SearchString: 
@@ -279,6 +334,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 381
+=======
+<<<<<<< HEAD
     x: 252.8
     y: 0
     width: 951.2
@@ -289,14 +347,19 @@ MonoBehaviour:
   controlID: 52
 =======
     x: 316
+>>>>>>> origin/zwtest
     y: 0
-    width: 1206
+    width: 1116
     height: 987
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< HEAD
+  controlID: 39
+=======
   controlID: 45
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -316,6 +379,11 @@ MonoBehaviour:
     x: 0
     y: 0
 <<<<<<< HEAD
+    width: 1116
+    height: 648
+  m_MinSize: {x: 102, y: 121}
+=======
+<<<<<<< HEAD
     width: 951.2
     height: 479.2
   m_MinSize: {x: 102, y: 121}
@@ -324,6 +392,7 @@ MonoBehaviour:
     height: 655
   m_MinSize: {x: 202, y: 221}
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 7}
   m_Panes:
@@ -331,7 +400,11 @@ MonoBehaviour:
   - {fileID: 8}
   - {fileID: 9}
   m_Selected: 0
+<<<<<<< HEAD
+  m_LastSelected: 1
+=======
   m_LastSelected: 2
+>>>>>>> origin/zwtest
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -353,6 +426,12 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 381
+    y: 73
+    width: 1114
+    height: 627
+=======
+<<<<<<< HEAD
     x: 252.8
     y: 73.6
     width: 949.2
@@ -363,6 +442,7 @@ MonoBehaviour:
     width: 1204
     height: 634
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -408,10 +488,14 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
 <<<<<<< HEAD
+      snapOffset: {x: 0, y: 25}
+=======
+<<<<<<< HEAD
       snapOffset: {x: 0, y: 24.8}
 =======
       snapOffset: {x: 0, y: 0}
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-scene-view-toolbar
@@ -438,10 +522,14 @@ MonoBehaviour:
       collapsed: 0
       displayed: 1
 <<<<<<< HEAD
+      snapOffset: {x: 0, y: 25}
+=======
+<<<<<<< HEAD
       snapOffset: {x: 0, y: 24.8}
 =======
       snapOffset: {x: 0, y: 0}
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -716,9 +804,9 @@ MonoBehaviour:
       floating: 1
       collapsed: 0
       displayed: 1
-      snapOffset: {x: -244, y: -139}
+      snapOffset: {x: 874, y: 492}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 3
+      snapCorner: 0
       id: UnityEditor.SceneViewCameraOverlay
       index: 0
 >>>>>>> origin/main
@@ -750,6 +838,11 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+    m_Target: {x: -0.20684834, y: -0.32015252, z: 0.06746511}
+    speed: 2
+    m_Value: {x: -0.21756524, y: -0.24641006, z: 0.065931566}
+=======
+<<<<<<< HEAD
     m_Target: {x: -0.43240482, y: 0.23954119, z: -0.034676816}
     speed: 2
     m_Value: {x: -0.43240482, y: 0.23954119, z: -0.034676816}
@@ -758,6 +851,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 821.23083, y: 471.8848, z: -1.6001221}
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -808,6 +902,11 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+    m_Target: 3.2545087
+    speed: 2
+    m_Value: 3.4078624
+=======
+<<<<<<< HEAD
     m_Target: 3.6522427
     speed: 2
     m_Value: 3.6522427
@@ -816,6 +915,7 @@ MonoBehaviour:
     speed: 2
     m_Value: 200.51794
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -856,6 +956,16 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4000}
   m_TitleContent:
     m_Text: Game
+<<<<<<< HEAD
+    m_Image: {fileID: -6423792434712278376, guid: 0000000000000000d000000000000000, type: 0}
+    m_Tooltip: 
+  m_Pos:
+    serializedVersion: 2
+    x: 381
+    y: 73
+    width: 1114
+    height: 627
+=======
     m_Image: {fileID: 4621777727084837110, guid: 0000000000000000d000000000000000, type: 0}
     m_Tooltip: 
   m_Pos:
@@ -864,6 +974,7 @@ MonoBehaviour:
     y: 73.6
     width: 949.2
     height: 458.2
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -880,7 +991,11 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
+<<<<<<< HEAD
+  m_TargetSize: {x: 1077, y: 606}
+=======
   m_TargetSize: {x: 777, y: 437.2}
+>>>>>>> origin/zwtest
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -895,10 +1010,17 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
+<<<<<<< HEAD
+    m_HBaseRangeMin: -538.5
+    m_HBaseRangeMax: 538.5
+    m_VBaseRangeMin: -303
+    m_VBaseRangeMax: 303
+=======
     m_HBaseRangeMin: -310.80002
     m_HBaseRangeMax: 310.80002
     m_VBaseRangeMin: -174.88
     m_VBaseRangeMax: 174.88
+>>>>>>> origin/zwtest
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -916,16 +1038,32 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
+      width: 1114
+      height: 606
+    m_Scale: {x: 1, y: 1}
+    m_Translation: {x: 557, y: 303}
+=======
       width: 949.2
       height: 437.2
     m_Scale: {x: 1.25, y: 1.25}
     m_Translation: {x: 474.59998, y: 218.6}
+>>>>>>> origin/zwtest
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
+<<<<<<< HEAD
+      x: -557
+      y: -303
+      width: 1114
+      height: 606
+    m_MinimalGUI: 1
+  m_defaultScale: 1
+  m_LastWindowPixelSize: {x: 1114, y: 627}
+=======
       x: -379.68
       y: -174.88
       width: 759.36
@@ -933,6 +1071,7 @@ MonoBehaviour:
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1186.5, y: 572.75}
+>>>>>>> origin/zwtest
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -959,6 +1098,12 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 381
+    y: 73
+    width: 1114
+    height: 627
+=======
+<<<<<<< HEAD
     x: 252.8
     y: 73.6
     width: 949.2
@@ -969,6 +1114,7 @@ MonoBehaviour:
     width: 1204
     height: 634
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -990,7 +1136,13 @@ MonoBehaviour:
     - {fileID: -2647584812779281378, guid: 29fc3e452ee7ea643b650e4160a7e43b, type: 2}
 =======
     - {fileID: -2881601394904153190, guid: 811a259d206dfbb43b666f7caa74fa1a, type: 2}
+<<<<<<< HEAD
+    - {fileID: 6579534759379194982, guid: 708f5038436dd094598d992270dffb16, type: 2}
+    - {fileID: -8140005952122845258, guid: f6cdc1754f28be34393cf85c17f3aeeb, type: 2}
+    - {fileID: 8935139105511635633, guid: 1889c9a2ad1b67440a9565f86e5724b1, type: 3}
+=======
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
     m_ValueSerializationHelper:
     - e00: 0.82151645
       e01: 0
@@ -1057,14 +1209,71 @@ MonoBehaviour:
       e32: 0
       e33: 1
 <<<<<<< HEAD
+    - e00: 0.7649484
+      e01: 0
+      e02: 0
+      e03: -7.9484253
+      e10: 0
+      e11: 0.7649484
+      e12: 0
+      e13: 190.40723
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.76153845
+      e01: 0
+      e02: 0
+      e03: -23.076904
+      e10: 0
+      e11: 0.76153845
+      e12: 0
+      e13: 147.78462
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 1
+=======
+<<<<<<< HEAD
     - e00: 1
 =======
     - e00: 0.70757043
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
       e01: 0
       e02: 0
       e03: 0
       e10: 0
+<<<<<<< HEAD
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    - e00: 0.7294737
+      e01: 0
+      e02: 0
+      e03: -21.473694
+      e10: 0
+      e11: 0.7294737
+      e12: 0
+      e13: 231.99474
+=======
 <<<<<<< HEAD
       e11: 1
       e12: 0
@@ -1090,6 +1299,7 @@ MonoBehaviour:
       e12: 0
       e13: 52.652435
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
       e20: 0
       e21: 0
       e22: 1
@@ -1100,6 +1310,11 @@ MonoBehaviour:
       e33: 1
   m_PreviewAnimator: {fileID: 0}
 <<<<<<< HEAD
+  m_AnimatorController: {fileID: 8482038639139121634, guid: 1889c9a2ad1b67440a9565f86e5724b1, type: 3}
+  m_BreadCrumbs:
+  - m_Target: {fileID: 8935139105511635633, guid: 1889c9a2ad1b67440a9565f86e5724b1, type: 3}
+=======
+<<<<<<< HEAD
   m_AnimatorController: {fileID: 9100000, guid: 29fc3e452ee7ea643b650e4160a7e43b, type: 2}
   m_BreadCrumbs:
   - m_Target: {fileID: -2647584812779281378, guid: 29fc3e452ee7ea643b650e4160a7e43b, type: 2}
@@ -1108,6 +1323,7 @@ MonoBehaviour:
   m_BreadCrumbs:
   - m_Target: {fileID: -2881601394904153190, guid: 811a259d206dfbb43b666f7caa74fa1a, type: 2}
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1137,6 +1353,20 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
 <<<<<<< HEAD
+    y: 648
+    width: 1116
+    height: 339
+  m_MinSize: {x: 232, y: 271}
+  m_MaxSize: {x: 10002, y: 10021}
+  m_ActualView: {fileID: 11}
+  m_Panes:
+  - {fileID: 11}
+  - {fileID: 12}
+  - {fileID: 13}
+  m_Selected: 0
+  m_LastSelected: 1
+=======
+<<<<<<< HEAD
     y: 479.2
     width: 951.2
     height: 243.59998
@@ -1157,6 +1387,7 @@ MonoBehaviour:
   - {fileID: 2}
   m_Selected: 2
   m_LastSelected: 0
+>>>>>>> origin/zwtest
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1178,6 +1409,12 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 381
+    y: 721
+    width: 1114
+    height: 318
+=======
+<<<<<<< HEAD
     x: 252.8
     y: 552.8
     width: 949.2
@@ -1188,6 +1425,7 @@ MonoBehaviour:
     width: 1204
     height: 311
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1210,10 +1448,14 @@ MonoBehaviour:
     m_SearchArea: 1
     m_Folders:
 <<<<<<< HEAD
+    - Assets/JS/Spaceship
+=======
+<<<<<<< HEAD
     - Assets/ZW/Animation
 =======
     - Assets/JS
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1221,6 +1463,9 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 78
   m_LastFolders:
+<<<<<<< HEAD
+  - Assets/JS/Spaceship
+=======
 <<<<<<< HEAD
   - Assets/ZW/Animation
   m_LastFoldersGridSize: 78
@@ -1238,20 +1483,26 @@ MonoBehaviour:
       m_OriginalName: Border
 =======
   - Assets/JS
+>>>>>>> origin/zwtest
   m_LastFoldersGridSize: 78
   m_LastProjectPath: D:\JiShou\Unity\Space\Unity-Assignment-Y2S1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 149}
-    m_SelectedIDs: 2e7b0000
-    m_LastClickedID: 31534
-    m_ExpandedIDs: 000000009e7a0000a07a0000a27a0000a47a0000a67a0000a87a0000aa7a0000ac7a0000ae7a0000b07a0000b27a0000b47a0000b67a0000b87a0000ba7a0000bc7a0000be7a0000c07a0000c27a0000c47a0000c67a0000c87a0000ca7a0000cc7a0000ce7a0000d07a0000d27a0000d47a0000d67a0000d87a0000da7a0000dc7a0000de7a0000e07a0000e27a0000e47a0000e67a0000e87a0000ea7a0000ec7a0000ee7a0000f07a0000f27a0000f47a0000f67a0000f87a0000fa7a0000fc7a0000fe7a0000007b0000027b00002c7b00002e7b00003c7b0000f27e00004e7f0000188100001c8100004081000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 36890000
+    m_LastClickedID: 35126
+    m_ExpandedIDs: 00000000be760000c0760000c2760000c4760000c6760000c8760000ca760000cc760000ce760000d0760000d2760000d4760000d6760000d8760000da760000dc760000de760000e0760000e2760000e4760000e6760000e8760000ea760000ec760000ee760000f0760000f2760000f4760000f6760000f8760000fa760000fc760000fe76000000770000027700000477000006770000087700000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700001e77000020770000227700002477000026770000287700002a7700002c7700002e77000030770000d4780000707900007279000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
+<<<<<<< HEAD
+      m_Name: 
+      m_OriginalName: 
+=======
       m_Name: Settings
       m_OriginalName: Settings
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
@@ -1259,13 +1510,17 @@ MonoBehaviour:
         width: 0
         height: 0
 <<<<<<< HEAD
+      m_UserData: 0
+=======
+<<<<<<< HEAD
       m_UserData: 30180
 =======
       m_UserData: 31544
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -1280,10 +1535,14 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+    m_ExpandedIDs: 00000000be760000c0760000c2760000c4760000c6760000c8760000ca760000cc760000ce760000d0760000d2760000d4760000d6760000d8760000da760000dc760000de760000e0760000e2760000e4760000e6760000e8760000ea760000ec760000ee760000f0760000f2760000f4760000f6760000f8760000fa760000fc760000fe76000000770000027700000477000006770000087700000a7700000c7700000e77000010770000127700001477000016770000187700001a7700001c7700001e77000020770000227700002477000026770000287700002a7700002c7700002e77000030770000
+=======
+<<<<<<< HEAD
     m_ExpandedIDs: 000000001c7400001e74000020740000227400002474000026740000287400002a7400002c7400002e74000030740000327400003474000036740000387400003a7400003c7400003e7400004074000042740000
 =======
     m_ExpandedIDs: 000000009e7a0000a07a0000a27a0000a47a0000a67a0000a87a0000aa7a0000ac7a0000ae7a0000b07a0000b27a0000b47a0000b67a0000b87a0000ba7a0000bc7a0000be7a0000c07a0000c27a0000c47a0000c67a0000c87a0000ca7a0000cc7a0000ce7a0000d07a0000d27a0000d47a0000d67a0000d87a0000da7a0000dc7a0000de7a0000e07a0000e27a0000e47a0000e67a0000e87a0000ea7a0000ec7a0000ee7a0000f07a0000f27a0000f47a0000f67a0000f87a0000fa7a0000fc7a0000fe7a0000007b0000027b0000
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1309,6 +1568,12 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+    m_SelectedInstanceIDs: e8ecffff
+    m_LastClickedInstanceID: -4888
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000487e00000e7200002e7200001a72000006720000b0730000be730000c67300008a700000747a00009e8100000a7100004c73000038cc00003a790000e227010002a40000f67b00003c760000a47700003a76000044760000ca79000082970000e8770000687800000000000012170100cef00000f47c00003e7f00009881000038870000b07e000028760000047d000020820000da860000828700008a870000928700009a870000a2870000aa870000b2870000aa660100b463010092680100a28d00004e8f0000508a0000ce910000
+=======
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 028c0000
     m_LastClickedInstanceID: 35842
     m_HadKeyboardFocusLastEvent: 1
@@ -1319,6 +1584,7 @@ MonoBehaviour:
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000487e00000e7200002e7200001a72000006720000b0730000be730000c67300008a700000747a00009e8100000a7100004c73000038cc00003a790000e227010002a40000f67b00003c760000a47700003a76000044760000ca79000082970000e8770000687800000000000012170100cef00000f47c00003e7f00009881000038870000b07e000028760000047d000020820000da860000828700008a870000928700009a870000a2870000aa870000b2870000
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1334,7 +1600,11 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
+<<<<<<< HEAD
+      m_ClientGUIView: {fileID: 10}
+=======
       m_ClientGUIView: {fileID: 0}
+>>>>>>> origin/zwtest
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -1371,6 +1641,12 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 381
+    y: 721
+    width: 1114
+    height: 318
+=======
+<<<<<<< HEAD
     x: 252.8
     y: 552.8
     width: 949.2
@@ -1381,6 +1657,7 @@ MonoBehaviour:
     width: 1204
     height: 311
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1392,8 +1669,12 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
 <<<<<<< HEAD
+--- !u!114 &13
+=======
+<<<<<<< HEAD
 =======
 --- !u!114 &12
+>>>>>>> origin/zwtest
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1413,10 +1694,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 316
-    y: 728
-    width: 1204
-    height: 311
+    x: 381
+    y: 721
+    width: 1114
+    height: 318
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1429,9 +1710,14 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< HEAD
+  m_LastSelectedObjectID: 95338
+--- !u!114 &14
+=======
   m_LastSelectedObjectID: -73700
 >>>>>>> origin/main
 --- !u!114 &13
+>>>>>>> origin/zwtest
 MonoBehaviour:
   m_ObjectHideFlags: 52
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1447,22 +1733,37 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 1497
+=======
+<<<<<<< HEAD
     x: 1204
     y: 0
     width: 332
     height: 722.8
 =======
     x: 1522
+>>>>>>> origin/zwtest
     y: 0
-    width: 398
+    width: 423
     height: 987
+<<<<<<< HEAD
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
+  m_ActualView: {fileID: 2}
+=======
 >>>>>>> origin/main
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
+>>>>>>> origin/zwtest
   m_Panes:
-  - {fileID: 14}
   - {fileID: 15}
+<<<<<<< HEAD
+  - {fileID: 16}
+  - {fileID: 2}
+  m_Selected: 2
+  m_LastSelected: 0
+=======
   m_Selected: 0
   m_LastSelected: 1
 --- !u!114 &14
@@ -1519,6 +1820,7 @@ MonoBehaviour:
   m_LockTracker:
     m_IsLocked: 0
   m_PreviewWindow: {fileID: 0}
+>>>>>>> origin/zwtest
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1540,6 +1842,12 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
 <<<<<<< HEAD
+    x: 1497
+    y: 73
+    width: 422
+    height: 966
+=======
+<<<<<<< HEAD
     x: 1216.8
     y: 73.6
     width: 318.19995
@@ -1550,6 +1858,7 @@ MonoBehaviour:
     width: 317.40002
     height: 749.8
 >>>>>>> origin/main
+>>>>>>> origin/zwtest
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -1582,9 +1891,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1522
+    x: 1497
     y: 73
-    width: 397
+    width: 422
     height: 966
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -1598,7 +1907,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_ShowAlpha: 0
   m_MipLevel: 0
-  m_Zoom: 0.6997959
+  m_Zoom: 5.709375
   m_ScrollPosition: {x: 0, y: 0}
   m_SelectedObject: {fileID: 0}
   m_SelectedSpriteRectGUID: 00000000000000000000000000000000

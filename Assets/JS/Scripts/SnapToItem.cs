@@ -28,7 +28,7 @@ public class SnapToItem : MonoBehaviour
     {
         int currentItem = Mathf.RoundToInt((0-contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
 
-        if (scrollRect.velocity.magnitude < 50 && !isSnapped) {
+        if (scrollRect.velocity.magnitude < 50 && !isSnapped && NameLabel!=null) {
             scrollRect.velocity = Vector2.zero;
             snapSpeed += snapForce * Time.deltaTime;
             contentPanel.localPosition = new Vector3(
@@ -42,7 +42,7 @@ public class SnapToItem : MonoBehaviour
             isSnapped = true;
         
         }
-        if(scrollRect.velocity.magnitude > 0)
+        if(scrollRect.velocity.magnitude > 0 && NameLabel != null)
         {
             NameLabel.text = (currentItem-70).ToString();
             isSnapped = false;

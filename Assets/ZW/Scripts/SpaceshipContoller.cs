@@ -8,6 +8,24 @@ public class SpaceshipController : MonoBehaviour
 
     private Animator animator;
 
+    public GameObject engineFire;  // The engine fire GameObject
+    public Animator spaceshipAnimator;  // Reference to the Animator controlling the spaceship
+
+    void Update()
+    {
+        // Check if the "collide" parameter is true in the Animator
+        bool isCollide = spaceshipAnimator.GetBool("collide");
+
+        // If the parameter is true, deactivate the engine fire
+        if (isCollide)
+        {
+            engineFire.SetActive(false);
+        }
+        else
+        {
+            engineFire.SetActive(true);
+        }
+    }
     void Start()
     {
         // Get the Rigidbody2D component attached to the spaceship
