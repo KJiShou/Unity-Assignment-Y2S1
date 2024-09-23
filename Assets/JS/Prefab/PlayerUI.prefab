@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 6973283688492514367}
   - component: {fileID: 9165668826865935629}
   m_Layer: 5
-  m_Name: Equation UI
+  m_Name: Equation UI Set
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1611,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4314358046239056330, guid: 1503fa5f6e8891e4a919d20c360ce0d2, type: 3}
       propertyPath: m_Name
-      value: Add Equation
+      value: Add Equation Set
       objectReference: {fileID: 0}
     - target: {fileID: 4322025362290823036, guid: 1503fa5f6e8891e4a919d20c360ce0d2, type: 3}
       propertyPath: m_Enabled

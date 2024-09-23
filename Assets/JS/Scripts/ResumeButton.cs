@@ -11,8 +11,8 @@ public class ResumeButton : MonoBehaviour
     private Canvas StartingButton;
     void Start()
     {
-        AddEquation = GameObject.Find("Add Equation").GetComponent<Canvas>();
-        EquationUI = GameObject.Find("Equation UI").GetComponent<Canvas>();
+        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
+        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
         StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
         // Add listener to the button's click event
         if (destroyButton != null)
