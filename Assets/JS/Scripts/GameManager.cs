@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public int spaceshipIndex = 0;
     public Color spaceshipColor = new Color(255, 255, 255);
+    public int difficulty = 1;
 
     private void Awake()
     {

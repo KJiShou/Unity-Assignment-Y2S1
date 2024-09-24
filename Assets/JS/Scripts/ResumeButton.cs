@@ -9,11 +9,13 @@ public class ResumeButton : MonoBehaviour
     private Canvas AddEquation;
     private Canvas EquationUI;
     private Canvas StartingButton;
+    private Timer timer;
     void Start()
     {
-        AddEquation = GameObject.Find("Add Equation").GetComponent<Canvas>();
-        EquationUI = GameObject.Find("Equation UI").GetComponent<Canvas>();
+        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
+        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
         StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
+        timer = GameObject.Find("Timer").GetComponent<Timer>();
         // Add listener to the button's click event
         if (destroyButton != null)
         {
@@ -28,6 +30,7 @@ public class ResumeButton : MonoBehaviour
     // Method to destroy the button's parent GameObject
     void DestroyParent()
     {
+        timer.ContinueCountdown();
         AddEquation.enabled = true;
         EquationUI.enabled = true;
         StartingButton.enabled = true;

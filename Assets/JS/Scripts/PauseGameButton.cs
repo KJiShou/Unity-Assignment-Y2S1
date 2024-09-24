@@ -14,8 +14,8 @@ public class PauseGameButton : MonoBehaviour
     private Canvas StartingButton;
     void Start()
     {
-        AddEquation = GameObject.Find("Add Equation").GetComponent<Canvas>();
-        EquationUI = GameObject.Find("Equation UI").GetComponent<Canvas>();
+        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
+        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
         StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
         if (generateButton != null)
         {
