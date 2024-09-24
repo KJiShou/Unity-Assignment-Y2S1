@@ -8,7 +8,7 @@ public class PortalCleaner : MonoBehaviour
     public void RunDelete()
     {
         // Find the parent object named "Equation UI"
-        GameObject equationUI = GameObject.Find("Equation UI");
+        GameObject equationUI = GameObject.Find("Equation UI Set");
 
         if (equationUI != null)
         {
