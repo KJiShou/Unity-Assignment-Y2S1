@@ -510,6 +510,7 @@ MonoBehaviour:
   spaceshipIndex: 0
   spaceshipColor: {r: 255, g: 255, b: 255, a: 1}
   difficulty: 1
+  score: 64000000000000000000000000000000000000000000000000000000
 --- !u!4 &364147709
 Transform:
   m_ObjectHideFlags: 0
@@ -605,6 +606,7 @@ GameObject:
   - component: {fileID: 911116437}
   - component: {fileID: 911116436}
   - component: {fileID: 911116439}
+  - component: {fileID: 911116440}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -730,6 +732,19 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &911116440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911116435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84782fd113c5afa4eac7b9c902a593fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 911116437}
 --- !u!224 &1630672347 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7019173844158856494, guid: a56947fca8c65b9428d2b0203576b71e, type: 3}
