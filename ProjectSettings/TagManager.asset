@@ -8,6 +8,9 @@ TagManager:
   - InPortal
   - OutPortal
   - Portal
+  - Audio
+  - Button
+  - Text
   layers:
   - Default
   - TransparentFX
