@@ -40,7 +40,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 4}
 >>>>>>> origin/main
   m_MinSize: {x: 875, y: 300}
@@ -65,8 +65,8 @@ MonoBehaviour:
     y: 0
     width: 499
     height: 616
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -345,8 +345,12 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< Updated upstream
   controlID: 90
 >>>>>>> origin/main
+=======
+  controlID: 42
+>>>>>>> Stashed changes
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -517,8 +521,8 @@ MonoBehaviour:
     y: 0
     width: 422
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -1012,8 +1016,12 @@ MonoBehaviour:
 =======
       m_SelectedIDs: 
       m_LastClickedID: 0
+<<<<<<< Updated upstream
       m_ExpandedIDs: 3a0dfeffc213feffc26bfeff8471feff7e7efeffde81feff2484feffde93feff46aafeff68abfeff34acfeff46b4feff80b5feff92c5feff66c6feffacc7feff54c8feff9ac9feff86cafeff56ccfeff0ccdfeffbacdfeff7acefeff22cffeffd2cffeffa6d0feff40d2feff4ad2feff84d2feff54d3feff38d4feffe6d4feffa6d5feff5cd6feff2cd8feff18d9feff5edafeff12dbfeffe4dcfeffb6defeff86e0feff34e1feff08e2feffc0e2feff70e3feffb6e4fefff0e5feff7ee8feff4eeafefffeeafeffa2ebfeff52ecfeffeefaffff867300008c730000a8730000c8730000f6730000007400000a74000022130100262401006a26010094270100a82901001c2a0100f02a01006a4101001a4c01008e4c0100a44c0100b0690100ee6b0100
 >>>>>>> origin/main
+=======
+      m_ExpandedIDs: 8c55fffff857ffff1066fffffe67ffff0670ffff3a75ffff6283ffff8e8bffffcc8ffffff4aaffffeefaffff8a73000090730000ae730000fe73000008740000147400005e870000928b0000908d0000048e0000d89a00004ea90000cabb000010bc00003ebc0000
+>>>>>>> Stashed changes
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1479,6 +1487,7 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1506,6 +1515,11 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 1.576247, y: -0.1069797, z: -4.5229573}
 >>>>>>> origin/main
+=======
+    m_Target: {x: 1.1041712, y: 0.76703644, z: 0.3088086}
+    speed: 2
+    m_Value: {x: 1.1041712, y: 0.76703644, z: 0.3088086}
+>>>>>>> Stashed changes
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1555,6 +1569,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
+<<<<<<< Updated upstream
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1582,6 +1597,11 @@ MonoBehaviour:
     speed: 2
     m_Value: 6.4355173
 >>>>>>> origin/main
+=======
+    m_Target: 5.843818
+    speed: 2
+    m_Value: 5.843818
+>>>>>>> Stashed changes
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -2177,7 +2197,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/JS/Scripts
+    - Assets/Sounds/SoundEffects/UISounds
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -2185,30 +2205,30 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 78
   m_LastFolders:
-  - Assets/JS/Scripts
+  - Assets/Sounds/SoundEffects/UISounds
   m_LastFoldersGridSize: 78
   m_LastProjectPath: C:\Users\User\Documents\Unity-Assignment-Y2S1
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: c07b0000
-    m_LastClickedID: 31680
-    m_ExpandedIDs: 0000000000780000027800000478000006780000087800000c7800000e78000010780000127800001478000016780000187800001a7800001c7800001e780000227800002478000090780000b67c000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 120}
+    m_SelectedIDs: dcb80000
+    m_LastClickedID: 47324
+    m_ExpandedIDs: 000000000c7800000e78000010780000127800001478000016780000187800001a7800001c78000020780000227800002478000026780000287800002a7800002c7800006c78000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: OpenType (.otf)
-      m_OriginalName: OpenType (.otf)
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 31604
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
@@ -2222,7 +2242,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000000780000027800000478000006780000087800000a7800000c7800000e78000010780000127800001478000016780000187800001a7800001c7800001e780000207800002278000024780000
+    m_ExpandedIDs: 000000000c7800000e78000010780000127800001478000016780000187800001a7800001c7800001e78000020780000227800002478000026780000287800002a7800002c7800002e780000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2616,6 +2636,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
+<<<<<<< Updated upstream
   m_LastSelectedObjectID: 32886
 --- !u!114 &19
 MonoBehaviour:
@@ -2688,6 +2709,9 @@ MonoBehaviour:
 --- !u!114 &19
 =======
   m_LastSelectedObjectID: 85156
+=======
+  m_LastSelectedObjectID: 48224
+>>>>>>> Stashed changes
 --- !u!114 &20
 >>>>>>> origin/main
 MonoBehaviour:

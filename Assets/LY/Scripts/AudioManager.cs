@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuHover;
     public AudioClip menuClickIn;
     public AudioClip menuClickOut;
+
+    public AudioClip changeSkinSwipe;
     public AudioClip menuSlider;
     public AudioClip stageSelectConfirm;
 

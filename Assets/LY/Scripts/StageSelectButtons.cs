@@ -19,18 +19,16 @@ public class StageSelectButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         audioManager.PlaySFX(audioManager.menuHover);
     }
 
+    public void OnClick() 
+    {
+        audioManager.PlaySFX(audioManager.menuClickOut);
+        SceneManager.LoadScene("Main");
+    }
+
 
     public void OnPointerExit(PointerEventData eventData)
     {
         Debug.Log("No longer hovering!");
-    }
-
-
-
-    public void returnButton()
-    {
-        audioManager.PlaySFX(audioManager.menuClickOut);
-        SceneManager.LoadScene("Main");
     }
 
 

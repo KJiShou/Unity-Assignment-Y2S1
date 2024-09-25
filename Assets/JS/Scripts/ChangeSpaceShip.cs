@@ -13,7 +13,12 @@ public class ChangeSpaceShip : MonoBehaviour
     private float backupR = 1;
     private float backupG = 1;
     private float backupB = 1;
+
+    AudioManager audioManager;
     void Start() {
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    
         backup = GameManager.Instance.spaceshipIndex;
         backupR = GameManager.Instance.spaceshipColor.r;
         backupG = GameManager.Instance.spaceshipColor.g;
@@ -22,6 +27,8 @@ public class ChangeSpaceShip : MonoBehaviour
         image.color = GameManager.Instance.spaceshipColor;
     }
     public void leftImage() {
+        audioManager.PlaySFX(audioManager.changeSkinSwipe);
+
         if (GameManager.Instance.spaceshipIndex>0) {
             GameManager.Instance.spaceshipIndex--;
             image.sprite = imageList[GameManager.Instance.spaceshipIndex];
@@ -34,6 +41,8 @@ public class ChangeSpaceShip : MonoBehaviour
     }
 
     public void rightImage() {
+        audioManager.PlaySFX(audioManager.changeSkinSwipe);
+
         if (GameManager.Instance.spaceshipIndex<imageList.Length-1) {
             GameManager.Instance.spaceshipIndex++;
             image.sprite = imageList[GameManager.Instance.spaceshipIndex];
@@ -46,7 +55,9 @@ public class ChangeSpaceShip : MonoBehaviour
     }
 
     public void cancel() {
-        
+
+        audioManager.PlaySFX(audioManager.menuClickOut);
+
         GameManager.Instance.spaceshipIndex = backup;
         RGBColor.r = backupR;
         RGBColor.g = backupG;
@@ -56,6 +67,7 @@ public class ChangeSpaceShip : MonoBehaviour
     }
 
     public void submit(){
+        audioManager.PlaySFX(audioManager.menuClickIn);
         SceneManager.LoadScene("Main");
     }
 }

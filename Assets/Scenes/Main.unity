@@ -327,7 +327,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -960, y: -543.75}
-  m_SizeDelta: {x: 9, y: 1.2478}
+  m_SizeDelta: {x: 5.5, y: 1.2478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &449680483
 MonoBehaviour:
@@ -692,7 +692,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -2.4300942, y: 0, z: -2.4944677, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -744,7 +744,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -960, y: -541.25}
-  m_SizeDelta: {x: 9, y: 1.2478}
+  m_SizeDelta: {x: 5.5, y: 1.2478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &710225547
 MonoBehaviour:
@@ -1402,7 +1402,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -2.8431258, y: 0, z: -2.8954535, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1536,7 +1536,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -2.494276, y: 0, z: -2.5989308, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1652,8 +1652,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.0000500679, y: 0}
+  m_SizeDelta: {x: 0.000100016594, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1789918222
 MonoBehaviour:
@@ -1738,7 +1738,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -1.5733011, y: 0, z: -1.6088116, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2002,7 +2002,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -960, y: -542.5}
-  m_SizeDelta: {x: 9, y: 1.2478}
+  m_SizeDelta: {x: 5.5, y: 1.2478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2070799200
 MonoBehaviour:
@@ -2147,8 +2147,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -960, y: -540}
-  m_SizeDelta: {x: 9, y: 1.2478}
+  m_AnchoredPosition: {x: -960.01624, y: -540}
+  m_SizeDelta: {x: 5.5, y: 1.2478}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118948118
 MonoBehaviour:
@@ -2291,6 +2291,7 @@ MonoBehaviour:
   menuHover: {fileID: 8300000, guid: 7b471e296a40ad944b64aae9a40dd2e3, type: 3}
   menuClickIn: {fileID: 8300000, guid: 00d6051bde544bf42be0c73028b5459f, type: 3}
   menuClickOut: {fileID: 8300000, guid: 095b63f0df1efec468c22912dc5a0344, type: 3}
+  changeSkinSwipe: {fileID: 8300000, guid: 51939965cf7baa44a82119d48c821b11, type: 3}
   menuSlider: {fileID: 8300000, guid: 96c81762275a9894fbdc2667983517ae, type: 3}
   stageSelectConfirm: {fileID: 8300000, guid: cdc334cfb457ba748a530db14668c04e, type: 3}
 --- !u!4 &2137111322
