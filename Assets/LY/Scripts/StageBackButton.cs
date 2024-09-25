@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-public class StageSelectButtons : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class StageBackButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     AudioManager audioManager;
 
@@ -19,7 +19,7 @@ public class StageSelectButtons : MonoBehaviour, IPointerEnterHandler, IPointerE
         audioManager.PlaySFX(audioManager.menuHover);
     }
 
-    public void OnClick() 
+    public void OnClick()
     {
         audioManager.PlaySFX(audioManager.menuClickOut);
         SceneManager.LoadScene("Main");
