@@ -37,5 +37,6 @@ public class AsteroidMovement : MonoBehaviour
         // Optionally, add a little random torque for a tumbling effect
         float randomTorque = Random.Range(-hitForce, hitForce);
         rb.AddTorque(randomTorque);
+    
     }
 }
