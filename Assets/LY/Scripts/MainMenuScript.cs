@@ -5,18 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour
 {
-    // public AudioClip buttonHitSounds;
-    // static AudioSource audioSrc;
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
 
     // Start is called before the first frame update
     void Start()
     {
-        // audioSrc = GetComponent<AudioSource>();
+        audioManager.PlaySFX(audioManager.menuBgm);
     }
+
+
+
 
     public void startFunc()
     {
-        // audioSrc.PlayOneShot(buttonHitSounds);
         SceneManager.LoadScene("StageSelect");
     }
 
@@ -32,7 +39,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void quitFunc()
     {
-        //audioSrc.PlayOneShot(buttonHItSounds);
         Application.Quit();
     }
 
