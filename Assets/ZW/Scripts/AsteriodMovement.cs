@@ -5,6 +5,7 @@ public class AsteroidMovement : MonoBehaviour
     public float initialRotationSpeed = 10f;  // Initial rotation speed (slow)
     public float hitRotationSpeedMultiplier = 3f;  // Multiplier for rotation speed when hit
     public float hitForce = 10f;  // Force applied to the asteroid when hit
+    public bool rotateClockwise = true;  // Variable to control rotation direction
 
     private Rigidbody2D rb;
     private float currentRotationSpeed;
@@ -20,8 +21,11 @@ public class AsteroidMovement : MonoBehaviour
 
     void Update()
     {
+        // Determine the rotation direction
+        float direction = rotateClockwise ? 1f : -1f;
+
         // Apply continuous slow rotation
-        transform.Rotate(0f, 0f, currentRotationSpeed * Time.deltaTime);
+        transform.Rotate(0f, 0f, direction * currentRotationSpeed * Time.deltaTime);
     }
 
     // This method will be called when the asteroid is hit
@@ -37,6 +41,5 @@ public class AsteroidMovement : MonoBehaviour
         // Optionally, add a little random torque for a tumbling effect
         float randomTorque = Random.Range(-hitForce, hitForce);
         rb.AddTorque(randomTorque);
-    
     }
 }
