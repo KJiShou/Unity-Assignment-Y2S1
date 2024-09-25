@@ -32,6 +32,7 @@ public class PortalController : MonoBehaviour
         playerRb.simulated = false;
     
         anim.Play("InPortal");
+        StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
     
         player.transform.position = destination.position;
@@ -40,5 +41,17 @@ public class PortalController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         playerRb.simulated = true;
     }
+
+    IEnumerator MoveInPortal()
+    {
+        float timer = 0;
+        while (timer < 0.5f)
+        {
+            player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, 3 * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+            timer += Time.deltaTime;
+        }
+    }
+
 
 }
