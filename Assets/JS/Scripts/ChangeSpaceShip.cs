@@ -57,12 +57,8 @@ public class ChangeSpaceShip : MonoBehaviour
     public void cancel() {
 
         audioManager.PlaySFX(audioManager.menuClickOut);
-
         GameManager.Instance.spaceshipIndex = backup;
-        RGBColor.r = backupR;
-        RGBColor.g = backupG;
-        RGBColor.b = backupB;
-        GameManager.Instance.spaceshipColor = new Color(RGBColor.r, RGBColor.g, RGBColor.b);
+        GameManager.Instance.spaceshipColor = new Color(backupR, backupG, backupB);
         SceneManager.LoadScene("Main");
     }
 
