@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class RGBColor : MonoBehaviour
 {
+    AudioManager audioManager;
     public Slider redSlider;
     public Slider greenSlider;
     public Slider blueSlider;
@@ -15,6 +16,8 @@ public class RGBColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         redSlider.value = GameManager.Instance.spaceshipColor.r;
         greenSlider.value = GameManager.Instance.spaceshipColor.g;
         blueSlider.value = GameManager.Instance.spaceshipColor.b;
@@ -32,6 +35,8 @@ public class RGBColor : MonoBehaviour
     }
     public void ChangeColor()
     {
+        audioManager.PlaySFX(audioManager.menuSlider);
+        
         // Get the slider values and create a new Color
         r = redSlider.value;
         g = greenSlider.value;
