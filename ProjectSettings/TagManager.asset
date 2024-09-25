@@ -7,6 +7,8 @@ TagManager:
   - Asteriod
   - Portal
   - Audio
+  - Button
+  - Text
   layers:
   - Default
   - TransparentFX

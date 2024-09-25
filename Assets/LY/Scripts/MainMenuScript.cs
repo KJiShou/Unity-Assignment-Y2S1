@@ -14,23 +14,28 @@ public class MainMenuScript : MonoBehaviour
 
     public void startFunc()
     {
+        audioManager.PlaySFX(audioManager.menuClickIn);
         SceneManager.LoadScene("StageSelect");
     }
 
     public void customizeFunc()
     {
+        audioManager.PlaySFX(audioManager.menuClickIn);
         SceneManager.LoadScene("ChangeSkinUI");
     }
 
     public void settingsFunc()
     {
+        audioManager.PlaySFX(audioManager.menuClickIn);
         SceneManager.LoadScene("MainMenuSettings");
     }
 
     public void quitFunc()
     {
+        audioManager.PlaySFX(audioManager.menuClickIn);
         Application.Quit();
     }
+
 
 
 
