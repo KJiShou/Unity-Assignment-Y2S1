@@ -12,16 +12,6 @@ public class MainMenuScript : MonoBehaviour
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        audioManager.PlaySFX(audioManager.menuBgm);
-    }
-
-
-
-
     public void startFunc()
     {
         SceneManager.LoadScene("StageSelect");
