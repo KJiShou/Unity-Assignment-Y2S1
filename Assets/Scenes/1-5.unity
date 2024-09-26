@@ -1422,8 +1422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be80c71d45be69f49b6d5bc7d50ce4d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialRotationSpeed: 15
-  hitRotationSpeedMultiplier: 3
+  initialRotationSpeed: 20
+  hitRotationSpeedMultiplier: 1.1
   hitForce: 10
   rotateClockwise: 1
 --- !u!50 &853164061
@@ -1438,7 +1438,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1679,13 +1679,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1493428880}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 61.28, y: -11.94, z: 0}
-  m_LocalScale: {x: 6.7200136, y: 6.7200136, z: 6.7200136}
+  m_LocalRotation: {x: -0, y: -0, z: 0.9938618, w: -0.110629596}
+  m_LocalPosition: {x: 58.02, y: -14.99, z: 0}
+  m_LocalScale: {x: 9.705292, y: 9.242255, z: 9.242255}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 192.703}
 --- !u!50 &1493428883
 Rigidbody2D:
   serializedVersion: 4
@@ -1698,7 +1698,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -1876,7 +1876,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -2099,11 +2099,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1104224777427486831, guid: 8a25ff85bbda8044497e4335f9461ecf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 21.57
+      value: 22.41
       objectReference: {fileID: 0}
     - target: {fileID: 1104224777427486831, guid: 8a25ff85bbda8044497e4335f9461ecf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.12
+      value: -7.37
       objectReference: {fileID: 0}
     - target: {fileID: 1104224777427486831, guid: 8a25ff85bbda8044497e4335f9461ecf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2522,7 +2522,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 30
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -2597,13 +2597,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039398721}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.28282595, w: 0.95917124}
-  m_LocalPosition: {x: 61.34, y: 13.39, z: 0}
-  m_LocalScale: {x: 5.5485153, y: 5.5485153, z: 5.5485153}
+  m_LocalRotation: {x: -0, y: -0, z: 0.20440978, w: 0.9788855}
+  m_LocalPosition: {x: 63.02, y: 12.28, z: 0}
+  m_LocalScale: {x: 9.101932, y: 9.101932, z: 9.101932}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.858}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 23.59}
 --- !u!1001 &2050744137
 PrefabInstance:
   m_ObjectHideFlags: 0
