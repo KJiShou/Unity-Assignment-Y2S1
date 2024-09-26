@@ -261,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 96.43902, y: 7.6714}
+  m_AnchoredPosition: {x: 127.2, y: 7.6714}
   m_SizeDelta: {x: 118.84, y: 93.2669}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6427540982658032996
@@ -433,7 +433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -107.6, y: 7.6714}
+  m_AnchoredPosition: {x: -121.14, y: 7.6714}
   m_SizeDelta: {x: 145.3033, y: 89.3641}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3561643874845941385
@@ -2044,7 +2044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.6, y: 7.6714}
+  m_AnchoredPosition: {x: 19.9, y: 7.6714}
   m_SizeDelta: {x: 118.84, y: 93.2669}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7000708096481034107
@@ -2763,14 +2763,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 527119764678084452}
-  numPoints: 100
-  xStart: -20
-  xEnd: 20
+  numPoints: 500
+  xStart: -50
+  xEnd: 50
   amplitude: 1
   frequency: 1
   phaseShift: 0
-  yMin: -20
-  yMax: 20
+  yMin: -40
+  yMax: 40
   amplitudeText: {fileID: 5754492399635280167}
   frequencyText: {fileID: 7766725928089711528}
   phaseShiftText: {fileID: 6963329362029217993}
@@ -5311,8 +5311,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.0894, y: 7.6714}
-  m_SizeDelta: {x: 329.4089, y: 71.7159}
+  m_AnchoredPosition: {x: -11.96, y: 7.6714}
+  m_SizeDelta: {x: 385.98, y: 71.7159}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6263077278323716611
 CanvasRenderer:
@@ -5342,7 +5342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: y =     Tan(     x +     )
+  m_text: y =       Tan(       x +      )
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff444fae1d802744e850d909f55db8fa, type: 2}
   m_sharedMaterial: {fileID: -5018905329224871852, guid: ff444fae1d802744e850d909f55db8fa, type: 2}
