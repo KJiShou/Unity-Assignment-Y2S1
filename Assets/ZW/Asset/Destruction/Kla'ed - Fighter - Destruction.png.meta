@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: dabcce52e7e6a4842adfc98dbfc92b14
+guid: a622be4189a0aab438363e7eb91c527d
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 16384
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Kla'ed - Fighter - Weapons_0
+      name: Kla'ed - Fighter - Destruction_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a371d218fa022dc498fec435abb2a252
-      internalID: 49919050
+      spriteID: 81105ac314e8223479f9748594f84a7c
+      internalID: 1237207747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kla'ed - Fighter - Weapons_1
+      name: Kla'ed - Fighter - Destruction_1
       rect:
         serializedVersion: 2
         x: 64
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d6c005249ae70c14491c0af59a027b02
-      internalID: -751471219
+      spriteID: 6b4629b9d83cf2946899f6fb949aea4f
+      internalID: -1279108076
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kla'ed - Fighter - Weapons_2
+      name: Kla'ed - Fighter - Destruction_2
       rect:
         serializedVersion: 2
         x: 128
@@ -153,14 +153,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66e9097100480a74488ea1f42a663009
-      internalID: 264498696
+      spriteID: 7b7e7ec89f31de545a67d55c96441d10
+      internalID: 2134860938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kla'ed - Fighter - Weapons_3
+      name: Kla'ed - Fighter - Destruction_3
       rect:
         serializedVersion: 2
         x: 192
@@ -174,14 +174,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 57d603bb6eda3ae438d97ad3bf43b40b
-      internalID: -1684413325
+      spriteID: 93e27dc6ac51a944094a02eaa7edb35b
+      internalID: 354665645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kla'ed - Fighter - Weapons_4
+      name: Kla'ed - Fighter - Destruction_4
       rect:
         serializedVersion: 2
         x: 256
@@ -195,14 +195,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77537c312a2863e4db4b25f36ef1630b
-      internalID: 1454116846
+      spriteID: d9a8649bb615c0947b32e2fd9179858c
+      internalID: -1343816928
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Kla'ed - Fighter - Weapons_5
+      name: Kla'ed - Fighter - Destruction_5
       rect:
         serializedVersion: 2
         x: 320
@@ -216,8 +216,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41a5e4bceb5e4114d9d745599b3b2fd0
-      internalID: 1394246682
+      spriteID: a7dd0920629d4e44a9bf1e21c8ad9afc
+      internalID: 1607352458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kla'ed - Fighter - Destruction_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d10c815611ad6448707fe87909c7c9
+      internalID: 2021512885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Kla'ed - Fighter - Destruction_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7cfd383a276da41aa62093bce1378d
+      internalID: 2087523656
       vertices: []
       indices: 
       edges: []
@@ -233,12 +275,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Kla'ed - Fighter - Weapons_0: 49919050
-      Kla'ed - Fighter - Weapons_1: -751471219
-      Kla'ed - Fighter - Weapons_2: 264498696
-      Kla'ed - Fighter - Weapons_3: -1684413325
-      Kla'ed - Fighter - Weapons_4: 1454116846
-      Kla'ed - Fighter - Weapons_5: 1394246682
+      Kla'ed - Fighter - Destruction_0: 1237207747
+      Kla'ed - Fighter - Destruction_1: -1279108076
+      Kla'ed - Fighter - Destruction_2: 2134860938
+      Kla'ed - Fighter - Destruction_3: 354665645
+      Kla'ed - Fighter - Destruction_4: -1343816928
+      Kla'ed - Fighter - Destruction_5: 1607352458
+      Kla'ed - Fighter - Destruction_6: 2021512885
+      Kla'ed - Fighter - Destruction_7: 2087523656
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

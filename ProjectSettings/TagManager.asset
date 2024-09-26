@@ -61,3 +61,6 @@ TagManager:
   - name: Text
     uniqueID: 240486309
     locked: 0
+  - name: Obstacle
+    uniqueID: 4248470217
+    locked: 0

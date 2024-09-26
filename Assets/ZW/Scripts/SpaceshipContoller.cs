@@ -7,25 +7,26 @@ public class SpaceshipController : MonoBehaviour
     private Rigidbody2D rb;  // Reference to the Rigidbody2D component
     private Animator animator;
     public GameObject engineFire;  // The engine fire GameObject
+    public GameObject headlights;
+    public GameObject arealights;
     public GameObject shield;  // The shield GameObject
     public GameObject explosionPrefab;  // Explosion prefab for visual effect (optional)
     public float destructionDelay = 5f;  // Delay before destruction (in seconds)
+    public float blinkInterval = 0.2f;
     public float shrinkSpeed = 2f;  // Speed at which the spaceship shrinks
     private bool isShrinking = false;  // Track if the spaceship is shrinking
 
     private VictoryManager victoryManager;  // Reference to VictoryManager script
     private int collisionCount = 0;  // Counter to track collisions
     private bool isExploding = false;  // To prevent multiple explosions
+    private bool isBlinking = false;
 
     void Start()
     {
         // Get the Rigidbody2D component attached to the spaceship
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        // Set the spaceship to move in the right direction at the start
-        rb.velocity = transform.up * speed;
-
+        
         // Get the reference to the VictoryManager in the scene
         victoryManager = FindObjectOfType<VictoryManager>();
     }
@@ -45,6 +46,7 @@ public class SpaceshipController : MonoBehaviour
         if (isCollide)
         {
             engineFire.SetActive(false);
+            
         }
         else
         {
@@ -113,6 +115,11 @@ public class SpaceshipController : MonoBehaviour
 
             // Set the "collide" parameter in the Animator to play the first collision animation
             animator.SetBool("collide", true);
+
+            if (headlights != null && !isBlinking)
+            {
+                StartCoroutine(BlinkLight());
+            }
         }
         else if (collisionCount == 2)
         {
@@ -122,10 +129,42 @@ public class SpaceshipController : MonoBehaviour
             // Set the "collide2" parameter in the Animator to trigger the explosion animation
             animator.SetBool("collide2", true);
 
+            StopBlinking();
+
             DisableRigidbody();
 
             // Proceed with explosion and delayed destruction
             TriggerExplosion();
+        }
+    }
+
+    IEnumerator BlinkLight()
+    {
+        isBlinking = true;
+
+        while (isBlinking)
+        {
+            if (headlights != null)
+            {
+                headlights.SetActive(!headlights.activeSelf);  // Toggle light on and off
+            }
+            yield return new WaitForSeconds(blinkInterval);  // Wait for blink interval
+        }
+
+        // Ensure the light is off once blinking stops
+        if (headlights != null)
+        {
+            arealights.SetActive(false);
+            headlights.SetActive(false);
+        }
+    }
+
+    void StopBlinking()
+    {
+        isBlinking = false;
+        if (headlights != null)
+        {
+            headlights.SetActive(false);  // Turn off the light
         }
     }
 

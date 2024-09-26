@@ -123,8 +123,8 @@ ScriptedImporter:
   animatedSpriteImportData:
   - name: Kla'ed - Battlecruiser - Destruction_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -143,8 +143,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 311}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -163,8 +163,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 407}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_2
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -183,8 +183,8 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 4}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_3
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -203,8 +203,8 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 100}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_4
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -223,8 +223,8 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 196}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_5
     originalName: 
-    pivot: {x: 0.5, y: -0.3068182}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -243,8 +243,8 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 292}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_6
     originalName: 
-    pivot: {x: 0.5, y: -0.2777778}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -263,8 +263,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 213}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_7
     originalName: 
-    pivot: {x: 0.5, y: -0.22340424}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -283,8 +283,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 4}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_8
     originalName: 
-    pivot: {x: 0.53061223, y: -0.20224719}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -303,8 +303,8 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 203}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_9
     originalName: 
-    pivot: {x: 0.4827586, y: -0.16842106}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -323,8 +323,8 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 100}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_10
     originalName: 
-    pivot: {x: 0.4848485, y: -0.121212125}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -343,8 +343,8 @@ ScriptedImporter:
     uvTransform: {x: 4, y: 106}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_11
     originalName: 
-    pivot: {x: 0.4848485, y: -0.114583336}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -363,8 +363,8 @@ ScriptedImporter:
     uvTransform: {x: 84, y: 388}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_12
     originalName: 
-    pivot: {x: 0.4848485, y: -0.14772728}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
@@ -383,8 +383,8 @@ ScriptedImporter:
     uvTransform: {x: 164, y: 4}
   - name: Kla'ed - Battlecruiser - Destruction_Frame_13
     originalName: 
-    pivot: {x: 0.54545456, y: -0.21538462}
-    alignment: 9
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
