@@ -71,3 +71,6 @@ TagManager:
   - name: Obstacle
     uniqueID: 4248470217
     locked: 0
+  - name: Portals
+    uniqueID: 3467861381
+    locked: 0

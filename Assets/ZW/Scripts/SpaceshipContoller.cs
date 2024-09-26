@@ -54,6 +54,8 @@ public class SpaceshipController : MonoBehaviour
         }
     }
 
+    
+
     // Detect collision with Black Hole using a Trigger
     void OnTriggerEnter2D(Collider2D other)
     {
