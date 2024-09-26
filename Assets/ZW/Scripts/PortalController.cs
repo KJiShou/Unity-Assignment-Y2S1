@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PortalController : MonoBehaviour
 {
-    public Transform destination;
     GameObject player;
     Animation anim;
     Rigidbody2D playerRb;
@@ -22,7 +21,7 @@ public class PortalController : MonoBehaviour
         {
             if (Vector2.Distance(player.transform.position, transform.position) > 0.3f)
             {
-                StartCoroutine(PortalIn());
+                 StartCoroutine(PortalIn());
             }
         }
     }
@@ -31,13 +30,11 @@ public class PortalController : MonoBehaviour
     {
         playerRb.simulated = false;
     
-        anim.Play("InPortal");
+        anim.Play("Portal In");
         StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
     
-        player.transform.position = destination.position;
-    
-        anim.Play("OutPortal");
+        anim.Play("Portal Out");
         yield return new WaitForSeconds(0.5f);
         playerRb.simulated = true;
     }

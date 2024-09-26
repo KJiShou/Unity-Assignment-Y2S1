@@ -16,6 +16,14 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Asteriod
       objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: ff217c2420d69d14088488d9626b9a07, type: 3}
+      propertyPath: m_SortingLayer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3626916397498700004, guid: ff217c2420d69d14088488d9626b9a07, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -46497079
+      objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ff217c2420d69d14088488d9626b9a07, type: 3}
       propertyPath: m_LocalScale.x
       value: 3.2786539
@@ -30,11 +38,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ff217c2420d69d14088488d9626b9a07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.33
+      value: -1.37
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ff217c2420d69d14088488d9626b9a07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.41
+      value: 4.09
       objectReference: {fileID: 0}
     - target: {fileID: 7878350319992209165, guid: ff217c2420d69d14088488d9626b9a07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -183,6 +191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialRotationSpeed: 5
-  hitRotationSpeedMultiplier: 2
+  hitRotationSpeedMultiplier: 1
   hitForce: 1
   rotateClockwise: 1

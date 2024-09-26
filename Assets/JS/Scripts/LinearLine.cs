@@ -16,14 +16,15 @@ public class LineRendererLinear : MonoBehaviour
     public TMP_Text interceptText;  // Reference to the TMP_Text for the intercept (c)
     [SerializeField] private DoubleSlider _slider;
 
-    // Portal prefabs
-    public GameObject startPortalPrefab; // Assign in Inspector
-    public GameObject endPortalPrefab;   // Assign in Inspector
+    public Vector3[] linePoints;  // Store line points for the spaceship to follow
 
-    // Portal instances
+    // Portal prefabs
+    public GameObject startPortalPrefab;
+    public GameObject endPortalPrefab;
+
     private GameObject startPortalInstance;
     private GameObject endPortalInstance;
-    private GameObject portalContainer; // We'll create a new container for each line's portals
+    private GameObject portalContainer;
 
     void Awake()
     {
@@ -33,24 +34,21 @@ public class LineRendererLinear : MonoBehaviour
     void Start()
     {
         lineRenderer.positionCount = numPoints;
-        lineRenderer.sortingLayerName = "Background";  // Set it to a background layer
-        lineRenderer.sortingOrder = 1;  // Lower number means it renders behind UI
-        // Create a new container for the portals for this line
+
+        // Create a container for portals
         portalContainer = new GameObject("PortalContainer");
         portalContainer.transform.SetParent(this.transform);
 
         GameObject targetParent = GameObject.Find("Equation UI Set");
         if (targetParent != null)
         {
-            // Set the portalContainer to be a child of the specific Canvas or parent
             portalContainer.transform.SetParent(targetParent.transform, false);
         }
         else
         {
-            Debug.LogError("MainCanvas not found. Please make sure you have a Canvas named 'MainCanvas'.");
+            Debug.LogError("MainCanvas not found.");
         }
 
-        // Instantiate portals under the PortalContainer
         if (startPortalPrefab != null)
         {
             startPortalInstance = Instantiate(startPortalPrefab, portalContainer.transform);
@@ -71,51 +69,38 @@ public class LineRendererLinear : MonoBehaviour
 
     public void DrawLinearEquation()
     {
-        Vector3[] positions = new Vector3[numPoints];
+        linePoints = new Vector3[numPoints];  // Initialize the array to store line points
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
         for (int i = 0; i < numPoints; i++)
         {
             float x = xStart + i * xStep;
-            float y = m * x + c;  // y = mx + c (linear equation)
-            y = Mathf.Clamp(y, yMin, yMax); // Clamp the y value within min and max limits
-            positions[i] = new Vector3(x, y, 0);
+            float y = m * x + c;  // y = mx + c
+            y = Mathf.Clamp(y, yMin, yMax);  // Clamp the y value
+            linePoints[i] = new Vector3(x, y, 0);  // Store the point
+
+            if (i == 0 && startPortalInstance != null)
+            {
+                startPortalInstance.transform.position = linePoints[0];
+            }
+            if (i == numPoints - 1 && endPortalInstance != null)
+            {
+                endPortalInstance.transform.position = linePoints[numPoints - 1];
+            }
         }
 
-        lineRenderer.SetPositions(positions);
-
-        // Update portal positions
-        if (startPortalInstance != null)
-        {
-            // If LineRenderer uses local positions, convert to world positions
-            Vector3 startWorldPosition = positions[0];
-            if (!lineRenderer.useWorldSpace)
-            {
-                startWorldPosition = transform.TransformPoint(positions[0]);
-            }
-            startPortalInstance.transform.position = startWorldPosition;
-        }
-        if (endPortalInstance != null)
-        {
-            Vector3 endWorldPosition = positions[numPoints - 1];
-            if (!lineRenderer.useWorldSpace)
-            {
-                endWorldPosition = transform.TransformPoint(positions[numPoints - 1]);
-            }
-            endPortalInstance.transform.position = endWorldPosition;
-        }
+        lineRenderer.SetPositions(linePoints);  // Update the LineRenderer with the new points
     }
 
     public void UpdateEquationValues()
     {
-        // Try to parse the TMP_Text fields as floats
         if (float.TryParse(slopeText.text, out float parsedM))
         {
             m = parsedM;
         }
         else
         {
-            Debug.LogError("Invalid input for slope (m). Make sure it's a valid number.");
+            Debug.LogError("Invalid input for slope (m).");
         }
 
         if (float.TryParse(interceptText.text, out float parsedC))
@@ -124,14 +109,10 @@ public class LineRendererLinear : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Invalid input for intercept (c). Make sure it's a valid number.");
-        }
-        if(lineRenderer == null) {
-            Destroy(transform.gameObject);
+            Debug.LogError("Invalid input for intercept (c).");
         }
 
-        // Redraw the line after updating values
-        DrawLinearEquation();
+        DrawLinearEquation();  // Redraw the line
     }
 
     private void SliderDouble_ValueChanged(float min, float max)
