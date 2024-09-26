@@ -2751,14 +2751,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 527119764678084452}
-  numPoints: 50
-  xStart: -20
-  xEnd: 20
+  numPoints: 500
+  xStart: -50
+  xEnd: 50
   a: 1
   b: 1
   c: 0
-  yMin: -20
-  yMax: 20
+  yMin: -40
+  yMax: 50
   aText: {fileID: 5754492399635280167}
   bText: {fileID: 7766725928089711528}
   cText: {fileID: 6963329362029217993}

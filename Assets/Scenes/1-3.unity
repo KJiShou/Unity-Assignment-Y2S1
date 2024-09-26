@@ -578,6 +578,8 @@ MonoBehaviour:
   spaceshipColor: {r: 255, g: 255, b: 255, a: 1}
   difficulty: 1
   score: 64000000000000000000000000000000000000000000000000000000
+  musicVolume: 1
+  SFXVolume: 1
 --- !u!4 &364147709
 Transform:
   m_ObjectHideFlags: 0
@@ -812,6 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 911116437}
+  mapRenderer: {fileID: 1437787816}
 --- !u!1 &1070857343
 GameObject:
   m_ObjectHideFlags: 0

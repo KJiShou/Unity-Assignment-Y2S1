@@ -1418,7 +1418,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2734d0ca286624540a5ececf4493592c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 866403269}
+  cameraTransform: {fileID: 866403269}
+  scrollSpeed: 3
+  mapRenderer: {fileID: 2125001724}
 --- !u!1 &573248940
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,8 +1908,7 @@ GameObject:
   - component: {fileID: 866403268}
   - component: {fileID: 866403267}
   - component: {fileID: 866403270}
-  - component: {fileID: 866403272}
-  - component: {fileID: 866403273}
+  - component: {fileID: 866403274}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2033,78 +2034,22 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!61 &866403272
-BoxCollider2D:
+--- !u!114 &866403274
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 866403266}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 32
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56666c5a40171f54783dd416a44f42bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.009536266, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 17.779438, y: 9.990898}
-  m_EdgeRadius: 0
---- !u!50 &866403273
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866403266}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
+  m_MaxRayIntersections: 0
 --- !u!1 &881057210
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,6 +2151,8 @@ GameObject:
   - component: {fileID: 914447831}
   - component: {fileID: 914447830}
   - component: {fileID: 914447829}
+  - component: {fileID: 914447833}
+  - component: {fileID: 914447834}
   m_Layer: 0
   m_Name: LevelButton1
   m_TagString: Untagged
@@ -2349,6 +2296,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 914447827}
   m_CullTransparentMesh: 1
+--- !u!114 &914447833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914447827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ab552781722b148b6f30884439dc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &914447834
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914447827}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.018805742, y: 0.00000011920929}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.6674504, y: 1.2507442}
+  m_EdgeRadius: 0
 --- !u!1 &926981542
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,6 +2781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1125154765}
   - component: {fileID: 1125154764}
+  - component: {fileID: 1125154766}
   m_Layer: 0
   m_Name: StageManager
   m_TagString: Untagged
@@ -2819,6 +2824,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125154766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125154763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67954d6696b8d0441908fdec642593df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelButtons:
+  - {fileID: 914447827}
+  - {fileID: 277353239}
+  - {fileID: 1655199608}
+  - {fileID: 681579050}
+  - {fileID: 1847522927}
+  - {fileID: 1839662452}
+  - {fileID: 926981542}
 --- !u!1 &1135590304
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,7 +3070,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20ebb1c2557ad8340a306a336a2f7eaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camera: {fileID: 866403269}
+  cameraTransform: {fileID: 866403269}
+  scrollSpeed: 3
+  mapRenderer: {fileID: 2125001724}
 --- !u!114 &1191048567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3112,7 +3139,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 866403268}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4074,6 +4101,7 @@ GameObject:
   - component: {fileID: 1655199609}
   - component: {fileID: 1655199611}
   - component: {fileID: 1655199610}
+  - component: {fileID: 1655199612}
   m_Layer: 0
   m_Name: LevelButton3
   m_TagString: Untagged
@@ -4141,6 +4169,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1655199608}
   m_CullTransparentMesh: 1
+--- !u!114 &1655199612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655199608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79ab552781722b148b6f30884439dc3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1665773029
 GameObject:
   m_ObjectHideFlags: 0

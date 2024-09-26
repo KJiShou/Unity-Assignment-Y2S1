@@ -26,7 +26,7 @@ public class SnapToItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int currentItem = Mathf.RoundToInt((0-contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
+        float currentItem = (0-contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing));
 
         if (scrollRect.velocity.magnitude < 50 && !isSnapped && NameLabel!=null) {
             scrollRect.velocity = Vector2.zero;
@@ -35,7 +35,7 @@ public class SnapToItem : MonoBehaviour
                 Mathf.MoveTowards(contentPanel.localPosition.x, 0 - (currentItem * (sampleListItem.rect.width + HLG.spacing)),snapSpeed),
                 contentPanel.localPosition.y,
                 contentPanel.localPosition.z);
-            NameLabel.text = (currentItem-70).ToString();
+            NameLabel.text = (currentItem-70).ToString("F1");
             if (contentPanel.localPosition.x == 0 -(currentItem * (sampleListItem.rect.width + HLG.spacing))){
                 isSnapped = true;
             }
@@ -44,13 +44,13 @@ public class SnapToItem : MonoBehaviour
         }
         if(scrollRect.velocity.magnitude > 0 && NameLabel != null)
         {
-            NameLabel.text = (currentItem-70).ToString();
+            NameLabel.text = (currentItem-70).ToString("F1");
             isSnapped = false;
             snapSpeed = 0;
         }
     }
 
-    public void UpdateSlider(int itemIndex)
+    public void UpdateSlider(float itemIndex)
     {
         // Calculate the target position based on the item index
         float targetPositionX = 0 - (itemIndex * (sampleListItem.rect.width + HLG.spacing));
@@ -67,7 +67,7 @@ public class SnapToItem : MonoBehaviour
         scrollRect.velocity = Vector2.zero;
 
         // Update the NameLabel
-        NameLabel.text = (itemIndex - 70).ToString();
+        NameLabel.text = (itemIndex - 70).ToString("F1");
     }
 
 

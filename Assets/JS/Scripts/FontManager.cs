@@ -62,7 +62,7 @@ public class FontManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             if (snapToItem != null)
             {
                 // Get the item index based on the clicked text
-                int itemIndex = GetItemIndexFromText(currentText.text);
+                float itemIndex = GetItemIndexFromText(currentText.text);
 
                 // Call the UpdateSlider method
                 snapToItem.UpdateSlider(itemIndex);
@@ -167,14 +167,14 @@ public class FontManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         }
         return false;
     }
-    private int GetItemIndexFromText(string text)
+    private float GetItemIndexFromText(string text)
     {
         // Assuming your text represents the item number
-        int itemNumber;
-        if (int.TryParse(text, out itemNumber))
+        float itemNumber;
+        if (float.TryParse(text, out itemNumber))
         {
             // Adjust for offset if necessary
-            int itemIndex = itemNumber + 70; // Add 70 if your items start from index 70
+            float itemIndex = itemNumber + 70; // Add 70 if your items start from index 70
             return itemIndex;
         }
         else

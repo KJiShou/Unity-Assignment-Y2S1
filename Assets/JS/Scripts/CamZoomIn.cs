@@ -12,10 +12,20 @@ public class CamZoomIn : MonoBehaviour
     private float velocity = 0f;
     private float smoothTime = 0.25f;
     [SerializeField] private Camera cam;
+    [SerializeField] private SpriteRenderer mapRenderer;
+    private float mapMinX, mapMaxX, mapMinY, mapMaxY;
 
     // drag camera
     private Vector3 dragOrigin;
     private MainEquationButton menuButton; // Cache the button component
+
+    private void Awake() {
+        mapMinX = mapRenderer.transform.position.x - mapRenderer.bounds.size.x / 2f;
+        mapMaxX = mapRenderer.transform.position.x + mapRenderer.bounds.size.x / 2f;
+
+        mapMinY = mapRenderer.transform.position.y - mapRenderer.bounds.size.y / 2f;
+        mapMaxY = mapRenderer.transform.position.y + mapRenderer.bounds.size.y / 2f;
+    }
 
     void Start()
     {
@@ -56,5 +66,22 @@ public class CamZoomIn : MonoBehaviour
         zoom -= scroll * zoomMultiplier;
         zoom = Mathf.Clamp(zoom, minZoom, maxZoom);
         cam.orthographicSize = Mathf.SmoothDamp(cam.orthographicSize, zoom, ref velocity, smoothTime);
+        cam.transform.position = ClampCamera(cam.transform.position);
+    }
+
+    private Vector3 ClampCamera(Vector3 targetPosition)
+    {
+        float camHeight = cam.orthographicSize;
+        float camWidth = cam.orthographicSize * cam.aspect;
+
+        float minX = mapMinX + camWidth;
+        float maxX = mapMaxX - camWidth;
+        float minY = mapMinY + camHeight;
+        float maxY = mapMaxY - camHeight;
+
+        float newX = Mathf.Clamp(targetPosition.x, minX, maxX);
+        float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
+
+        return new Vector3(newX, newY, targetPosition.z);
     }
 }
