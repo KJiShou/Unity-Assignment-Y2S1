@@ -11,6 +11,7 @@ TagManager:
   - Audio
   - Button
   - Text
+  - BlackHole
   - StageButton
   layers:
   - Default
