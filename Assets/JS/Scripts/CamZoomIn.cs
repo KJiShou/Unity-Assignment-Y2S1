@@ -8,7 +8,7 @@ public class CamZoomIn : MonoBehaviour
     private float zoom;
     private float zoomMultiplier = 4f;
     private float minZoom = 5f;
-    private float maxZoom = 20f;
+    public float maxZoom = 10f;
     private float velocity = 0f;
     private float smoothTime = 0.25f;
     [SerializeField] private Camera cam;

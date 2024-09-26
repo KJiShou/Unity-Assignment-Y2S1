@@ -2776,8 +2776,10 @@ MonoBehaviour:
   phaseShiftText: {fileID: 6963329362029217993}
   _slider: {fileID: 692881516197372699}
   trigFunction: 1
-  startPortalPrefab: {fileID: 2329930818521082863}
-  endPortalPrefab: {fileID: 2329930818521082863}
+  startPortalPrefab: {fileID: 1812824083981798976, guid: 0f908f62557348f44ab0efdaf92a0ced, type: 3}
+  endPortalPrefab: {fileID: 7170221401046870379, guid: 889e17d697ee3ab4eb2da3b20cadc335, type: 3}
+  positions: []
+  lineID: 0
 --- !u!1 &4089298338138812288
 GameObject:
   m_ObjectHideFlags: 0

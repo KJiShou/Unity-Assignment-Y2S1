@@ -25,6 +25,7 @@ public class LineRendererLinear : MonoBehaviour
     private GameObject startPortalInstance;
     private GameObject endPortalInstance;
     private GameObject portalContainer;
+    public int lineID;
 
     void Awake()
     {
@@ -33,6 +34,7 @@ public class LineRendererLinear : MonoBehaviour
 
     void Start()
     {
+        lineID = GetInstanceID();
         lineRenderer.positionCount = numPoints;
 
         // Create a container for portals
@@ -52,10 +54,12 @@ public class LineRendererLinear : MonoBehaviour
         if (startPortalPrefab != null)
         {
             startPortalInstance = Instantiate(startPortalPrefab, portalContainer.transform);
+            startPortalInstance.GetComponent<PortalController>().lineID = lineID;
         }
         if (endPortalPrefab != null)
         {
             endPortalInstance = Instantiate(endPortalPrefab, portalContainer.transform);
+            endPortalInstance.GetComponent<PortalController>().lineID = lineID;
         }
 
         // Initial draw
@@ -138,6 +142,14 @@ public class LineRendererLinear : MonoBehaviour
         {
             Destroy(lineRenderer); // Completely remove the LineRenderer component
             lineRenderer = null;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player entered the portal.");
         }
     }
 }
