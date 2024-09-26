@@ -32,4 +32,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ZW/Scenes/Victory.unity
     guid: da00bc64b5e97b849970b04ebfb5876d
+  - enabled: 1
+    path: Assets/Scenes/1-1.unity
+    guid: f17c9e1bbd2f9f64d94c64b73fe72ee3
+  - enabled: 1
+    path: Assets/Scenes/1-2.unity
+    guid: 61b3aab29f20a234c8e28ac1ef4f69fd
+  - enabled: 1
+    path: Assets/Scenes/1-4.unity
+    guid: 6da817029cf1e2449bd047f63a42a219
+  - enabled: 1
+    path: Assets/Scenes/1-5.unity
+    guid: bc2620c81b62a6a4ebe87c92bcffe25c
+  - enabled: 1
+    path: Assets/Scenes/1-6.unity
+    guid: 56f00dad5636c9b41afe9bdf71f45ed4
   m_configObjects: {}
