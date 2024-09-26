@@ -56,6 +56,9 @@ TagManager:
   - name: Spaceship
     uniqueID: 4126653999
     locked: 0
+  - name: Collidables
+    uniqueID: 3058842715
+    locked: 0
   - name: Collectables
     uniqueID: 3302202967
     locked: 0
