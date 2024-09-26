@@ -33,7 +33,8 @@ public class LineRendererLinear : MonoBehaviour
     void Start()
     {
         lineRenderer.positionCount = numPoints;
-
+        lineRenderer.sortingLayerName = "Background";  // Set it to a background layer
+        lineRenderer.sortingOrder = 1;  // Lower number means it renders behind UI
         // Create a new container for the portals for this line
         portalContainer = new GameObject("PortalContainer");
         portalContainer.transform.SetParent(this.transform);
