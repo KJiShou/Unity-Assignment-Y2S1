@@ -26,6 +26,8 @@ public class QuadraticLineRenderer : MonoBehaviour
     private GameObject startPortalInstance;
     private GameObject endPortalInstance;
     private GameObject portalContainer; // We'll create a new container for each line's portals
+    public Vector3[] positions;
+    public int lineID;
 
     void Awake()
     {
@@ -34,6 +36,7 @@ public class QuadraticLineRenderer : MonoBehaviour
 
     void Start()
     {
+        lineID = GetInstanceID();
         lineRenderer.positionCount = numPoints;
 
         // Create a new container for the portals for this line
@@ -53,10 +56,12 @@ public class QuadraticLineRenderer : MonoBehaviour
         if (startPortalPrefab != null)
         {
             startPortalInstance = Instantiate(startPortalPrefab, portalContainer.transform);
+            startPortalInstance.GetComponent<PortalController>().lineID = lineID;
         }
         if (endPortalPrefab != null)
         {
             endPortalInstance = Instantiate(endPortalPrefab, portalContainer.transform);
+            endPortalInstance.GetComponent<PortalController>().lineID = lineID;
         }
 
         // Initial draw
@@ -70,7 +75,7 @@ public class QuadraticLineRenderer : MonoBehaviour
 
     public void DrawQuadraticEquation()
     {
-        Vector3[] positions = new Vector3[numPoints];
+        positions = new Vector3[numPoints];
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
         for (int i = 0; i < numPoints; i++)

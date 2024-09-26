@@ -115,4 +115,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9eafc8ffa3f17429fc9814fc22add5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destination: {fileID: 0}
+  lineID: 0
+  isReversing: 1

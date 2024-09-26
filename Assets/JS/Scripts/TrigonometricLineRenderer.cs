@@ -29,6 +29,8 @@ public class TrigonometricLineRenderer : MonoBehaviour
     private GameObject startPortalInstance;
     private GameObject endPortalInstance;
     private GameObject portalContainer; // We'll create a new container for each line's portals
+    public Vector3[] positions;
+    public int lineID;
 
     void Awake()
     {
@@ -37,8 +39,9 @@ public class TrigonometricLineRenderer : MonoBehaviour
 
     void Start()
     {
+        lineID = GetInstanceID();
         lineRenderer.positionCount = numPoints;
-
+        positions = new Vector3[numPoints];
         // Create a new container for the portals for this line
         portalContainer = new GameObject("PortalContainer");
         portalContainer.transform.SetParent(this.transform);
@@ -57,10 +60,12 @@ public class TrigonometricLineRenderer : MonoBehaviour
         if (startPortalPrefab != null)
         {
             startPortalInstance = Instantiate(startPortalPrefab, portalContainer.transform);
+            startPortalInstance.GetComponent<PortalController>().lineID = lineID;
         }
         if (endPortalPrefab != null)
         {
             endPortalInstance = Instantiate(endPortalPrefab, portalContainer.transform);
+            endPortalInstance.GetComponent<PortalController>().lineID = lineID;
         }
 
         // Initial draw
@@ -74,7 +79,7 @@ public class TrigonometricLineRenderer : MonoBehaviour
 
     public void DrawTrigEquation()
     {
-        Vector3[] positions = new Vector3[numPoints];
+        
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
         for (int i = 0; i < numPoints; i++)

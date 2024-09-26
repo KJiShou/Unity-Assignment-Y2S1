@@ -7,7 +7,7 @@ public class SpaceshipFollowLine : MonoBehaviour
     public float speed = 5f;  // Speed of the spaceship
     private Vector3[] linePoints;  // Stores the points of the currently selected line
     private int currentPointIndex = 0;  // Track which point the spaceship is moving towards
-    private bool isMoving = false;  // Check if the spaceship is currently moving
+    public bool isMoving = false;  // Check if the spaceship is currently moving
     private Rigidbody2D rb;  // Reference to the Rigidbody2D component
     private bool hasLine = false;  // Check if a line has been set
 
@@ -47,6 +47,7 @@ public class SpaceshipFollowLine : MonoBehaviour
     // Start movement when the button is pressed or the portal animation finishes
     public void StartMovement()
     {
+        GetComponent<Collider2D>().enabled = true;
         isMoving = true;  // Start the movement
         Debug.Log("Movement started.");
 
@@ -91,6 +92,7 @@ public class SpaceshipFollowLine : MonoBehaviour
     public void ActivateAndStart()
     {
         Debug.Log("ActivateAndStart called.");
+        
         this.enabled = true;  // Enable the script
         StartMovement();
     }
