@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
     private GameObject parentObject;
     public float musicVolume=1;
     public float SFXVolume=1;
+
+    public int[] highScores = new int[7]; 
+    private int currentScore = 0; 
+    public int currentStage = 1;  
+
     private void Awake()
     {
         if(Instance == null)
@@ -48,5 +53,58 @@ public class GameManager : MonoBehaviour
             return score[levelIndex - 1];  // Return the score for the specified level
         }
         return 0;  // Return 0 if no score is found
+    }
+
+    public void AddScore(int value)
+    {
+        currentScore += value;
+        Debug.Log("Current Score: " + currentScore);
+    }
+
+       public void CheckAndUpdateHighScore()
+    {
+        int stageIndex = currentStage - 1; // Convert stage number to array index (e.g., stage 1 => index 0)
+
+        // Compare the current score to the high score of the current stage
+        if (currentScore > highScores[stageIndex])
+        {
+            highScores[stageIndex] = currentScore; // Update the high score
+            Debug.Log("New high score for Stage " + currentStage + ": " + currentScore);
+        }
+        else
+        {
+            Debug.Log("Current score did not exceed the high score for Stage " + currentStage);
+        }
+    }
+
+    // Reset the current score (e.g., when starting a new stage)
+    public void ResetScore()
+    {
+        currentScore = 0;
+        Debug.Log("Score reset.");
+    }
+
+    // Method to handle stage completion (called when player reaches the stage endpoint)
+    public void CompleteStage()
+    {
+        // Check and update the high score for the current stage
+        CheckAndUpdateHighScore();
+
+        // Reset the score for the next stage
+        ResetScore();
+
+        // Optionally load the next stage or victory screen here
+        Debug.Log("Stage " + currentStage + " completed!");
+
+        // Move to the next stage
+        currentStage++;
+
+        // Load next stage or handle game flow logic (e.g., SceneManager.LoadScene("NextStage"));
+    }
+
+    // Returns the high score for the current stage
+    public int GetHighScore()
+    {
+        return highScores[currentStage - 1];
     }
 }
