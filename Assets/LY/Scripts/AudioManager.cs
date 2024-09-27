@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance { get; private set; }
+
     [Header("---------- Audio Source ----------")]
     public AudioSource musicSource;
     [SerializeField] AudioSource SFXSource;
@@ -13,6 +15,20 @@ public class AudioManager : MonoBehaviour
     public AudioClip menuHover;
     public AudioClip menuClickIn;
     public AudioClip menuClickOut;
+
+
+    public AudioClip stageBgm;
+    public AudioClip speech;
+    public AudioClip playMenuOpen;
+    public AudioClip playMenuClose;
+    public AudioClip playMenuExpand;
+    public AudioClip playMenuShrink;
+    public AudioClip playMenuHover;
+    public AudioClip playMenuSlider;
+    public AudioClip pauseMenuResume;
+    public AudioClip pauseMenuStop;
+
+
 
     public AudioClip changeSkinSwipe;
     public AudioClip menuSlider;
@@ -25,9 +41,30 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        PlayMainTheme();
+    }
+
+    public void PlayMainTheme()
+    {
         musicSource.clip = menuBgm;
         musicSource.Play();
     }
+
+    public void PlayStageTheme()
+    {
+        musicSource.clip = stageBgm;
+        musicSource.Play();
+    }
+
 
 
     public void PlaySFX(AudioClip clip)
@@ -52,9 +89,6 @@ public class AudioManager : MonoBehaviour
 
         SFXSource.PlayOneShot(clip);
     }
-    
-
-
 
 
 }

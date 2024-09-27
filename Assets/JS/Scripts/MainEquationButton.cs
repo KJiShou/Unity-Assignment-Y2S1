@@ -5,14 +5,19 @@ using UnityEngine.UI;
 
 public class MainEquationButton : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public Button button; // Assign your button here
     public GameObject targetObject; // The UI object to enable, animate, and disable
     private Animator animator; // Animator to handle animations
+
 
     public bool isMenuOpen = false; // A flag to track if the menu is open or closed
     private Animator buttonAnimator;
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         buttonAnimator = GetComponent<Animator>();
         if (button != null)
         {
@@ -43,6 +48,8 @@ public class MainEquationButton : MonoBehaviour
             buttonAnimator.SetTrigger("Close");
             animator.ResetTrigger("Open");
             buttonAnimator.ResetTrigger("Open");
+
+            audioManager.PlaySFX(audioManager.playMenuClose);
         }
         else
         {
@@ -53,6 +60,7 @@ public class MainEquationButton : MonoBehaviour
             animator.ResetTrigger("Close");
             buttonAnimator.ResetTrigger("Close");
 
+            audioManager.PlaySFX(audioManager.playMenuOpen);
         }
 
         // Toggle the isMenuOpen flag

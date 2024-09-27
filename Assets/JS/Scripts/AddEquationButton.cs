@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class AddEquationButton : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public Button button; // Assign your button here
     public GameObject prefabToInstantiate; // The prefab to generate on button click
 
@@ -14,6 +16,8 @@ public class AddEquationButton : MonoBehaviour
 
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         if (button != null)
         {
             button.onClick.AddListener(OnButtonClick);
@@ -30,6 +34,8 @@ public class AddEquationButton : MonoBehaviour
     {
         if (isMenuOpen)
         {
+            audioManager.PlaySFX(audioManager.playMenuShrink);
+
             // If the menu is currently open, destroy the instantiated prefab and play the 'Close' animation
             if (instantiatedPrefab != null)
             {
@@ -45,6 +51,8 @@ public class AddEquationButton : MonoBehaviour
         }
         else
         {
+            audioManager.PlaySFX(audioManager.playMenuExpand);
+
             // If the menu is currently closed, generate the prefab and play the 'Open' animation
             if (prefabToInstantiate != null)
             {

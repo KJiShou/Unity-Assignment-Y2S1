@@ -7,6 +7,9 @@ using Unity.VisualScripting;
 
 public class SnapToItem : MonoBehaviour
 {
+    AudioManager audioManager;
+    private bool isPlayingSFX = false;
+
     public ScrollRect scrollRect;
     public RectTransform contentPanel;
     public RectTransform sampleListItem;
@@ -21,6 +24,7 @@ public class SnapToItem : MonoBehaviour
     void Start()
     {
         isSnapped = false;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -38,11 +42,19 @@ public class SnapToItem : MonoBehaviour
             NameLabel.text = (currentItem-70).ToString("F1");
             if (contentPanel.localPosition.x == 0 -(currentItem * (sampleListItem.rect.width + HLG.spacing))){
                 isSnapped = true;
+
             }
             isSnapped = true;
-        
+
+
+            if (!isPlayingSFX)
+            {
+                StartCoroutine(PlaySliderSFXSmoothly());
+            }
+
+
         }
-        if(scrollRect.velocity.magnitude > 0 && NameLabel != null)
+        if (scrollRect.velocity.magnitude > 0 && NameLabel != null)
         {
             NameLabel.text = (currentItem-70).ToString("F1");
             isSnapped = false;
@@ -69,6 +81,19 @@ public class SnapToItem : MonoBehaviour
         // Update the NameLabel
         NameLabel.text = (itemIndex - 70).ToString("F1");
     }
+
+
+    private IEnumerator PlaySliderSFXSmoothly()
+    {
+        isPlayingSFX = true;
+        audioManager.PlaySFX(audioManager.menuSlider);  // Play the slider sound effect
+
+        // Wait a short period before allowing the sound to play again (smooth effect)
+        yield return new WaitForSeconds(0.1f);  // Adjust this value for smoother sound effect timing
+
+        isPlayingSFX = false;
+    }
+
 
 
 }

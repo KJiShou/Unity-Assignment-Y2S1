@@ -11,13 +11,20 @@ using TMPro;
 
 public class typewriterUI : MonoBehaviour
 {
-	//Text _text;
-	TMP_Text _tmpProText;
+	public GameObject textBox;
+	public GameObject speech;
+	public GameObject imageBox;
+	private bool firstLine = true;
+    AudioManager audioManager;
+
+    TMP_Text _tmpProText;
 	string writer;
-	string[] script = new string[19] {
+	string[] script = new string[22] {
 		"Worry not my bewildered biped, it is just as easy as ABC",
 		"and also calculus and algebra",
-		"First, let's click on the arrow to the right",
+		"Hold right click to move the camera around",
+		"You can also use the scroll wheel to adjust the zoom levels",
+		"Now, let's click on the arrow to the right",
 		"This here is the equation table, we use this to draw the path of portals",
 		"We will use these portals to help us navigate the deep space",
 		"I have already prepared a simple one for you, right here",
@@ -33,20 +40,21 @@ public class typewriterUI : MonoBehaviour
 		"The rest I will leave up to you",
 		"Play around with the equations and its variables",
 		"See how the line reacts to each change",
-		"And maybe you wouldn't fail your algebra exam next time"};
+		"And maybe you wouldn't fail your algebra exam next time",
+		""};
 		
 
 
 	int scriptOrder = 0;
-	[SerializeField] float delayBeforeStart = 0f;
+	[SerializeField] float delayBeforeStart = 0.6f;
 	[SerializeField] float timeBtwChars = 0.03f;
 	// Use this for initialization
 	void Start()
 	{
-		_tmpProText = GetComponent<TMP_Text>()!;
+		_tmpProText = GetComponentInChildren<TMP_Text>()!;
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-
-		if (_tmpProText != null)
+        if (_tmpProText != null)
 		{
 			writer = _tmpProText.text;
 			_tmpProText.text = "";
@@ -57,12 +65,17 @@ public class typewriterUI : MonoBehaviour
 
 	IEnumerator TypeWriterTMP()
     {
-
-        yield return new WaitForSeconds(delayBeforeStart);
+		if (firstLine) 
+		{
+            yield return new WaitForSeconds(delayBeforeStart);
+        }
+        firstLine = false;
 
 		foreach (char c in writer)
 		{
-			if (_tmpProText.text.Length > 0)
+            audioManager.PlaySFX(audioManager.speech);
+
+            if (_tmpProText.text.Length > 0)
 			{
 				_tmpProText.text = _tmpProText.text.Substring(0, _tmpProText.text.Length);
 			}
@@ -77,19 +90,23 @@ public class typewriterUI : MonoBehaviour
 			Debug.Log("Pressed left-click.");
 
 			StopCoroutine("TypeWriterTMP");
-
 			_tmpProText.text = "";
-            writer = script[scriptOrder];
-            StartCoroutine("TypeWriterTMP");
+			writer = script[scriptOrder];
+			StartCoroutine("TypeWriterTMP");
 
-			if (scriptOrder < 18)
+			if (scriptOrder < 21)
 			{
 				scriptOrder++;
 			}
 			else
 			{
-				// Disable everything
+				Destroy(textBox);
+				Destroy(speech);
+				Destroy(imageBox);
 			}
+
+
+			
 
         }
     }
