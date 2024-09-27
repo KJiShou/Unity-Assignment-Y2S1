@@ -200,6 +200,7 @@ MonoBehaviour:
   blinkInterval: 0.2
   shrinkSpeed: 2
   collisionCount: 0
+  loseMenu: {fileID: 5986198193249126897, guid: 19ec99ecca2bc17429eb9dd442455ca9, type: 3}
 --- !u!114 &8544387054958063184
 MonoBehaviour:
   m_ObjectHideFlags: 0
