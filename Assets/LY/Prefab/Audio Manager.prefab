@@ -66,6 +66,7 @@ MonoBehaviour:
   pauseBgm: {fileID: 8300000, guid: 54f7b5d7d0ea16f408c5bcdc8e9dac5f, type: 3}
   shipCrack: {fileID: 8300000, guid: fc986a634faad074f889cce860ce7726, type: 3}
   shipCrash: {fileID: 8300000, guid: 54de653f0835255449c8e7b365d0c3ac, type: 3}
+  winBgm: {fileID: 8300000, guid: f651ebc87efb4484a8799d37a4e65ed9, type: 3}
   loseBgm: {fileID: 8300000, guid: 9790a20735fdf7843b98a463d9e3addb, type: 3}
   portalIn: {fileID: 8300000, guid: 48f2a6cca54658d4da158c990c0bd2e4, type: 3}
   portalOut: {fileID: 8300000, guid: c6e025c7b02dabc468a6b852e73c3a25, type: 3}

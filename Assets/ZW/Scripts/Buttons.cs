@@ -15,17 +15,29 @@ public class Buttons : MonoBehaviour
 
     public void returnHome()
     {
+        audioManager.musicSource.Stop();
         audioManager.PlaySFX(audioManager.pauseMenuStop);
+        AudioManager.Instance.PlayMainTheme();
+
+
         SceneManager.LoadScene("StageSelect");
     }
     
     public void toMainScene() {
+        audioManager.musicSource.Stop();
         audioManager.PlaySFX(audioManager.pauseMenuResume);
+        AudioManager.Instance.PlayStageTheme();
+
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void nextStage()
     {
+        audioManager.musicSource.Stop();
+        audioManager.PlaySFX(audioManager.pauseMenuResume);
+        AudioManager.Instance.PlayStageTheme();
+
         SceneManager.LoadScene("1-3");
     }
 }

@@ -190,6 +190,7 @@ public class SpaceshipController : MonoBehaviour
 
             // Proceed with explosion and delayed destruction
             TriggerExplosion();
+            audioManager.musicSource.Stop();
         }
     }
     
@@ -260,6 +261,8 @@ public class SpaceshipController : MonoBehaviour
         StartingButton.enabled = false;
         Destroy(gameObject);  // Destroy the spaceship after the delay
         Instantiate(loseMenu);
+
+        AudioManager.Instance.PlayLoseTheme();
 
     }
 

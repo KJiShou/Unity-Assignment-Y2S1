@@ -32,6 +32,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioClip shipCrack;
     public AudioClip shipCrash;
+    public AudioClip winBgm;
     public AudioClip loseBgm;
     public AudioClip portalIn;
     public AudioClip portalOut;
@@ -76,6 +77,12 @@ public class AudioManager : MonoBehaviour
     public void PlayPauseTheme()
     {
         musicSource.clip = pauseBgm;
+        musicSource.Play();
+    }
+
+    public void PlayWinTheme()
+    {
+        musicSource.clip = winBgm;
         musicSource.Play();
     }
 
