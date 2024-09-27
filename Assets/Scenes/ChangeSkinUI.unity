@@ -1227,6 +1227,9 @@ MonoBehaviour:
   greenSlider: {fileID: 221193924}
   blueSlider: {fileID: 249336545}
   spaceship: {fileID: 947056882}
+  previousRedValue: 0
+  previousGreenValue: 0
+  previousBlueValue: 0
 --- !u!1 &931535467
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,6 +1969,9 @@ MonoBehaviour:
   greenSlider: {fileID: 221193924}
   blueSlider: {fileID: 249336545}
   spaceship: {fileID: 947056882}
+  previousRedValue: 0
+  previousGreenValue: 0
+  previousBlueValue: 0
 --- !u!4 &1473713982
 Transform:
   m_ObjectHideFlags: 0
