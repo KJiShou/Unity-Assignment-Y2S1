@@ -161,7 +161,6 @@ GameObject:
   - component: {fileID: 8476113412434521355}
   - component: {fileID: 4076550924776287914}
   - component: {fileID: 5253559781452293610}
-  - component: {fileID: 2645735369105954777}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -285,19 +284,51 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &2645735369105954777
+--- !u!1 &2981689067084593999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3272287590859700176}
+  - component: {fileID: 3388655220776115585}
+  m_Layer: 0
+  m_Name: WinManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3272287590859700176
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2981689067084593999}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 92.451614, y: 85.02725, z: -4.8436384}
+  m_LocalScale: {x: 2.6129954, y: 2.6129954, z: 2.6129954}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1508661496808531185}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3388655220776115585
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973838248280820269}
+  m_GameObject: {fileID: 2981689067084593999}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30d30365b592f7a47b9c8a4af940ca32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stars: {fileID: 5642823023121557250}
+  stars: {fileID: 0}
 --- !u!1 &3123549379045523774
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,9 +607,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5193532567949371734}
         m_TargetAssemblyTypeName: VictoryButtons, Assembly-CSharp
-        m_MethodName: toMainScene
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -605,7 +636,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7704208493357976917
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1062,7 +1093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6285941084912601188
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1235,6 +1266,7 @@ RectTransform:
   - {fileID: 3426960782421151620}
   - {fileID: 5642823023121557250}
   - {fileID: 6463576259426463410}
+  - {fileID: 3272287590859700176}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1477,7 +1509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1278213250306875653
 RectTransform:
   m_ObjectHideFlags: 0

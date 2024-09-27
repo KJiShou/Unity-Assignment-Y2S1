@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Build.Content;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -10,13 +12,11 @@ public class GameManager : MonoBehaviour
     public int spaceshipIndex = 0;
     public Color spaceshipColor = new Color(255, 255, 255);
     public int difficulty = 1;
-    public int[] score = new int[7]{3,2,1,0,0,0,0};
+    public int[] score = new int[7]{0,0,0,0,0,0,0};
 
     private GameObject parentObject;
     public float musicVolume=1;
     public float SFXVolume=1;
-
-    public int[] highScores = new int[7]; 
     private int currentScore = 0; 
     public int currentStage = 1;  
 
@@ -66,9 +66,9 @@ public class GameManager : MonoBehaviour
         int stageIndex = currentStage - 1; // Convert stage number to array index (e.g., stage 1 => index 0)
 
         // Compare the current score to the high score of the current stage
-        if (currentScore > highScores[stageIndex])
+        if (currentScore > score[stageIndex])
         {
-            highScores[stageIndex] = currentScore; // Update the high score
+            score[stageIndex] = currentScore; // Update the high score
             Debug.Log("New high score for Stage " + currentStage + ": " + currentScore);
         }
         else
@@ -96,15 +96,36 @@ public class GameManager : MonoBehaviour
         // Optionally load the next stage or victory screen here
         Debug.Log("Stage " + currentStage + " completed!");
 
-        // Move to the next stage
-        currentStage++;
 
         // Load next stage or handle game flow logic (e.g., SceneManager.LoadScene("NextStage"));
     }
 
-    // Returns the high score for the current stage
-    public int GetHighScore()
+    public void SetCurrentStageFromSceneName()
     {
-        return highScores[currentStage - 1];
+        // Get the current scene name
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        // Check if the scene name follows the expected format (e.g., "1-1", "1-2")
+        if (sceneName.Contains("-"))
+        {
+            // Split the scene name by the hyphen
+            string[] parts = sceneName.Split('-');
+
+            // Ensure that we have two parts and the second part is an integer
+            if (parts.Length == 2 && int.TryParse(parts[1], out int stage))
+            {
+                // Set currentStage to the second part of the scene name (e.g., "1-2" -> 2)
+                currentStage = stage;
+                Debug.Log($"Current stage set to: {currentStage}");
+            }
+            else
+            {
+                Debug.LogError("Invalid scene format. Expected format is like '1-1'.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Scene name does not contain a hyphen. Expected format is like '1-1'.");
+        }
     }
 }

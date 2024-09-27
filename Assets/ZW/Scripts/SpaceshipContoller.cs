@@ -163,7 +163,7 @@ public class SpaceshipController : MonoBehaviour
         // Once the spaceship's scale is close to zero, call VictoryManager to generate the victory menu
         Debug.Log("Spawning victory");
         isShrinking = false;
-
+        Destroy(player);
         // Call the VictoryManager to generate the victory menu
         if (WinMenu != null)
         {
