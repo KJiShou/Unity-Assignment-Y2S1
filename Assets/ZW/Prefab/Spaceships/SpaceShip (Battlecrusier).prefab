@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2c5b28e164e05469107e7d0f0d0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  slowSpeed: 1
+  speed: 3
+  slowSpeed: 3
   engineFire: {fileID: 7550952702281793381}
   headlights: {fileID: 3195089323209850724}
   arealights: {fileID: 3251035050032885659}
