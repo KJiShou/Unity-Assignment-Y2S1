@@ -977,9 +977,45 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8544387054958063184, guid: f2856bb39b791264bae3bbb0196e612c, type: 3}
         m_TargetAssemblyTypeName: SpaceshipFollowLine, Assembly-CSharp
-        m_MethodName: StartMovement
+        m_MethodName: ActivateAndStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 7595215992288847373, guid: 51da742410f3d1948be6ee894075805a, type: 3}
+        m_TargetAssemblyTypeName: SpaceshipFollowLine, Assembly-CSharp
+        m_MethodName: ActivateAndStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 8544387054958063184, guid: 850a1e0bd80466543919f6077aea0543, type: 3}
+        m_TargetAssemblyTypeName: SpaceshipFollowLine, Assembly-CSharp
+        m_MethodName: ActivateAndStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+      - m_Target: {fileID: 8544387054958063184, guid: 58613fcd8e7addb459ba031d0f741cfd, type: 3}
+        m_TargetAssemblyTypeName: SpaceshipFollowLine, Assembly-CSharp
+        m_MethodName: ActivateAndStart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1451,8 +1487,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50913b35bf198b49bca4e9aca439d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 10
-  minutes: 1
+  seconds: 2
+  minutes: 0
   countdownText: {fileID: 5730659963061711820}
   isCountingDown: 1
 --- !u!1 &8142543978228175396

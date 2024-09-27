@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class VictoryButtons : MonoBehaviour
+public class Buttons : MonoBehaviour
 {
     public void returnHome()
     {
