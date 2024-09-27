@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PauseGameButton : MonoBehaviour
 {
+    AudioManager audioManager;
     public Button generateButton;  // Assign your button in the Inspector
     public GameObject canvasPrefab;  // Assign your Canvas prefab in the Inspector
     private GameObject instantiatedCanvas;  // To track the instantiated Canvas
@@ -14,6 +15,8 @@ public class PauseGameButton : MonoBehaviour
     private Canvas StartingButton;
     void Start()
     {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
         AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
         EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
         StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
@@ -31,6 +34,8 @@ public class PauseGameButton : MonoBehaviour
     // Method to generate the Canvas from a prefab
     void GenerateCanvas()
     {
+        audioManager.PlaySFX(audioManager.pauseMenuStop);
+
         if (canvasPrefab != null)
         {
             // Check if a canvas is already instantiated

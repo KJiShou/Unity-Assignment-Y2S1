@@ -5,8 +5,18 @@ using System.Collections.Generic;
 
 public class PortalCleaner : MonoBehaviour
 {
+    AudioManager audioManager;
+
+    public void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
     public void RunDelete()
     {
+        audioManager.PlaySFX(audioManager.pauseMenuStop);
+
         // Find the parent object named "Equation UI"
         GameObject equationUI = GameObject.Find("Equation UI Set");
 

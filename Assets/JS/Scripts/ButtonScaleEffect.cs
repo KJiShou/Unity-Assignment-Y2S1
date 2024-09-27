@@ -54,10 +54,11 @@ public class ButtonScaleEffect : MonoBehaviour, IPointerEnterHandler, IPointerEx
             Debug.Log(levelNumber);
             audioManager.musicSource.Stop();
             audioManager.PlaySFX(audioManager.stageSelectConfirm);
+            animator.SetTrigger("Click");  // Play the click animation
+
 
             StageNavigation.Instance.LoadNextScene(levelNumber);
-
-            animator.SetTrigger("Click");  // Play the click animation
+            AudioManager.Instance.PlayStageTheme();
         }
     }
 }

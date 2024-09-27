@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
     }
 
     // calculate the game score
