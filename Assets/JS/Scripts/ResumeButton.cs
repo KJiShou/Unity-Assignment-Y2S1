@@ -38,8 +38,10 @@ public class ResumeButton : MonoBehaviour
     // Method to destroy the button's parent GameObject
     void DestroyParent()
     {
+        audioManager.musicSource.Stop();
         audioManager.PlaySFX(audioManager.pauseMenuResume);
 
+        AudioManager.Instance.PlayStageTheme();
 
         timer.ContinueCountdown();
         AddEquation.enabled = true;
