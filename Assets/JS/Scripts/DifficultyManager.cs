@@ -4,6 +4,8 @@ using UnityEngine.EventSystems;
 
 public class DifficultyManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
 {
+    AudioManager audioManager;
+
     public TMP_Text[] difficultyTexts = new TMP_Text[3];  // Array of text options for difficulty (e.g., Easy, Medium, Hard)
     public TMP_FontAsset hoverFontAsset;  // Font to apply when hovering
     public TMP_FontAsset defaultFontAsset;  // Default font asset
@@ -14,6 +16,11 @@ public class DifficultyManager : MonoBehaviour, IPointerEnterHandler, IPointerEx
     private bool isTextSelected = false;  // Whether a difficulty is selected
     private int selectedIndex = -1;  // Track the selected difficulty index
 
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     void Start()
     {
         difficultyTexts[GameManager.Instance.difficulty - 1].color = selectedColor;
@@ -23,6 +30,8 @@ public class DifficultyManager : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        audioManager.PlaySFX(audioManager.menuHover);
+
         if (!isTextSelected)
         {
             TMP_Text hoveredText = eventData.pointerEnter.GetComponent<TMP_Text>();
@@ -52,6 +61,9 @@ public class DifficultyManager : MonoBehaviour, IPointerEnterHandler, IPointerEx
     public void OnPointerClick(PointerEventData eventData)
     {
         TMP_Text clickedText = eventData.pointerClick.GetComponent<TMP_Text>();
+
+        audioManager.PlaySFX(audioManager.menuClickIn);
+
 
         if (clickedText != null)
         {
