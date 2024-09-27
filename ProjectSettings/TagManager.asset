@@ -56,9 +56,6 @@ TagManager:
   - name: Background
     uniqueID: 3046804477
     locked: 0
-  - name: Spaceship
-    uniqueID: 4126653999
-    locked: 0
   - name: Collidables
     uniqueID: 3058842715
     locked: 0
@@ -76,4 +73,7 @@ TagManager:
     locked: 0
   - name: Portals
     uniqueID: 3467861381
+    locked: 0
+  - name: Spaceship
+    uniqueID: 4126653999
     locked: 0

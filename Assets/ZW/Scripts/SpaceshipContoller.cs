@@ -21,7 +21,7 @@ public class SpaceshipController : MonoBehaviour
     public bool isShrinking = false;  // Track if the spaceship is shrinking
     private bool inPortal = false;  // Track if the spaceship is in a portal animation
 
-    private VictoryManager victoryManager;  // Reference to VictoryManager script
+    public GameObject WinMenu;  // Reference to VictoryManager script
     
     private GameObject player;
     private Animation anim;
@@ -58,9 +58,6 @@ public class SpaceshipController : MonoBehaviour
         // Get the Rigidbody2D component attached to the spaceship
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-
-        // Get the reference to the VictoryManager in the scene
-        victoryManager = FindObjectOfType<VictoryManager>();
     }
 
     void Update()
@@ -124,29 +121,60 @@ public class SpaceshipController : MonoBehaviour
         ShrinkSpaceship();
     }
 
-    void ShrinkSpaceship()
+    IEnumerator EnterBlackHole()
     {
-        Debug.Log("Test1");
-        // Gradually shrink the spaceship by reducing its scale
-        transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, shrinkSpeed * Time.deltaTime);
+        audioManager.PlaySFX(audioManager.portalIn);
+        anim.Play("EnterBlackHole");
+        Debug.Log("Entering Black Hole");
+        StartCoroutine(MoveInPortal());
+        yield return new WaitForSeconds(0.5f);
+    }
 
-        // Once the spaceship's scale is close to zero, call VictoryManager to generate the Victory menu
-        if (transform.localScale.x <= 0.01f)
+    IEnumerator MoveInPortal()
+    {
+        float timer = 0;
+        while (timer < 0.5f)
         {
-            isShrinking = false;
-
-            // Call the VictoryManager to generate the victory menu
-            if (victoryManager != null)
-            {
-                victoryManager.GenerateVictoryMenu();
-            }
-            else
-            {
-                Debug.LogError("VictoryManager not found in the scene!");
-            }
+            player.transform.position = Vector2.MoveTowards(player.transform.position, transform.position, 3 * Time.deltaTime);
+            yield return new WaitForEndOfFrame();
+            timer += Time.deltaTime;
         }
     }
 
+    void ShrinkSpaceship()
+    {
+        StartCoroutine(ShrinkAndEnterBlackHole());
+    }
+
+    IEnumerator ShrinkAndEnterBlackHole()
+    {
+        yield return StartCoroutine(EnterBlackHole());
+
+        // Debug to confirm entering the black hole has finished
+        Debug.Log("Spaceship has entered the black hole");
+
+        // Gradually shrink the spaceship by reducing its scale
+        while (transform.localScale.x > 0.01f)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, Time.deltaTime * shrinkSpeed);
+            yield return null; // Wait for the next frame before continuing
+        }
+
+        // Once the spaceship's scale is close to zero, call VictoryManager to generate the victory menu
+        Debug.Log("Spawning victory");
+        isShrinking = false;
+
+        // Call the VictoryManager to generate the victory menu
+        if (WinMenu != null)
+        {
+            Instantiate(WinMenu);
+        }
+        else
+        {
+            Debug.LogError("VictoryManager not found in the scene!");
+        }
+    }
+    
     // Handle collisions with asteroids (kept as-is)
     void OnCollisionEnter2D(Collision2D collision)
     {
