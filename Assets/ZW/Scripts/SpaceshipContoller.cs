@@ -60,6 +60,12 @@ public class SpaceshipController : MonoBehaviour
             return;
         }
 
+        // Handle the spaceship movement after the portal animations
+        if (!inPortal && !isExploding)
+        {
+            MoveSpaceship();
+        }
+
         // Check if the "collide" parameter is true in the Animator
         bool isCollide = animator.GetBool("collide");
 
@@ -72,6 +78,12 @@ public class SpaceshipController : MonoBehaviour
         {
             engineFire.SetActive(true);
         }
+    }
+
+    // Handle spaceship movement (this will be resumed after portal animations)
+    void MoveSpaceship()
+    {
+        rb.velocity = transform.up * speed;
     }
 
     // Detect collision with Black Hole using a Trigger
