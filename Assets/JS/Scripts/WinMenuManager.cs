@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -32,7 +31,7 @@ public class WinMenuManager : MonoBehaviour
         // Update and display the time
         changeTime();
 
-        // Calculate and display the stars
+        // Calculate and display the stars based on score
         calculateStar();
     }
 
@@ -72,22 +71,11 @@ public class WinMenuManager : MonoBehaviour
 
     void calculateStar()
     {
-        // Example logic: fewer stars for more time taken
-        if (usedMinutes <= 3)
-        {
-            // Show all 3 stars for a fast time
-            ShowStars(3);
-        }
-        else if (usedMinutes <= 6)
-        {
-            // Show 2 stars for medium time
-            ShowStars(2);
-        }
-        else
-        {
-            // Show 1 star for slower time
-            ShowStars(1);
-        }
+        // Get the current stage score from GameManager
+        int stageScore = GameManager.Instance.GetLevelScore(GameManager.Instance.currentStage);
+
+        // Determine stars based on the stage score
+        ShowStars(stageScore);
     }
 
     void ShowStars(int starCount)
@@ -98,7 +86,7 @@ public class WinMenuManager : MonoBehaviour
             starList[i].SetActive(false);
         }
 
-        // Enable the number of stars based on the calculated count
+        // Enable the number of stars based on the stage score
         for (int i = 0; i < starCount; i++)
         {
             starList[i].SetActive(true);

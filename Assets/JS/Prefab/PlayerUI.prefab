@@ -871,7 +871,7 @@ GameObject:
   - component: {fileID: 9157301810754903322}
   m_Layer: 5
   m_Name: Start Game
-  m_TagString: Untagged
+  m_TagString: StartButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -976,19 +976,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 9006810046519193254}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: SpaceshipFollowLine, Assembly-CSharp
-        m_MethodName: ActivateAndStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &9157301810754903322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1463,8 +1451,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f50913b35bf198b49bca4e9aca439d2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seconds: 2
-  minutes: 0
+  seconds: 0
+  minutes: 10
   countdownText: {fileID: 5730659963061711820}
   isCountingDown: 1
 --- !u!1 &8142543978228175396

@@ -2769,8 +2769,8 @@ MonoBehaviour:
   amplitude: 1
   frequency: 1
   phaseShift: 0
-  yMin: -40
-  yMax: 40
+  yMin: -100
+  yMax: 100
   amplitudeText: {fileID: 5754492399635280167}
   frequencyText: {fileID: 7766725928089711528}
   phaseShiftText: {fileID: 6963329362029217993}
@@ -6137,12 +6137,12 @@ MonoBehaviour:
   _sliderMax: {fileID: 4555433765658402497}
   _fillArea: {fileID: 8260490577556563230}
   _setupOnStart: 1
-  _minValue: -20
-  _maxValue: 20
+  _minValue: -100
+  _maxValue: 100
   _minDistance: 1
   _wholeNumbers: 0
-  _initialMinValue: -20
-  _initialMaxValue: 20
+  _initialMinValue: -100
+  _initialMaxValue: 100
   OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
