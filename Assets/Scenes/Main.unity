@@ -2186,6 +2186,16 @@ MonoBehaviour:
   menuHover: {fileID: 8300000, guid: 7b471e296a40ad944b64aae9a40dd2e3, type: 3}
   menuClickIn: {fileID: 8300000, guid: 00d6051bde544bf42be0c73028b5459f, type: 3}
   menuClickOut: {fileID: 8300000, guid: 095b63f0df1efec468c22912dc5a0344, type: 3}
+  stageBgm: {fileID: 8300000, guid: 3241f5b7e918bb240823f8cb6cc3c48e, type: 3}
+  speech: {fileID: 8300000, guid: b0f5813844d8729498a02ba17abb5c30, type: 3}
+  playMenuOpen: {fileID: 8300000, guid: a2fdd1d1f152c784780509ca84c63049, type: 3}
+  playMenuClose: {fileID: 8300000, guid: a2fdd1d1f152c784780509ca84c63049, type: 3}
+  playMenuExpand: {fileID: 8300000, guid: f2e5ed501751b714f8537fa91d8b2a48, type: 3}
+  playMenuShrink: {fileID: 8300000, guid: fc0cf4ee8c2970a4dabf79c0503c760d, type: 3}
+  playMenuHover: {fileID: 8300000, guid: 7b471e296a40ad944b64aae9a40dd2e3, type: 3}
+  playMenuSlider: {fileID: 8300000, guid: 63144ec06dea13c42950143ec1137744, type: 3}
+  pauseMenuResume: {fileID: 8300000, guid: e851dda64d0146046b97de212d6243ed, type: 3}
+  pauseMenuStop: {fileID: 8300000, guid: 51939965cf7baa44a82119d48c821b11, type: 3}
   changeSkinSwipe: {fileID: 8300000, guid: 51939965cf7baa44a82119d48c821b11, type: 3}
   menuSlider: {fileID: 8300000, guid: 96c81762275a9894fbdc2667983517ae, type: 3}
   stageSelectConfirm: {fileID: 8300000, guid: cdc334cfb457ba748a530db14668c04e, type: 3}

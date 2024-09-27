@@ -12,7 +12,7 @@ using TMPro;
 public class TutorialScript : MonoBehaviour
 {
 
-	public GameObject globalLight;
+	//public Light globalLight;
 	public GameObject[] glowDots = new GameObject[4];
 	public GameObject textBox;
 	public GameObject speech;
@@ -91,7 +91,7 @@ public class TutorialScript : MonoBehaviour
     {
 		if (Input.GetMouseButtonDown(0)) {
 			Debug.Log("Pressed left-click.");
-			globalLight.Intensity = 0.5f;
+			//globalLight.Intensity = 0.5f;
 
             StopCoroutine("TypeWriterTMP");
 			_tmpProText.text = "";
