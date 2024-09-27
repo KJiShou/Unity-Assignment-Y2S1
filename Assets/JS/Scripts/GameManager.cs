@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private GameObject parentObject;
     public float musicVolume=1;
     public float SFXVolume=1;
-    private int currentScore = 0; 
+    public int currentScore = 0; 
     public int currentStage = 1;  
 
     private void Awake()
