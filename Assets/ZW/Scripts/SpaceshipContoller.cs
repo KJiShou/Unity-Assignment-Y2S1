@@ -19,7 +19,7 @@ public class SpaceshipController : MonoBehaviour
     public float blinkInterval = 0.2f;
     public float shrinkSpeed = 2f;  // Speed at which the spaceship shrinks
     public bool isShrinking = false;  // Track if the spaceship is shrinking
-    private bool inPortal = false;  // Track if the spaceship is in a portal animation
+    public bool inPortal = false;  // Track if the spaceship is in a portal animation
 
     public GameObject WinMenu;  // Reference to VictoryManager script
     
