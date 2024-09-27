@@ -167,6 +167,8 @@ public class SpaceshipController : MonoBehaviour
             {
                 Instantiate(WinMenu);  // Instantiate the victory menu after 1 second
                 Debug.Log("WinMenu instantiated after 1 second delay.");
+
+                audioManager.PlaySFX(audioManager.stageClear);
             }        
         }
         else

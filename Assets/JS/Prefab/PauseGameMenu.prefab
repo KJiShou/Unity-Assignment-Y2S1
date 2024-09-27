@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myMixer: {fileID: 24100000, guid: f8667f9e9d43a9f4a83bf057e91f0704, type: 2}
-  musicSlider: {fileID: 8871884436260858791}
-  SFXSlider: {fileID: 3317853029354466535}
+  musicSlider: {fileID: 3317853029354466535}
+  SFXSlider: {fileID: 8871884436260858791}
 --- !u!1 &230400267359741614
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +907,7 @@ GameObject:
   - component: {fileID: 4377282272423463530}
   - component: {fileID: 8871884436260858791}
   m_Layer: 5
-  m_Name: Music
+  m_Name: SFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 3545447246891432348}
   - component: {fileID: 3317853029354466535}
   m_Layer: 5
-  m_Name: SoundEffect
+  m_Name: Music
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

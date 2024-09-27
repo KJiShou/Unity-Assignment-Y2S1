@@ -85,6 +85,7 @@ public class SpaceshipSpawner : MonoBehaviour
 
             if (leftArrow != null)
             {
+                leftArrow.GetComponent<MainEquationButton>().isMenuOpen = false;
                 leftArrow.gameObject.SetActive(false);  // Disable the left arrow
             }
             else

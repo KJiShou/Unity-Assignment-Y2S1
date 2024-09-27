@@ -12,9 +12,10 @@ public class ChangeSpaceShip : MonoBehaviour
     private int backupIndex;
 
     AudioManager audioManager;
-
+    RGBColor rgbColor;
     void Start()
     {
+        rgbColor = GameObject.Find("Canvas").GetComponent<RGBColor>();
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         
         // Backup the current spaceship index
@@ -49,6 +50,7 @@ public class ChangeSpaceShip : MonoBehaviour
     {
         audioManager.PlaySFX(audioManager.menuClickOut);
         GameManager.Instance.spaceshipIndex = backupIndex;
+        GameManager.Instance.spaceshipColor = new Color(rgbColor.previousRedValue, rgbColor.previousGreenValue, rgbColor.previousBlueValue);  // Reset the color to default
         SceneManager.LoadScene("Main");
     }
 
