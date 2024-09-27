@@ -147,6 +147,7 @@ public class SpaceshipController : MonoBehaviour
 
         // Once shrinking is complete, wait 1 second before generating the victory menu
         yield return StartCoroutine(SpawnWinMenuWithDelay());
+        Destroy(player);
     }
 
     IEnumerator SpawnWinMenuWithDelay()
@@ -154,6 +155,7 @@ public class SpaceshipController : MonoBehaviour
         // Wait for 1 second before spawning the WinMenu
         yield return new WaitForSeconds(1f);
         // Check if WinMenu is assigned
+        
         if (WinMenu != null)
         {
             if (GameManager.Instance.currentScore == 0)

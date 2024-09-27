@@ -8,9 +8,16 @@ public class SpaceshipSpawner : MonoBehaviour
     public Transform spawnLocation;  // The location where the spaceship will be spawned
 
     private GameObject spawnedSpaceship;  // Keep track of the spawned spaceship
+    private Canvas AddEquation;
+    private Canvas EquationUI;
+    private Canvas StartingButton;
 
     void Start()
     {
+        GameManager.Instance.SetCurrentStageFromSceneName();
+        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
+        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
+        StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
         // Ensure spaceship spawns when the game starts
         SpawnPlayerSpaceship();
 
@@ -67,6 +74,22 @@ public class SpaceshipSpawner : MonoBehaviour
             else
             {
                 Debug.LogError("SpaceshipFollowLine component not found on the spawned spaceship.");
+            }
+
+            // Disable the Add Equation Set and Equation UI Canvases
+            AddEquation.enabled = false;
+            EquationUI.enabled = false;
+
+            // Disable specific elements (left arrow and timer) inside the Starting Button
+            Transform leftArrow = StartingButton.transform.Find("Left Arrow");  // Assuming "LeftArrow" is the name of the object
+
+            if (leftArrow != null)
+            {
+                leftArrow.gameObject.SetActive(false);  // Disable the left arrow
+            }
+            else
+            {
+                Debug.LogError("Left Arrow not found in Starting Button.");
             }
         }
         else

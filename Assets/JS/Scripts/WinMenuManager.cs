@@ -12,17 +12,22 @@ public class WinMenuManager : MonoBehaviour
     private float defaultSeconds;
     private float usedMinutes;
     private float usedSeconds;
-
+    private Canvas AddEquation;
+    private Canvas EquationUI;
+    private Canvas StartingButton;
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.CompleteStage();
         timer = GameObject.Find("Timer").GetComponent<Timer>();
-        timerText = GameObject.Find("TimerText").GetComponent<TMP_Text>();
+        timerText = GameObject.Find("Score").GetComponent<TMP_Text>();
         stars = GameObject.Find("GoldStar").transform;
         starList[0] = stars.Find("GoldStar1").gameObject;
         starList[1] = stars.Find("GoldStar2").gameObject;
         starList[2] = stars.Find("GoldStar3").gameObject;
-
+        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
+        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
+        StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
         UpdateWinMenu(); // Call the method to update the time and stars
     }
 
@@ -33,6 +38,9 @@ public class WinMenuManager : MonoBehaviour
 
         // Calculate and display the stars based on score
         calculateStar();
+        AddEquation.enabled = false;
+        EquationUI.enabled = false;
+        StartingButton.enabled = false;
     }
 
     void changeTime()
@@ -66,7 +74,7 @@ public class WinMenuManager : MonoBehaviour
         }
 
         // Update the timer UI in the format "Time: 10min 30s"
-        timerText.text = $"Time: {usedMinutes}min {usedSeconds}s";
+        timerText.text = $"Time: {(int)usedMinutes}min {(int)usedSeconds}s";
     }
 
     void calculateStar()
@@ -91,5 +99,9 @@ public class WinMenuManager : MonoBehaviour
         {
             starList[i].SetActive(true);
         }
+    }
+
+    public void RestartGame() {
+
     }
 }
