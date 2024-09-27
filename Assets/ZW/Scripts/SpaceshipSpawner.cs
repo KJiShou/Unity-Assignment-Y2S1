@@ -6,18 +6,25 @@ public class SpaceshipSpawner : MonoBehaviour
 {
     public GameObject[] spaceshipPrefabs;  // Array of spaceship prefabs (different models)
     public Transform spawnLocation;  // The location where the spaceship will be spawned
-    public Button startButton;  // Button to trigger spaceship movement
 
     private GameObject spawnedSpaceship;  // Keep track of the spawned spaceship
 
     void Start()
     {
+        // Ensure spaceship spawns when the game starts
         SpawnPlayerSpaceship();
 
-        // Assign the button's onClick listener to call the ActivateAndStart method when clicked
+        // Automatically find the start button in the scene by its tag
+        Button startButton = GameObject.FindGameObjectWithTag("StartButton").GetComponent<Button>();
+
+        // Assign the button's onClick listener to call the OnStartButtonClick method when clicked
         if (startButton != null)
         {
-            startButton.onClick.AddListener(StartSpaceshipMovement);
+            startButton.onClick.AddListener(OnStartButtonClick);
+        }
+        else
+        {
+            Debug.LogError("Start button not found. Make sure the button is tagged 'StartButton'.");
         }
     }
 
@@ -47,7 +54,7 @@ public class SpaceshipSpawner : MonoBehaviour
     }
 
     // This method will be called when the start button is clicked
-    void StartSpaceshipMovement()
+    void OnStartButtonClick()
     {
         if (spawnedSpaceship != null)
         {

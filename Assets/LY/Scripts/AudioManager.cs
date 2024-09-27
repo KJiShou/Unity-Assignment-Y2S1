@@ -28,9 +28,12 @@ public class AudioManager : MonoBehaviour
     public AudioClip playMenuLaunch;
     public AudioClip pauseMenuResume;
     public AudioClip pauseMenuStop;
+    public AudioClip pauseBgm;
 
     public AudioClip shipCrack;
     public AudioClip shipCrash;
+    public AudioClip winBgm;
+    public AudioClip loseBgm;
     public AudioClip portalIn;
     public AudioClip portalOut;
     public AudioClip starCollect;
@@ -68,6 +71,24 @@ public class AudioManager : MonoBehaviour
     public void PlayStageTheme()
     {
         musicSource.clip = stageBgm;
+        musicSource.Play();
+    }
+
+    public void PlayPauseTheme()
+    {
+        musicSource.clip = pauseBgm;
+        musicSource.Play();
+    }
+
+    public void PlayWinTheme()
+    {
+        musicSource.clip = winBgm;
+        musicSource.Play();
+    }
+
+    public void PlayLoseTheme()
+    {
+        musicSource.clip = loseBgm;
         musicSource.Play();
     }
 

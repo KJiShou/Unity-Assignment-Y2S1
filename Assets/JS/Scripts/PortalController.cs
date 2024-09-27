@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PortalController : MonoBehaviour
 {
+    AudioManager audioManager;
+
     GameObject player;
     Animation anim;
     Rigidbody2D playerRb;
@@ -21,6 +23,8 @@ public class PortalController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         anim = player.GetComponent<Animation>();
         playerRb = player.GetComponent<Rigidbody2D>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -124,7 +128,7 @@ public class PortalController : MonoBehaviour
 
     IEnumerator PortalIn()
     {
-        
+        audioManager.PlaySFX(audioManager.portalIn);
         anim.Play("Portal In");
         StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
@@ -132,6 +136,7 @@ public class PortalController : MonoBehaviour
 
     IEnumerator PortalOut()
     {
+        audioManager.PlaySFX(audioManager.portalOut);
         playerRb.simulated = true;
         anim.Play("SpaceshipOutPortal");
 

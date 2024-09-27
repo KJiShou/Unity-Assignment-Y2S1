@@ -34,7 +34,10 @@ public class PauseGameButton : MonoBehaviour
     // Method to generate the Canvas from a prefab
     void GenerateCanvas()
     {
+        audioManager.musicSource.Stop();
         audioManager.PlaySFX(audioManager.pauseMenuStop);
+
+        AudioManager.Instance.PlayPauseTheme();
 
         if (canvasPrefab != null)
         {

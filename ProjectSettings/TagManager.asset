@@ -15,6 +15,7 @@ TagManager:
   - StageButton
   - GlobalLight
   - Collectables
+  - StartButton
   layers:
   - Default
   - TransparentFX
