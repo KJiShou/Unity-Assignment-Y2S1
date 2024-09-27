@@ -34,10 +34,7 @@ public class VictoryButtons : MonoBehaviour
 
     public void nextStage()
     {
-        audioManager.musicSource.Stop();
         audioManager.PlaySFX(audioManager.pauseMenuResume);
-        AudioManager.Instance.PlayStageTheme();
-
         SceneManager.LoadScene("1-"+ (GameManager.Instance.currentStage+1));
     }
 
