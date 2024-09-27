@@ -25,10 +25,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip playMenuShrink;
     public AudioClip playMenuHover;
     public AudioClip playMenuSlider;
+    public AudioClip playMenuLaunch;
     public AudioClip pauseMenuResume;
     public AudioClip pauseMenuStop;
 
-
+    public AudioClip shipCrack;
+    public AudioClip shipCrash;
+    public AudioClip portalIn;
+    public AudioClip portalOut;
+    public AudioClip starCollect;
 
     public AudioClip changeSkinSwipe;
     public AudioClip menuSlider;
