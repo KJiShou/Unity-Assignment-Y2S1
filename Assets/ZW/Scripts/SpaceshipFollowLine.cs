@@ -26,7 +26,8 @@ public class SpaceshipFollowLine : MonoBehaviour
             }
             else
             {
-                MoveForward();  // Move forward if no line is provided
+                if (GetComponent<SpaceshipController>().collisionCount == 0)
+                    MoveForward();  // Move forward if no line is provided
             }
         }
     }
