@@ -58,7 +58,6 @@ public class ButtonScaleEffect : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
 
             StageNavigation.Instance.LoadNextScene(levelNumber);
-            AudioManager.Instance.PlayStageTheme();
         }
     }
 }

@@ -5,11 +5,19 @@ using UnityEngine.UI;
 
 public class ResumeButton : MonoBehaviour
 {
+    AudioManager audioManager;
     public Button destroyButton; // Assign your destroy button in the Inspector
     private Canvas AddEquation;
     private Canvas EquationUI;
     private Canvas StartingButton;
     private Timer timer;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
+
     void Start()
     {
         AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
@@ -30,6 +38,9 @@ public class ResumeButton : MonoBehaviour
     // Method to destroy the button's parent GameObject
     void DestroyParent()
     {
+        audioManager.PlaySFX(audioManager.pauseMenuResume);
+
+
         timer.ContinueCountdown();
         AddEquation.enabled = true;
         EquationUI.enabled = true;

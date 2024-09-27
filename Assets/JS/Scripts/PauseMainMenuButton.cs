@@ -6,7 +6,14 @@ using UnityEngine.UI;
 
 public class PauseMainMenuButton : MonoBehaviour
 {
+    AudioManager audioManager;
     public Button generateButton;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +29,10 @@ public class PauseMainMenuButton : MonoBehaviour
     }
 
     private void toMainScene() {
+        audioManager.musicSource.Stop();
+        audioManager.PlaySFX(audioManager.pauseMenuStop);
+
+        AudioManager.Instance.PlayMainTheme();
         SceneManager.LoadScene("StageSelect");
     }
 }

@@ -25,14 +25,20 @@ public class AudioManager : MonoBehaviour
     public AudioClip playMenuShrink;
     public AudioClip playMenuHover;
     public AudioClip playMenuSlider;
+    public AudioClip playMenuLaunch;
     public AudioClip pauseMenuResume;
     public AudioClip pauseMenuStop;
 
-
+    public AudioClip shipCrack;
+    public AudioClip shipCrash;
+    public AudioClip portalIn;
+    public AudioClip portalOut;
+    public AudioClip starCollect;
 
     public AudioClip changeSkinSwipe;
     public AudioClip menuSlider;
     public AudioClip stageSelectConfirm;
+    public AudioClip stageClear;
 
     // If you want to use another sound that's not listed here, simply declare a new variable and put it here.
     // Remember to put the audio clip into the Audio Manager game object afterwards!

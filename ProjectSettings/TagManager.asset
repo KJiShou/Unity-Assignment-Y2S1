@@ -13,6 +13,7 @@ TagManager:
   - Text
   - BlackHole
   - StageButton
+  - GlobalLight
   layers:
   - Default
   - TransparentFX

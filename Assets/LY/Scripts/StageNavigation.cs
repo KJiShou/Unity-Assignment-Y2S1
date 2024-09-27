@@ -9,12 +9,10 @@ using TMPro;
 public class StageNavigation : MonoBehaviour
 {
     public static StageNavigation Instance { get; private set; }
-    AudioManager audioManager;
 
     public void Awake()
     {
         Instance = this;
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     public void LoadNextScene(string levelNumber)

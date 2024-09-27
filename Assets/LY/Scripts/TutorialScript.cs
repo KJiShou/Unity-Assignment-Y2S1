@@ -8,12 +8,12 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering.Universal;
 
 public class TutorialScript : MonoBehaviour
 {
-
-	//public Light globalLight;
-	public GameObject[] glowDots = new GameObject[4];
+    public Light2D globalLight;
+    public Light2D[] glowDots = new Light2D[4];
 	public GameObject textBox;
 	public GameObject speech;
 	public GameObject imageBox;
@@ -34,7 +34,7 @@ public class TutorialScript : MonoBehaviour
 		"By modifying the values and limit of equations...",
 		"We can change how the portal's pathing is drawn",
 		"Now, let's look at more options",
-		"Further expand the menu by clicking this button here",
+		"Further expand the menu by clicking the menu button",
 		"These are the templates of other lines we can draw",
 		"by virtue of different types of equations, as you can see",
 		"To use any of these, simply drag it to the right",
@@ -56,6 +56,8 @@ public class TutorialScript : MonoBehaviour
 	{
 		_tmpProText = GetComponentInChildren<TMP_Text>()!;
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+
+		//glowDots.SetActive(false);
 
         if (_tmpProText != null)
 		{
@@ -91,7 +93,7 @@ public class TutorialScript : MonoBehaviour
     {
 		if (Input.GetMouseButtonDown(0)) {
 			Debug.Log("Pressed left-click.");
-			//globalLight.Intensity = 0.5f;
+
 
             StopCoroutine("TypeWriterTMP");
 			_tmpProText.text = "";
