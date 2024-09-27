@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168313297
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 8684459004466523538, guid: feb93a322f5889442984bbcbb0fd98a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -199,6 +199,8 @@ MonoBehaviour:
   destructionDelay: 5
   blinkInterval: 0.2
   shrinkSpeed: 2
+  isShrinking: 0
+  WinMenu: {fileID: 6091302756743559110, guid: 893ad4ce424316b4f9edeb5c5bb0e94e, type: 3}
   collisionCount: 0
   loseMenu: {fileID: 5986198193249126897, guid: 19ec99ecca2bc17429eb9dd442455ca9, type: 3}
 --- !u!114 &8544387054958063184
@@ -228,6 +230,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 4005c667da7310b4194aa9185cb60985, type: 2}
   - {fileID: 7400000, guid: ea214ce969d27874ab6da0850025d50d, type: 2}
+  - {fileID: 7400000, guid: b3170ddcfa456e148ba3b52e79fb4bc7, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -325,7 +328,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168313297
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1903569031, guid: de0c4945446151e48a5bd58293d50df1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -595,7 +598,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168313297
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1177481289, guid: cc833426968dd7b45b94eb320a65388a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

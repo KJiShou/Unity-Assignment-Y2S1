@@ -38,6 +38,14 @@ public class VictoryButtons : MonoBehaviour
         audioManager.PlaySFX(audioManager.pauseMenuResume);
         AudioManager.Instance.PlayStageTheme();
 
-        SceneManager.LoadScene("1-3");
+        SceneManager.LoadScene("1-"+ (GameManager.Instance.currentStage+1));
+    }
+
+    public void RestartGame() {
+        audioManager.musicSource.Stop();
+        audioManager.PlaySFX(audioManager.pauseMenuResume);
+        AudioManager.Instance.PlayStageTheme();
+
+        SceneManager.LoadScene("1-"+ (GameManager.Instance.currentStage));
     }
 }

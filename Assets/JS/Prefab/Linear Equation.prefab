@@ -2600,7 +2600,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 240486309
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
@@ -5545,7 +5545,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 435674916130557654, guid: e9779ccbc5922d94da8bfa4ef6dca782, type: 3}
       propertyPath: m_SortingLayer
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2023896971253484241, guid: e9779ccbc5922d94da8bfa4ef6dca782, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5911,7 +5911,7 @@ MonoBehaviour:
   _setupOnStart: 1
   _minValue: -100
   _maxValue: 100
-  _minDistance: 1
+  _minDistance: 5
   _wholeNumbers: 0
   _initialMinValue: -100
   _initialMaxValue: 100
