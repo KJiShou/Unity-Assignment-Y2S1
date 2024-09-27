@@ -10,9 +10,9 @@ public class RGBColor : MonoBehaviour
     public Slider blueSlider;
     public Image spaceship;
     
-    private float previousRedValue;
-    private float previousGreenValue;
-    private float previousBlueValue;
+    public float previousRedValue;
+    public float previousGreenValue;
+    public float previousBlueValue;
 
     private bool isPlayingSFX = false; // Track if the sound effect is currently playing
 
@@ -52,11 +52,6 @@ public class RGBColor : MonoBehaviour
         // Assign the new color to the Image component
         GameManager.Instance.spaceshipColor = new Color(r, g, b);
         spaceship.color = GameManager.Instance.spaceshipColor;
-
-        // Update the previous slider values
-        previousRedValue = redSlider.value;
-        previousGreenValue = greenSlider.value;
-        previousBlueValue = blueSlider.value;
     }
 
     private IEnumerator PlaySliderSFXSmoothly()
