@@ -16,7 +16,7 @@ public class SpaceshipController : MonoBehaviour
     public float destructionDelay = 5f;  // Delay before destruction (in seconds)
     public float blinkInterval = 0.2f;
     public float shrinkSpeed = 2f;  // Speed at which the spaceship shrinks
-    private bool isShrinking = false;  // Track if the spaceship is shrinking
+    public bool isShrinking = false;  // Track if the spaceship is shrinking
     private bool inPortal = false;  // Track if the spaceship is in a portal animation
 
     private VictoryManager victoryManager;  // Reference to VictoryManager script
@@ -64,6 +64,7 @@ public class SpaceshipController : MonoBehaviour
         // Handle the shrinking effect
         if (isShrinking)
         {
+            Debug.Log("test");
             ShrinkSpaceship();
             return;
         }
@@ -71,7 +72,6 @@ public class SpaceshipController : MonoBehaviour
         // Handle the spaceship movement after the portal animations
         if (!inPortal && !isExploding)
         {
-            Debug.Log("Test");
             MoveSpaceship();
         }
 
@@ -106,7 +106,7 @@ public class SpaceshipController : MonoBehaviour
         }
     }
 
-    void StartShrinking()
+    public void StartShrinking()
     {
         // Stop the spaceship's movement
         rb.velocity = Vector2.zero;
@@ -117,10 +117,12 @@ public class SpaceshipController : MonoBehaviour
         // Disable the shield and engine fire
         engineFire.SetActive(false);
         shield.SetActive(false);
+        ShrinkSpaceship();
     }
 
     void ShrinkSpaceship()
     {
+        Debug.Log("Test1");
         // Gradually shrink the spaceship by reducing its scale
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, shrinkSpeed * Time.deltaTime);
 
