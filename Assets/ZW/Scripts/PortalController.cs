@@ -49,6 +49,4 @@ public class PortalController : MonoBehaviour
             timer += Time.deltaTime;
         }
     }
-
-
 }

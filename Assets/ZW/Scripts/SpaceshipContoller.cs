@@ -5,6 +5,7 @@ public class SpaceshipController : MonoBehaviour
 {
     public float speed = 5f;  // Speed of the spaceship
     private Rigidbody2D rb;  // Reference to the Rigidbody2D component
+    private Collider2D collider; 
     private Animator animator;
     public GameObject engineFire;  // The engine fire GameObject
     public GameObject headlights;
@@ -15,18 +16,37 @@ public class SpaceshipController : MonoBehaviour
     public float blinkInterval = 0.2f;
     public float shrinkSpeed = 2f;  // Speed at which the spaceship shrinks
     private bool isShrinking = false;  // Track if the spaceship is shrinking
+    private bool inPortal = false;  // Track if the spaceship is in a portal animation
 
     private VictoryManager victoryManager;  // Reference to VictoryManager script
+    
+    private GameObject player;
+    private Animation anim;
+    private Rigidbody2D playerRb;
+
     private int collisionCount = 0;  // Counter to track collisions
     private bool isExploding = false;  // To prevent multiple explosions
     private bool isBlinking = false;
 
+    void Awake()
+    {
+        // Get the Rigidbody2D component attached to the spaceship
+        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        anim = player.GetComponent<Animation>();
+        playerRb = player.GetComponent<Rigidbody2D>();
+        
+        GetComponent<Collider2D>().enabled = false;
+
+        this.enabled = false;  // Deactivate the script at the start
+    }
     void Start()
     {
         // Get the Rigidbody2D component attached to the spaceship
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        
+
         // Get the reference to the VictoryManager in the scene
         victoryManager = FindObjectOfType<VictoryManager>();
     }
@@ -37,6 +57,13 @@ public class SpaceshipController : MonoBehaviour
         if (isShrinking)
         {
             ShrinkSpaceship();
+            return;
+        }
+
+        // Handle the spaceship movement after the portal animations
+        if (!inPortal && !isExploding)
+        {
+            MoveSpaceship();
         }
 
         // Check if the "collide" parameter is true in the Animator
@@ -46,7 +73,6 @@ public class SpaceshipController : MonoBehaviour
         if (isCollide)
         {
             engineFire.SetActive(false);
-            
         }
         else
         {
@@ -54,7 +80,11 @@ public class SpaceshipController : MonoBehaviour
         }
     }
 
-    
+    // Handle spaceship movement (this will be resumed after portal animations)
+    void MoveSpaceship()
+    {
+        rb.velocity = transform.up * speed;
+    }
 
     // Detect collision with Black Hole using a Trigger
     void OnTriggerEnter2D(Collider2D other)
@@ -131,6 +161,8 @@ public class SpaceshipController : MonoBehaviour
             // Set the "collide2" parameter in the Animator to trigger the explosion animation
             animator.SetBool("collide2", true);
 
+            engineFire.SetActive(false);
+
             StopBlinking();
 
             DisableRigidbody();
@@ -196,5 +228,20 @@ public class SpaceshipController : MonoBehaviour
     void DestroySpaceship()
     {
         Destroy(gameObject);  // Destroy the spaceship after the delay
+    }
+
+    // This method will be called by the PortalController after the portal animations
+    public void ResumeMovement()
+    {
+        inPortal = false;  // Exit portal mode
+        rb.simulated = true;  // Enable Rigidbody2D simulation
+    }
+
+    // Call this method when entering the portal to stop movement and animation
+    public void EnterPortal()
+    {
+        inPortal = true;
+        rb.velocity = Vector2.zero;  // Stop the spaceship during the portal animation
+        rb.simulated = false;  // Disable Rigidbody2D simulation during the portal animation
     }
 }

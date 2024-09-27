@@ -47,6 +47,7 @@ public class SpaceshipFollowLine : MonoBehaviour
     // Start movement when the button is pressed or the portal animation finishes
     public void StartMovement()
     {
+        GetComponent<Collider2D>().enabled = true;
         isMoving = true;  // Start the movement
         Debug.Log("Movement started.");
 
@@ -91,6 +92,7 @@ public class SpaceshipFollowLine : MonoBehaviour
     public void ActivateAndStart()
     {
         Debug.Log("ActivateAndStart called.");
+        
         this.enabled = true;  // Enable the script
         StartMovement();
     }
