@@ -9,8 +9,11 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class typewriterUI : MonoBehaviour
+public class TutorialScript : MonoBehaviour
 {
+
+	//public Light globalLight;
+	public GameObject[] glowDots = new GameObject[4];
 	public GameObject textBox;
 	public GameObject speech;
 	public GameObject imageBox;
@@ -88,8 +91,9 @@ public class typewriterUI : MonoBehaviour
     {
 		if (Input.GetMouseButtonDown(0)) {
 			Debug.Log("Pressed left-click.");
+			//globalLight.Intensity = 0.5f;
 
-			StopCoroutine("TypeWriterTMP");
+            StopCoroutine("TypeWriterTMP");
 			_tmpProText.text = "";
 			writer = script[scriptOrder];
 			StartCoroutine("TypeWriterTMP");
