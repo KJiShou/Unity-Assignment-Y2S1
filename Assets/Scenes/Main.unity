@@ -2199,6 +2199,7 @@ MonoBehaviour:
   changeSkinSwipe: {fileID: 8300000, guid: 51939965cf7baa44a82119d48c821b11, type: 3}
   menuSlider: {fileID: 8300000, guid: 96c81762275a9894fbdc2667983517ae, type: 3}
   stageSelectConfirm: {fileID: 8300000, guid: cdc334cfb457ba748a530db14668c04e, type: 3}
+  stageClear: {fileID: 8300000, guid: 5227de93917fcf746975465264e74887, type: 3}
 --- !u!4 &2137111322
 Transform:
   m_ObjectHideFlags: 0

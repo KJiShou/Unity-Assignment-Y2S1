@@ -6,7 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuRestartButton : MonoBehaviour
 {
+    AudioManager audioManager;
     public Button generateButton;
+
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +30,8 @@ public class PauseMenuRestartButton : MonoBehaviour
     }
 
     private void toMainScene() {
+
+        audioManager.PlaySFX(audioManager.pauseMenuStop);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

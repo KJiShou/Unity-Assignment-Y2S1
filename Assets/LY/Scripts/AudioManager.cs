@@ -33,6 +33,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip changeSkinSwipe;
     public AudioClip menuSlider;
     public AudioClip stageSelectConfirm;
+    public AudioClip stageClear;
 
     // If you want to use another sound that's not listed here, simply declare a new variable and put it here.
     // Remember to put the audio clip into the Audio Manager game object afterwards!
