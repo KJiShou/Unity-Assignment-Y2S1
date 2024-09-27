@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SpaceshipFollowLine : MonoBehaviour
@@ -23,24 +22,12 @@ public class SpaceshipFollowLine : MonoBehaviour
         {
             if (hasLine && linePoints != null && currentPointIndex < linePoints.Length)
             {
-                MoveAlongLine();  // Follow the line points if available
+                
             }
             else
             {
                 MoveForward();  // Move forward if no line is provided
             }
-        }
-    }
-
-    // Assign a LineRendererLinear and get its line points
-    public void SetLineRenderer(LineRendererLinear lineRendererLinear)
-    {
-        if (lineRendererLinear != null)
-        {
-            linePoints = lineRendererLinear.linePoints;  // Get the line points from LineRendererLinear
-            currentPointIndex = 0;  // Start from the first point
-            hasLine = true;  // Mark that the spaceship has a line to follow
-            Debug.Log("Line set with " + linePoints.Length + " points.");
         }
     }
 
@@ -50,12 +37,6 @@ public class SpaceshipFollowLine : MonoBehaviour
         GetComponent<Collider2D>().enabled = true;
         isMoving = true;  // Start the movement
         Debug.Log("Movement started.");
-
-        if (!hasLine)
-        {
-            // If no line is set, just move forward in the current direction
-            rb.velocity = transform.up * speed;
-        }
     }
 
     // Move forward continuously if no line is set
@@ -63,23 +44,6 @@ public class SpaceshipFollowLine : MonoBehaviour
     {
         // Continue moving in the current "up" direction
         transform.position += transform.up * speed * Time.deltaTime;
-    }
-
-    // Move the spaceship towards the next point in the line
-    void MoveAlongLine()
-    {
-        Vector3 targetPosition = linePoints[currentPointIndex];
-        transform.position = Vector3.MoveTowards(transform.position, targetPosition, speed * Time.deltaTime);
-
-        if (Vector3.Distance(transform.position, targetPosition) < 0.1f)
-        {
-            currentPointIndex++;
-            if (currentPointIndex >= linePoints.Length)
-            {
-                isMoving = false;  // Stop moving when the spaceship reaches the end of the line
-                Debug.Log("Spaceship has reached the end of the line.");
-            }
-        }
     }
 
     // Called when the portal animation finishes

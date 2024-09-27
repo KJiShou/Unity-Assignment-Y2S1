@@ -63,6 +63,7 @@ public class SpaceshipController : MonoBehaviour
         // Handle the spaceship movement after the portal animations
         if (!inPortal && !isExploding)
         {
+            Debug.Log("Test");
             MoveSpaceship();
         }
 

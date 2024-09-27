@@ -515,6 +515,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpaceShip (Battlecrusier)
       objectReference: {fileID: 0}
+    - target: {fileID: 675775667794344743, guid: f2856bb39b791264bae3bbb0196e612c, type: 3}
+      propertyPath: m_Animations.Array.data[1]
+      value: 
+      objectReference: {fileID: 7400000, guid: ea214ce969d27874ab6da0850025d50d, type: 2}
     - target: {fileID: 1978849124136565174, guid: f2856bb39b791264bae3bbb0196e612c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.74
@@ -554,6 +558,10 @@ PrefabInstance:
     - target: {fileID: 1978849124136565174, guid: f2856bb39b791264bae3bbb0196e612c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 4454711171407639592, guid: f2856bb39b791264bae3bbb0196e612c, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8337691089042806634, guid: f2856bb39b791264bae3bbb0196e612c, type: 3}
       propertyPath: m_Enabled

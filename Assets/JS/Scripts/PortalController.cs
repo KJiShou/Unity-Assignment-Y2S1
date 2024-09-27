@@ -56,8 +56,9 @@ public class PortalController : MonoBehaviour
                 {
                     linePoints = lineRendererLinear.linePoints;
                 }
-
-                currentPointIndex = linePoints.Length - 1; // Start at the last point of the line (for reverse)
+                if(isReversing){
+                    currentPointIndex = linePoints.Length - 1; // Start at the last point of the line (for reverse)
+                }
                 inPortal = true;
                 player.GetComponent<SpaceshipFollowLine>().isMoving = false;
                 StartCoroutine(PortalIn());
@@ -146,7 +147,7 @@ public class PortalController : MonoBehaviour
 
     private void MoveSpaceship()
     {
-        // If moving from end to start
+        // Check if we are moving from end to start or start to end
         if (isReversing)
         {
             if (currentPointIndex < 0)
@@ -166,7 +167,7 @@ public class PortalController : MonoBehaviour
             }
         }
 
-        // Get the current position and the target position
+        // Get the current position and the target point from the line
         Vector3 targetPoint = linePoints[currentPointIndex];
         Vector3 currentPosition = player.transform.position;
 
@@ -175,21 +176,26 @@ public class PortalController : MonoBehaviour
 
         // Rotate the spaceship to face the direction of movement
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        player.transform.rotation = Quaternion.Euler(0, 0, angle - 90); // Adjusting for 2D rotation
+        player.transform.rotation = Quaternion.Euler(0, 0, angle - 90);  // Adjust for 2D rotation
 
         // Move the spaceship towards the next point
         player.transform.position = Vector3.MoveTowards(currentPosition, targetPoint, player.GetComponent<SpaceshipController>().speed * Time.deltaTime);
 
+        // Use a reasonable threshold to determine if the spaceship is "close enough" to the point
+        float distanceThreshold = 0.05f;
+
         // Check if the spaceship has reached the target point
-        if (Vector3.Distance(player.transform.position, targetPoint) < 0.1f)
+        if (Vector3.Distance(player.transform.position, targetPoint) < distanceThreshold)
         {
             if (isReversing)
             {
-                currentPointIndex--; // Move backward if reversing
+                // If moving in reverse, move to the previous point
+                currentPointIndex--;
             }
             else
             {
-                currentPointIndex++; // Move forward if not reversing
+                // If moving forward, move to the next point
+                currentPointIndex++;
             }
         }
     }
