@@ -107,6 +107,7 @@ public class PortalController : MonoBehaviour
 
     IEnumerator PortalIn()
     {
+        
         anim.Play("Portal In");
         StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
@@ -114,6 +115,7 @@ public class PortalController : MonoBehaviour
 
     IEnumerator PortalOut()
     {
+        playerRb.simulated = true;
         anim.Play("SpaceshipOutPortal");
 
         // Start from the first point when exiting the portal (normal movement)
@@ -196,6 +198,12 @@ public class PortalController : MonoBehaviour
                     // If moving forward, move to the next point
                     currentPointIndex++;
                 }
+            }
+            float distanceToLastPoint = Vector3.Distance(player.transform.position, linePoints[linePoints.Length - 1]);
+
+            if (distanceToLastPoint < 1.0f)  // Change 1.0f to whatever distance you want
+            {
+                playerRb.simulated = false;  // Disable physics when close to the last point
             }
         }
     }

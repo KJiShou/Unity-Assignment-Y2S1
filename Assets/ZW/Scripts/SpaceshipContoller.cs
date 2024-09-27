@@ -4,7 +4,7 @@ using UnityEngine;
 public class SpaceshipController : MonoBehaviour
 {
     public float speed = 5f;  // Speed of the spaceship
-    public float slowSpeed = 0.5f;
+    public float slowSpeed = 1f;  // Slower speed when hitting an asteroid
     private Rigidbody2D rb;  // Reference to the Rigidbody2D component
     private Collider2D collider; 
     private Animator animator;
@@ -64,7 +64,8 @@ public class SpaceshipController : MonoBehaviour
         // Handle the spaceship movement after the portal animations
         if (!inPortal && !isExploding)
         {
-            //MoveSpaceship();
+            Debug.Log("Test");
+            MoveSpaceship();
         }
 
         // Check if the "collide" parameter is true in the Animator
@@ -139,7 +140,7 @@ public class SpaceshipController : MonoBehaviour
         if (isExploding) return;  // Prevent multiple explosions
 
         collisionCount++;  // Increment the collision counter
-        SlowDownSpaceship();
+				SlowDownSpaceship();
         if (collisionCount == 1)
         {
             // First contact: disable the shield and trigger the first collision animation
@@ -172,7 +173,7 @@ public class SpaceshipController : MonoBehaviour
             TriggerExplosion();
         }
     }
-
+    
     void SlowDownSpaceship()
     {
         Debug.Log("Spaceship hit an asteroid! Slowing down...");
