@@ -81,7 +81,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168313297
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 668308413854939124, guid: 6d7d254551d07804bb008247178cca2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -189,8 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf2c5b28e164e05469107e7d0f0d0cad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  slowSpeed: 1
+  speed: 3
+  slowSpeed: 3
   engineFire: {fileID: 4120115364501777918}
   headlights: {fileID: 5692291976904876000}
   arealights: {fileID: 7950970391368583321}
@@ -199,6 +199,8 @@ MonoBehaviour:
   destructionDelay: 5
   blinkInterval: 0.2
   shrinkSpeed: 2
+  isShrinking: 0
+  WinMenu: {fileID: 6091302756743559110, guid: 893ad4ce424316b4f9edeb5c5bb0e94e, type: 3}
   collisionCount: 0
   loseMenu: {fileID: 5986198193249126897, guid: 19ec99ecca2bc17429eb9dd442455ca9, type: 3}
 --- !u!114 &7595215992288847373
@@ -213,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcc25b14f43fa4143a356d7d9c0ce9e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   isMoving: 0
 --- !u!111 &4865330683051604477
 Animation:
@@ -228,6 +230,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 4005c667da7310b4194aa9185cb60985, type: 2}
   - {fileID: 7400000, guid: ea214ce969d27874ab6da0850025d50d, type: 2}
+  - {fileID: 7400000, guid: b3170ddcfa456e148ba3b52e79fb4bc7, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -325,7 +328,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168313297
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 408574001, guid: d1669ef1298a94c4cbc91c798c2fb1e9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -431,7 +434,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -168313297
-  m_SortingLayer: 2
+  m_SortingLayer: 8
   m_SortingOrder: 0
   m_Sprite: {fileID: 1834815363, guid: 216b26bb87ac3bd4e8d15e4da6df97a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

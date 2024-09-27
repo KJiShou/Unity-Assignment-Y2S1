@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     public float SFXVolume=1;
 
     public int[] highScores = new int[7]; 
-    private int currentScore = 0; 
+    public int currentScore = 0; 
     public int currentStage = 1;  
 
     private void Awake()

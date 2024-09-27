@@ -483,11 +483,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4480640924622771640, guid: ab3b6b4124bb97240bd1c18cdead3489, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.55
+      value: -1.09
       objectReference: {fileID: 0}
     - target: {fileID: 4480640924622771640, guid: ab3b6b4124bb97240bd1c18cdead3489, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.38
+      value: -1.94
       objectReference: {fileID: 0}
     - target: {fileID: 4480640924622771640, guid: ab3b6b4124bb97240bd1c18cdead3489, type: 3}
       propertyPath: m_LocalPosition.z
@@ -714,11 +714,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4480640924622771640, guid: ab3b6b4124bb97240bd1c18cdead3489, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.4
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 4480640924622771640, guid: ab3b6b4124bb97240bd1c18cdead3489, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.01
+      value: 1.12
       objectReference: {fileID: 0}
     - target: {fileID: 4480640924622771640, guid: ab3b6b4124bb97240bd1c18cdead3489, type: 3}
       propertyPath: m_LocalPosition.z
@@ -903,6 +903,7 @@ MonoBehaviour:
   musicVolume: 1
   SFXVolume: 1
   highScores: 00000000000000000000000000000000000000000000000000000000
+  currentScore: 0
   currentStage: 1
 --- !u!4 &1681668319
 Transform:

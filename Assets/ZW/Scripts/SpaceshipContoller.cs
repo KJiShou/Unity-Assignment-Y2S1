@@ -28,6 +28,7 @@ public class SpaceshipController : MonoBehaviour
     private Rigidbody2D playerRb;
 
     public int collisionCount = 0;  // Counter to track collisions
+    private bool hasEnteredBlackHole = false;
     private bool isExploding = false;  // To prevent multiple explosions
     private bool isBlinking = false;
     private Canvas AddEquation;
@@ -99,10 +100,18 @@ public class SpaceshipController : MonoBehaviour
     // Detect collision with Black Hole using a Trigger
     void OnTriggerEnter2D(Collider2D other)
     {
+        if (hasEnteredBlackHole) 
+        {
+            Debug.Log("Spaceship has already entered the black hole, skipping...");
+            return;
+        }
+
         if (other.CompareTag("BlackHole"))
         {
+            hasEnteredBlackHole = true;
             // Start the shrinking process when spaceship enters the black hole
             Debug.Log("Spaceship entering the black hole!");
+            GetComponent<Collider2D>().enabled = false;
             StartShrinking();
         }
     }
@@ -119,6 +128,49 @@ public class SpaceshipController : MonoBehaviour
         engineFire.SetActive(false);
         shield.SetActive(false);
         ShrinkSpaceship();
+    }
+
+    void ShrinkSpaceship()
+    {
+        StartCoroutine(ShrinkAndEnterBlackHole());
+    }
+
+    IEnumerator ShrinkAndEnterBlackHole()
+    {
+        yield return StartCoroutine(EnterBlackHole());
+        // Gradually shrink the spaceship by reducing its scale
+        while (transform.localScale.x > 0.01f)
+        {
+            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, Time.deltaTime * shrinkSpeed);
+            yield return null; // Wait for the next frame
+        }
+
+        // Once shrinking is complete, wait 1 second before generating the victory menu
+        yield return StartCoroutine(SpawnWinMenuWithDelay());
+    }
+
+    IEnumerator SpawnWinMenuWithDelay()
+    {
+        // Wait for 1 second before spawning the WinMenu
+        yield return new WaitForSeconds(1f);
+        // Check if WinMenu is assigned
+        if (WinMenu != null)
+        {
+            if (GameManager.Instance.currentScore == 0)
+            {
+                Instantiate(loseMenu);
+            }
+
+            else 
+            {
+                Instantiate(WinMenu);  // Instantiate the victory menu after 1 second
+                Debug.Log("WinMenu instantiated after 1 second delay.");
+            }        
+        }
+        else
+        {
+            Debug.LogError("VictoryManager not found in the scene!");
+        }
     }
 
     IEnumerator EnterBlackHole()
@@ -140,48 +192,14 @@ public class SpaceshipController : MonoBehaviour
             timer += Time.deltaTime;
         }
     }
-
-    void ShrinkSpaceship()
-    {
-        StartCoroutine(ShrinkAndEnterBlackHole());
-    }
-
-    IEnumerator ShrinkAndEnterBlackHole()
-    {
-        yield return StartCoroutine(EnterBlackHole());
-
-        // Debug to confirm entering the black hole has finished
-        Debug.Log("Spaceship has entered the black hole");
-
-        // Gradually shrink the spaceship by reducing its scale
-        while (transform.localScale.x > 0.01f)
-        {
-            transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, Time.deltaTime * shrinkSpeed);
-            yield return null; // Wait for the next frame before continuing
-        }
-
-        // Once the spaceship's scale is close to zero, call VictoryManager to generate the victory menu
-        Debug.Log("Spawning victory");
-        isShrinking = false;
-
-        // Call the VictoryManager to generate the victory menu
-        if (WinMenu != null)
-        {
-            Instantiate(WinMenu);
-        }
-        else
-        {
-            Debug.LogError("VictoryManager not found in the scene!");
-        }
-    }
-    
+        
     // Handle collisions with asteroids (kept as-is)
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (isExploding) return;  // Prevent multiple explosions
 
         collisionCount++;  // Increment the collision counter
-				SlowDownSpaceship();
+		SlowDownSpaceship();
         if (collisionCount == 1)
         {
 
