@@ -13,6 +13,7 @@ TagManager:
   - Text
   - BlackHole
   - StageButton
+  - Collectables
   layers:
   - Default
   - TransparentFX

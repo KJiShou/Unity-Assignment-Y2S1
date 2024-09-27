@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+  slowSpeed: 1
   engineFire: {fileID: 4120115364501777918}
   headlights: {fileID: 5692291976904876000}
   arealights: {fileID: 7950970391368583321}
@@ -198,6 +199,7 @@ MonoBehaviour:
   destructionDelay: 5
   blinkInterval: 0.2
   shrinkSpeed: 2
+  collisionCount: 0
 --- !u!114 &7595215992288847373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
+  isMoving: 0
 --- !u!111 &4865330683051604477
 Animation:
   m_ObjectHideFlags: 0
@@ -223,7 +226,7 @@ Animation:
   m_Animation: {fileID: 0}
   m_Animations:
   - {fileID: 7400000, guid: 4005c667da7310b4194aa9185cb60985, type: 2}
-  - {fileID: 7400000, guid: 4215da656627c5348b8f45cdb75503db, type: 2}
+  - {fileID: 7400000, guid: ea214ce969d27874ab6da0850025d50d, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
