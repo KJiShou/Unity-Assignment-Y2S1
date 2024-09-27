@@ -142,6 +142,7 @@ public class PortalController : MonoBehaviour
 
         // Start from the first point when exiting the portal (normal movement)
         currentPointIndex = 0;
+        player.GetComponent<SpaceshipController>().inPortal = false;  // Exit portal mode
         player.GetComponent<SpaceshipFollowLine>().MoveForward();
         isReversing = false; // Set flag to false when moving forward from the first point
 
