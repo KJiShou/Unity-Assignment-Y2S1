@@ -3,11 +3,17 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    AudioManager audioManager;
     public float seconds = 10f;  // Time in seconds
     public float minutes = 1f;   // Time in minutes
     public TMP_Text countdownText;  // UI Text element to display the countdown
     public bool isCountingDown = true;
     private LoseManager loseManager;  // Reference to LoseManager script
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -70,6 +76,8 @@ public class Timer : MonoBehaviour
         Debug.Log("Countdown finished!");
         if (loseManager != null)
         {
+            audioManager.musicSource.Stop();
+            AudioManager.Instance.PlayLoseTheme();
             loseManager.GenerateLoseMenu();  // Call LoseManager to show the lose menu
         }
         else

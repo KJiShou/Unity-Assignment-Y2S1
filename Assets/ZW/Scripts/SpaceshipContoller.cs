@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public float speed = 5f;  // Speed of the spaceship
     public float slowSpeed = 1f;  // Slower speed when hitting an asteroid
     private Rigidbody2D rb;  // Reference to the Rigidbody2D component
@@ -16,7 +18,7 @@ public class SpaceshipController : MonoBehaviour
     public float destructionDelay = 5f;  // Delay before destruction (in seconds)
     public float blinkInterval = 0.2f;
     public float shrinkSpeed = 2f;  // Speed at which the spaceship shrinks
-    private bool isShrinking = false;  // Track if the spaceship is shrinking
+    public bool isShrinking = false;  // Track if the spaceship is shrinking
     private bool inPortal = false;  // Track if the spaceship is in a portal animation
 
     private VictoryManager victoryManager;  // Reference to VictoryManager script
@@ -48,6 +50,8 @@ public class SpaceshipController : MonoBehaviour
         AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
         EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
         StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     void Start()
     {
@@ -64,6 +68,7 @@ public class SpaceshipController : MonoBehaviour
         // Handle the shrinking effect
         if (isShrinking)
         {
+            Debug.Log("test");
             ShrinkSpaceship();
             return;
         }
@@ -71,7 +76,6 @@ public class SpaceshipController : MonoBehaviour
         // Handle the spaceship movement after the portal animations
         if (!inPortal && !isExploding)
         {
-            Debug.Log("Test");
             MoveSpaceship();
         }
 
@@ -106,7 +110,7 @@ public class SpaceshipController : MonoBehaviour
         }
     }
 
-    void StartShrinking()
+    public void StartShrinking()
     {
         // Stop the spaceship's movement
         rb.velocity = Vector2.zero;
@@ -117,10 +121,12 @@ public class SpaceshipController : MonoBehaviour
         // Disable the shield and engine fire
         engineFire.SetActive(false);
         shield.SetActive(false);
+        ShrinkSpaceship();
     }
 
     void ShrinkSpaceship()
     {
+        Debug.Log("Test1");
         // Gradually shrink the spaceship by reducing its scale
         transform.localScale = Vector3.Lerp(transform.localScale, Vector3.zero, shrinkSpeed * Time.deltaTime);
 
@@ -150,6 +156,7 @@ public class SpaceshipController : MonoBehaviour
 				SlowDownSpaceship();
         if (collisionCount == 1)
         {
+
             // First contact: disable the shield and trigger the first collision animation
             Debug.Log("First collision! Disabling shield and setting 'collide' animation.");
             shield.SetActive(false);
@@ -161,9 +168,13 @@ public class SpaceshipController : MonoBehaviour
             {
                 StartCoroutine(BlinkLight());
             }
+            audioManager.PlaySFX(audioManager.shipCrack);
+
+
         }
         else if (collisionCount == 2)
         {
+
             // Second contact: trigger explosion and destroy the spaceship
             Debug.Log("Second collision! Spaceship exploding.");
 
@@ -176,8 +187,12 @@ public class SpaceshipController : MonoBehaviour
 
             DisableRigidbody();
 
+            audioManager.PlaySFX(audioManager.shipCrash);
+
+
             // Proceed with explosion and delayed destruction
             TriggerExplosion();
+            audioManager.musicSource.Stop();
         }
     }
     
@@ -248,6 +263,8 @@ public class SpaceshipController : MonoBehaviour
         StartingButton.enabled = false;
         Destroy(gameObject);  // Destroy the spaceship after the delay
         Instantiate(loseMenu);
+
+        AudioManager.Instance.PlayLoseTheme();
 
     }
 

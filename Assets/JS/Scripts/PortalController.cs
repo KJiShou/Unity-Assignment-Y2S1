@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PortalController : MonoBehaviour
 {
+    AudioManager audioManager;
+
     GameObject player;
     Animation anim;
     Rigidbody2D playerRb;
@@ -21,15 +23,31 @@ public class PortalController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         anim = player.GetComponent<Animation>();
         playerRb = player.GetComponent<Rigidbody2D>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        // Handle BlackHole Collision
+        if (CompareTag("BlackHole") && collision.CompareTag("Player")) 
+        {
+            if (Vector2.Distance(player.transform.position, transform.position) > 0.3f) 
+            {
+                StartCoroutine(MoveInPortal());
+                player.GetComponent<SpaceshipController>().StartShrinking();
+                return; // Exit, no further processing after black hole.
+            }
+        }
+
+        // Normal Portal Handling
         if (collision.CompareTag("Player"))
         {
             if (Vector2.Distance(player.transform.position, transform.position) > 0.3f)
             {
-                Debug.Log("Player enter portal");
+                Debug.Log("Player entered portal");
+
                 lineRendererLinear = FindLineRendererByID(lineID);
                 if (lineRendererLinear == null)
                 {
@@ -56,8 +74,10 @@ public class PortalController : MonoBehaviour
                 {
                     linePoints = lineRendererLinear.linePoints;
                 }
-                if(isReversing){
-                    currentPointIndex = linePoints.Length - 1; // Start at the last point of the line (for reverse)
+
+                if (isReversing)
+                {
+                    currentPointIndex = linePoints.Length - 1; // Start at the last point for reverse
                 }
                 inPortal = true;
                 player.GetComponent<SpaceshipFollowLine>().isMoving = false;
@@ -65,6 +85,7 @@ public class PortalController : MonoBehaviour
             }
         }
     }
+
 
     private LineRendererLinear FindLineRendererByID(int id)
     {
@@ -107,7 +128,7 @@ public class PortalController : MonoBehaviour
 
     IEnumerator PortalIn()
     {
-        
+        audioManager.PlaySFX(audioManager.portalIn);
         anim.Play("Portal In");
         StartCoroutine(MoveInPortal());
         yield return new WaitForSeconds(0.5f);
@@ -115,6 +136,7 @@ public class PortalController : MonoBehaviour
 
     IEnumerator PortalOut()
     {
+        audioManager.PlaySFX(audioManager.portalOut);
         playerRb.simulated = true;
         anim.Play("SpaceshipOutPortal");
 
