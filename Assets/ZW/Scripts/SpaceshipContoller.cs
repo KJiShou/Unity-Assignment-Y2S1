@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SpaceshipController : MonoBehaviour
 {
+    AudioManager audioManager;
+
     public float speed = 5f;  // Speed of the spaceship
     public float slowSpeed = 1f;  // Slower speed when hitting an asteroid
     private Rigidbody2D rb;  // Reference to the Rigidbody2D component
@@ -48,6 +50,8 @@ public class SpaceshipController : MonoBehaviour
         AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
         EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
         StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
+
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
     void Start()
     {
@@ -150,6 +154,7 @@ public class SpaceshipController : MonoBehaviour
 				SlowDownSpaceship();
         if (collisionCount == 1)
         {
+
             // First contact: disable the shield and trigger the first collision animation
             Debug.Log("First collision! Disabling shield and setting 'collide' animation.");
             shield.SetActive(false);
@@ -161,9 +166,13 @@ public class SpaceshipController : MonoBehaviour
             {
                 StartCoroutine(BlinkLight());
             }
+            audioManager.PlaySFX(audioManager.shipCrack);
+
+
         }
         else if (collisionCount == 2)
         {
+
             // Second contact: trigger explosion and destroy the spaceship
             Debug.Log("Second collision! Spaceship exploding.");
 
@@ -175,6 +184,9 @@ public class SpaceshipController : MonoBehaviour
             StopBlinking();
 
             DisableRigidbody();
+
+            audioManager.PlaySFX(audioManager.shipCrash);
+
 
             // Proceed with explosion and delayed destruction
             TriggerExplosion();
