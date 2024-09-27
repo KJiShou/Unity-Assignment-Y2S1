@@ -28,6 +28,10 @@ public class SpaceshipController : MonoBehaviour
     public int collisionCount = 0;  // Counter to track collisions
     private bool isExploding = false;  // To prevent multiple explosions
     private bool isBlinking = false;
+    private Canvas AddEquation;
+    private Canvas EquationUI;
+    private Canvas StartingButton;
+    public GameObject loseMenu;  // Assign your Canvas prefab in the Inspector
 
     void Awake()
     {
@@ -41,6 +45,9 @@ public class SpaceshipController : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
 
         this.enabled = false;  // Deactivate the script at the start
+        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
+        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
+        StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
     }
     void Start()
     {
@@ -236,7 +243,12 @@ public class SpaceshipController : MonoBehaviour
 
     void DestroySpaceship()
     {
+        AddEquation.enabled = false;
+        EquationUI.enabled = false;
+        StartingButton.enabled = false;
         Destroy(gameObject);  // Destroy the spaceship after the delay
+        Instantiate(loseMenu);
+
     }
 
     // This method will be called by the PortalController after the portal animations

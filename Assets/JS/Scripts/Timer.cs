@@ -48,7 +48,8 @@ public class Timer : MonoBehaviour
                 seconds = 59;
                 minutes -= 1;
             }
-
+            if (seconds == 30 && minutes ==0)
+                countdownText.color = Color.red;
             // Update the UI text with the remaining time in MM:SS format
             countdownText.text = Mathf.Floor(minutes).ToString("00") + " : " + Mathf.Ceil(seconds).ToString("00");
 
