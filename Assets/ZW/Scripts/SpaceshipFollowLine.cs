@@ -43,7 +43,7 @@ public class SpaceshipFollowLine : MonoBehaviour
     }
 
     // Move forward continuously if no line is set
-    void MoveForward()
+    public void MoveForward()
     {
         // Continue moving in the current "up" direction
         transform.position += transform.up * speed * Time.deltaTime;
