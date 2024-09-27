@@ -29,12 +29,25 @@ public class PortalController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        // Handle BlackHole Collision
+        if (CompareTag("BlackHole") && collision.CompareTag("Player")) 
+        {
+            if (Vector2.Distance(player.transform.position, transform.position) > 0.3f) 
+            {
+                StartCoroutine(MoveInPortal());
+                player.GetComponent<SpaceshipController>().StartShrinking();
+                return; // Exit, no further processing after black hole.
+            }
+        }
+
+        // Normal Portal Handling
         if (collision.CompareTag("Player"))
         {
             if (Vector2.Distance(player.transform.position, transform.position) > 0.3f)
             {
+                Debug.Log("Player entered portal");
 
-                Debug.Log("Player enter portal");
                 lineRendererLinear = FindLineRendererByID(lineID);
                 if (lineRendererLinear == null)
                 {
@@ -61,8 +74,10 @@ public class PortalController : MonoBehaviour
                 {
                     linePoints = lineRendererLinear.linePoints;
                 }
-                if(isReversing){
-                    currentPointIndex = linePoints.Length - 1; // Start at the last point of the line (for reverse)
+
+                if (isReversing)
+                {
+                    currentPointIndex = linePoints.Length - 1; // Start at the last point for reverse
                 }
                 inPortal = true;
                 player.GetComponent<SpaceshipFollowLine>().isMoving = false;
@@ -70,6 +85,7 @@ public class PortalController : MonoBehaviour
             }
         }
     }
+
 
     private LineRendererLinear FindLineRendererByID(int id)
     {
