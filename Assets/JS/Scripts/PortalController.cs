@@ -36,7 +36,7 @@ public class PortalController : MonoBehaviour
             if (Vector2.Distance(player.transform.position, transform.position) > 0.3f) 
             {
                 StartCoroutine(MoveInPortal());
-                player.GetComponent<SpaceshipController>().StartShrinking();
+                //player.GetComponent<SpaceshipController>().StartShrinking();
                 return; // Exit, no further processing after black hole.
             }
         }
@@ -165,6 +165,8 @@ public class PortalController : MonoBehaviour
         {
             MoveSpaceship();
         }
+
+
     }
 
     private void MoveSpaceship()
@@ -250,4 +252,6 @@ public class PortalController : MonoBehaviour
         lineID = 0;
         Debug.Log("Portal state reset, ready for the next interaction.");
     }
+
+    
 }
