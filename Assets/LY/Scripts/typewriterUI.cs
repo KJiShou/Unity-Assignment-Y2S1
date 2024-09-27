@@ -11,7 +11,6 @@ using TMPro;
 
 public class typewriterUI : MonoBehaviour
 {
-	//Text _text;
 	TMP_Text _tmpProText;
 	string writer;
 	string[] script = new string[19] {
@@ -57,7 +56,6 @@ public class typewriterUI : MonoBehaviour
 
 	IEnumerator TypeWriterTMP()
     {
-
         yield return new WaitForSeconds(delayBeforeStart);
 
 		foreach (char c in writer)
@@ -77,10 +75,9 @@ public class typewriterUI : MonoBehaviour
 			Debug.Log("Pressed left-click.");
 
 			StopCoroutine("TypeWriterTMP");
-
 			_tmpProText.text = "";
-            writer = script[scriptOrder];
-            StartCoroutine("TypeWriterTMP");
+			writer = script[scriptOrder];
+			StartCoroutine("TypeWriterTMP");
 
 			if (scriptOrder < 18)
 			{
@@ -90,6 +87,9 @@ public class typewriterUI : MonoBehaviour
 			{
 				// Disable everything
 			}
+
+
+			
 
         }
     }
