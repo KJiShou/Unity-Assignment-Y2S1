@@ -14,7 +14,6 @@ public class SpaceshipController : MonoBehaviour
     public GameObject headlights;
     public GameObject arealights;
     public GameObject shield;  // The shield GameObject
-    public GameObject explosionPrefab;  // Explosion prefab for visual effect (optional)
     public float destructionDelay = 5f;  // Delay before destruction (in seconds)
     public float blinkInterval = 0.2f;
     public float shrinkSpeed = 2f;  // Speed at which the spaceship shrinks
@@ -27,10 +26,13 @@ public class SpaceshipController : MonoBehaviour
     private Animation anim;
     private Rigidbody2D playerRb;
 
+    public float seconds = 3.0f;
+
     public int collisionCount = 0;  // Counter to track collisions
     private bool hasEnteredBlackHole = false;
     private bool isExploding = false;  // To prevent multiple explosions
     private bool isBlinking = false;
+    private bool isFloating = false;
     private Canvas AddEquation;
     private Canvas EquationUI;
     private Canvas StartingButton;
@@ -72,7 +74,7 @@ public class SpaceshipController : MonoBehaviour
         }
 
         // Handle the spaceship movement after the portal animations
-        if (!inPortal && !isExploding)
+        if (!inPortal && !isExploding && !isFloating)
         {
             MoveSpaceship();
         }
@@ -88,6 +90,11 @@ public class SpaceshipController : MonoBehaviour
         else
         {
             engineFire.SetActive(true);
+        }
+
+        if(isFloating)
+        {
+            Debug.Log("Spaceship is free floating, countdown to explosion...");
         }
     }
 
@@ -153,7 +160,7 @@ public class SpaceshipController : MonoBehaviour
     IEnumerator SpawnWinMenuWithDelay()
     {
         // Wait for 1 second before spawning the WinMenu
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         // Check if WinMenu is assigned
         
         if (WinMenu != null)
@@ -203,9 +210,12 @@ public class SpaceshipController : MonoBehaviour
         if (isExploding) return;  // Prevent multiple explosions
 
         collisionCount++;  // Increment the collision counter
+
 		SlowDownSpaceship();
+
         if (collisionCount == 1)
         {
+            isFloating = true;
 
             // First contact: disable the shield and trigger the first collision animation
             Debug.Log("First collision! Disabling shield and setting 'collide' animation.");
@@ -219,33 +229,45 @@ public class SpaceshipController : MonoBehaviour
                 StartCoroutine(BlinkLight());
             }
             audioManager.PlaySFX(audioManager.shipCrack);
-
-
+            // Start the coroutine to trigger the explosion after a delay
+            StartCoroutine(TriggerExplosionAfterDelay(seconds));
         }
+
         else if (collisionCount == 2)
         {
-
-            // Second contact: trigger explosion and destroy the spaceship
-            Debug.Log("Second collision! Spaceship exploding.");
-
-            // Set the "collide2" parameter in the Animator to trigger the explosion animation
-            animator.SetBool("collide2", true);
-
-            engineFire.SetActive(false);
-
-            StopBlinking();
-
-            DisableRigidbody();
-
-            audioManager.PlaySFX(audioManager.shipCrash);
-
-
-            // Proceed with explosion and delayed destruction
-            TriggerExplosion();
-            audioManager.musicSource.Stop();
+            SpaceshipExplodeMotion();
         }
     }
     
+    void SpaceshipExplodeMotion()
+    {
+        if (isExploding) return;
+
+        isExploding = true;  // Mark that the spaceship is now exploding
+        Debug.Log("Spaceship is exploding!");
+
+        // Trigger the explosion animation
+        animator.SetBool("collide2", true);
+
+        engineFire.SetActive(false);  // Turn off the engine fire
+
+        StopBlinking();  // Stop any light blinking
+
+        DisableRigidbody();  // Disable the Rigidbody to prevent further physics interactions
+
+        audioManager.PlaySFX(audioManager.shipCrash);  // Play the crash sound effect
+
+        // Trigger explosion and handle destruction
+        TriggerExplosion();
+        audioManager.musicSource.Stop();
+    }
+
+    private IEnumerator TriggerExplosionAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SpaceshipExplodeMotion();
+    }
+
     void SlowDownSpaceship()
     {
         Debug.Log("Spaceship hit an asteroid! Slowing down...");
@@ -292,13 +314,7 @@ public class SpaceshipController : MonoBehaviour
     void TriggerExplosion()
     {
         isExploding = true;  // Set flag to prevent multiple explosions
-
-        // Optionally, instantiate an explosion effect if you have a prefab for it
-        if (explosionPrefab != null)
-        {
-            Instantiate(explosionPrefab, transform.position, Quaternion.identity);
-        }
-
+        
         // Disable the collider to prevent further collisions after explosion
         GetComponent<Collider2D>().enabled = false;
 
