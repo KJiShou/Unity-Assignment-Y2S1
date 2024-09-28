@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 
 
 public class GameManager : MonoBehaviour
@@ -30,6 +32,11 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+    }
+
+    private void Start()
+    {
+        LoadPlayerData();
     }
 
     // calculate the game score
@@ -92,6 +99,8 @@ public class GameManager : MonoBehaviour
         // Reset the score for the next stage
         ResetScore();
 
+        SavePlayerData();
+
         // Optionally load the next stage or victory screen here
         Debug.Log("Stage " + currentStage + " completed!");
 
@@ -125,6 +134,71 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.LogError("Scene name does not contain a hyphen. Expected format is like '1-1'.");
+        }
+    }
+
+    private string saveFilePath => Application.persistentDataPath + "/playerData.save";
+
+    public void SavePlayerData()
+    {
+        // Create an instance of PlayerData
+        PlayerData data = new PlayerData
+        {
+            score = score,
+            spaceshipIndex = spaceshipIndex,
+            musicVolume = musicVolume,
+            SFXVolume = SFXVolume,
+            currentStage = currentStage,
+            difficulty = difficulty,
+            currentScore = currentScore,
+            spaceshipColor = new float[] { spaceshipColor.r, spaceshipColor.g, spaceshipColor.b, spaceshipColor.a }
+        };
+
+        // Create a file to save the data
+        BinaryFormatter formatter = new BinaryFormatter();
+        using (FileStream stream = new FileStream(saveFilePath, FileMode.Create))
+        {
+            formatter.Serialize(stream, data);
+        }
+
+        Debug.Log("Game data saved.");
+    }
+
+    public void LoadPlayerData()
+    {
+        if (File.Exists(saveFilePath))
+        {
+            // Load the saved data
+            BinaryFormatter formatter = new BinaryFormatter();
+            using (FileStream stream = new FileStream(saveFilePath, FileMode.Open))
+            {
+                PlayerData data = formatter.Deserialize(stream) as PlayerData;
+
+                // Assign the loaded data to the GameManager fields
+                score = data.score;
+                spaceshipIndex = data.spaceshipIndex;
+                musicVolume = data.musicVolume;
+                SFXVolume = data.SFXVolume;
+                currentStage = data.currentStage;
+                difficulty = data.difficulty;
+                currentScore = data.currentScore;
+                spaceshipColor = new Color(data.spaceshipColor[0], data.spaceshipColor[1], data.spaceshipColor[2], data.spaceshipColor[3]);
+            }
+
+            Debug.Log("Game data loaded.");
+        }
+        else
+        {
+            Debug.LogError("Save file not found.");
+        }
+    }
+
+    public void DeleteSaveData()
+    {
+        if (File.Exists(saveFilePath))
+        {
+            File.Delete(saveFilePath);
+            Debug.Log("Save file deleted.");
         }
     }
 }

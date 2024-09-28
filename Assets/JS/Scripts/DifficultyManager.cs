@@ -83,6 +83,7 @@ public class DifficultyManager : MonoBehaviour, IPointerEnterHandler, IPointerEx
             GameManager.Instance.difficulty = selectedIndex + 1;
 
             Debug.Log("Selected difficulty: " + GameManager.Instance.difficulty);
+            GameManager.Instance.SavePlayerData();
         }
     }
 
