@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class LevelButtonManager : MonoBehaviour
 {
@@ -38,6 +39,15 @@ public class LevelButtonManager : MonoBehaviour
                 int previousLevelScore = GameManager.Instance.GetLevelScore(i);  // Get the previous level's score
                 if (previousLevelScore > 0)  // Previous level completed
                 {
+                    if (GameManager.Instance.GetLevelScore(i+1) == 0) {
+                        Transform grayStars = levelButtons[i].transform.Find("GrayStars");
+                        GameObject grayStar1 = grayStars.Find("Star1").gameObject;
+                        GameObject grayStar2 = grayStars.Find("Star2").gameObject;
+                        GameObject grayStar3 = grayStars.Find("Star3").gameObject;
+                        grayStar1.SetActive(false);
+                        grayStar2.SetActive(false);
+                        grayStar3.SetActive(false);
+                    }
                     EnableLevelButton(levelButtons[i]);  // Unlock the current level
                 }
                 else
@@ -52,7 +62,6 @@ public class LevelButtonManager : MonoBehaviour
     {
         ButtonScaleEffect button = levelButton.GetComponent<ButtonScaleEffect>();
         button.enabled = true;
-
         // Reset color to normal (assumes original color is white or non-gray)
         Image buttonImage = levelButton.GetComponent<Image>();
         buttonImage.color = Color.white;
@@ -60,6 +69,13 @@ public class LevelButtonManager : MonoBehaviour
 
     private void DisableLevelButton(GameObject levelButton)
     {
+        Transform grayStars = levelButton.transform.Find("GrayStars");
+        GameObject grayStar1 = grayStars.Find("Star1").gameObject;
+        GameObject grayStar2 = grayStars.Find("Star2").gameObject;
+        GameObject grayStar3 = grayStars.Find("Star3").gameObject;
+        grayStar1.SetActive(false);
+        grayStar2.SetActive(false);
+        grayStar3.SetActive(false);
         ButtonScaleEffect button = levelButton.GetComponent<ButtonScaleEffect>();
         button.enabled = false;
 
@@ -67,5 +83,7 @@ public class LevelButtonManager : MonoBehaviour
         // Set button to gray to indicate it's locked
         Image buttonImage = levelButton.GetComponent<Image>();
         buttonImage.color = new Color(0.2f, 0.2f, 0.2f, 1f);
+        TMP_Text text = levelButton.GetComponentInChildren<TMP_Text>();
+        text.color = new Color(0.2f, 0.2f, 0.2f, 1f);
     }
 }

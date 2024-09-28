@@ -80,7 +80,7 @@ public class Timer : MonoBehaviour
             AudioManager.Instance.PlayLoseTheme();
             loseManager.GenerateLoseMenu();  // Call LoseManager to show the lose menu
         }
-        else
+        else 
         {
             Debug.LogError("LoseManager not found in the scene!");  // Log error if LoseManager is not found
         }
