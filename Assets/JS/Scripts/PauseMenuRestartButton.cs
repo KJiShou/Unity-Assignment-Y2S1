@@ -30,7 +30,7 @@ public class PauseMenuRestartButton : MonoBehaviour
     }
 
     private void toMainScene() {
-
+        GameManager.Instance.currentScore = 0;
         audioManager.PlaySFX(audioManager.pauseMenuStop);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

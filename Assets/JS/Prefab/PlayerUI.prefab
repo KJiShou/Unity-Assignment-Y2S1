@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 5914799160336003842}
   m_Layer: 5
   m_Name: DragCanvas
-  m_TagString: Untagged
+  m_TagString: PlayerUIs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 9165668826865935629}
   m_Layer: 5
   m_Name: Equation UI Set
-  m_TagString: Untagged
+  m_TagString: PlayerUIs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1316,6 +1316,7 @@ GameObject:
   - component: {fileID: 2804213501330307165}
   - component: {fileID: 5730659963061711820}
   - component: {fileID: 3479816607020448704}
+  - component: {fileID: 4874919102361783651}
   m_Layer: 5
   m_Name: Timer
   m_TagString: Untagged
@@ -1455,6 +1456,19 @@ MonoBehaviour:
   minutes: 10
   countdownText: {fileID: 5730659963061711820}
   isCountingDown: 1
+--- !u!114 &4874919102361783651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6677596406163945971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03b714bb9122a8d4e8c1dfea8e76ec05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lostPrefab: {fileID: 5986198193249126897, guid: 19ec99ecca2bc17429eb9dd442455ca9, type: 3}
 --- !u!1 &8142543978228175396
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,7 +1480,7 @@ GameObject:
   - component: {fileID: 7938257808467475595}
   m_Layer: 0
   m_Name: PlayerUI
-  m_TagString: Untagged
+  m_TagString: PlayerUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1504,7 +1518,7 @@ GameObject:
   - component: {fileID: 3873046932279928278}
   m_Layer: 5
   m_Name: Starting button
-  m_TagString: Untagged
+  m_TagString: PlayerUIs
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1789,6 +1803,10 @@ PrefabInstance:
     - target: {fileID: 4314358046239056330, guid: 1503fa5f6e8891e4a919d20c360ce0d2, type: 3}
       propertyPath: m_Name
       value: Add Equation Set
+      objectReference: {fileID: 0}
+    - target: {fileID: 4314358046239056330, guid: 1503fa5f6e8891e4a919d20c360ce0d2, type: 3}
+      propertyPath: m_TagString
+      value: PlayerUIs
       objectReference: {fileID: 0}
     - target: {fileID: 4322025362290823036, guid: 1503fa5f6e8891e4a919d20c360ce0d2, type: 3}
       propertyPath: m_Enabled

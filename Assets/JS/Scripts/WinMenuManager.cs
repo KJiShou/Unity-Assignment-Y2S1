@@ -12,9 +12,8 @@ public class WinMenuManager : MonoBehaviour
     private float defaultSeconds;
     private float usedMinutes;
     private float usedSeconds;
-    private Canvas AddEquation;
-    private Canvas EquationUI;
-    private Canvas StartingButton;
+    private GameObject[] playerUIs;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,9 +24,7 @@ public class WinMenuManager : MonoBehaviour
         starList[0] = stars.Find("GoldStar1").gameObject;
         starList[1] = stars.Find("GoldStar2").gameObject;
         starList[2] = stars.Find("GoldStar3").gameObject;
-        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
-        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
-        StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
+        playerUIs = GameObject.FindGameObjectsWithTag("PlayerUIs");
         UpdateWinMenu(); // Call the method to update the time and stars
     }
 
@@ -38,9 +35,17 @@ public class WinMenuManager : MonoBehaviour
 
         // Calculate and display the stars based on score
         calculateStar();
-        AddEquation.enabled = false;
-        EquationUI.enabled = false;
-        StartingButton.enabled = false;
+
+        foreach (GameObject playerUI in playerUIs)
+        {
+            // Check if the GameObject has a Canvas component
+            Canvas canvasComponent = playerUI.GetComponent<Canvas>();
+            if (canvasComponent != null)
+            {
+                // Set the Canvas component to disabled
+                canvasComponent.enabled = false;
+            }
+        }
     }
 
     void changeTime()
@@ -82,11 +87,12 @@ public class WinMenuManager : MonoBehaviour
         // Get the current stage score from GameManager
         int stageScore = GameManager.Instance.GetLevelScore(GameManager.Instance.currentStage);
 
-        // Determine stars based on the stage score
-        ShowStars(stageScore);
+        // Show the stars one by one with an animation delay
+        StartCoroutine(ShowStarsWithDelay(stageScore));
     }
 
-    void ShowStars(int starCount)
+    // Coroutine to show stars one by one with a delay
+    IEnumerator ShowStarsWithDelay(int starCount)
     {
         // Hide all stars initially
         for (int i = 0; i < starList.Length; i++)
@@ -94,14 +100,16 @@ public class WinMenuManager : MonoBehaviour
             starList[i].SetActive(false);
         }
 
-        // Enable the number of stars based on the stage score
+        // Enable the stars one by one with a 0.5s delay
         for (int i = 0; i < starCount; i++)
         {
-            starList[i].SetActive(true);
+            starList[i].SetActive(true); // Activate the star
+            yield return new WaitForSeconds(0.5f); // Wait for 0.5 seconds before showing the next one
         }
     }
 
-    public void RestartGame() {
-
+    public void RestartGame()
+    {
+        // Add your restart logic here
     }
 }

@@ -2698,7 +2698,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 527119764678084452}
-  numPoints: 500
+  baseNumPoints: 200
+  numPoints: 50
   xStart: -50
   xEnd: 50
   m: 1

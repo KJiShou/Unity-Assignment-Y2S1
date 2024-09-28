@@ -10,16 +10,13 @@ public class PauseGameButton : MonoBehaviour
     public GameObject canvasPrefab;  // Assign your Canvas prefab in the Inspector
     private GameObject instantiatedCanvas;  // To track the instantiated Canvas
 
-    private Canvas AddEquation;
-    private Canvas EquationUI;
-    private Canvas StartingButton;
+    private GameObject[] playerUIs;
     void Start()
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
-        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
-        StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
+        // Find all game objects with the tag "PlayerUI"
+        playerUIs = GameObject.FindGameObjectsWithTag("PlayerUIs");
         if (generateButton != null)
         {
             // Add listener to call GenerateCanvas() when the button is clicked
@@ -58,9 +55,16 @@ public class PauseGameButton : MonoBehaviour
         {
             Debug.LogError("Canvas prefab is not assigned in the Inspector!");
         }
-        AddEquation.enabled = false;
-        EquationUI.enabled = false;
-        StartingButton.enabled = false;
+        foreach (GameObject playerUI in playerUIs)
+        {
+            // Check if the GameObject has a Canvas component
+            Canvas canvasComponent = playerUI.GetComponent<Canvas>();
+            if (canvasComponent != null)
+            {
+                // Set the Canvas component to disabled
+                canvasComponent.enabled = false;
+            }
+        }
     }
 
     // Optional method to destroy the instantiated Canvas
