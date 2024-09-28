@@ -16,6 +16,8 @@ TagManager:
   - GlobalLight
   - Collectables
   - StartButton
+  - PlayerUI
+  - PlayerUIs
   layers:
   - Default
   - TransparentFX

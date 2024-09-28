@@ -7,9 +7,7 @@ public class ResumeButton : MonoBehaviour
 {
     AudioManager audioManager;
     public Button destroyButton; // Assign your destroy button in the Inspector
-    private Canvas AddEquation;
-    private Canvas EquationUI;
-    private Canvas StartingButton;
+    private GameObject[] playerUIs;
     private Timer timer;
 
     private void Awake()
@@ -20,9 +18,8 @@ public class ResumeButton : MonoBehaviour
 
     void Start()
     {
-        AddEquation = GameObject.Find("Add Equation Set").GetComponent<Canvas>();
-        EquationUI = GameObject.Find("Equation UI Set").GetComponent<Canvas>();
-        StartingButton = GameObject.Find("Starting button").GetComponent<Canvas>();
+        // Find all game objects with the tag "PlayerUI"
+        playerUIs = GameObject.FindGameObjectsWithTag("PlayerUIs");
         timer = GameObject.Find("Timer").GetComponent<Timer>();
         // Add listener to the button's click event
         if (destroyButton != null)
@@ -44,9 +41,16 @@ public class ResumeButton : MonoBehaviour
         AudioManager.Instance.PlayStageTheme();
 
         timer.ContinueCountdown();
-        AddEquation.enabled = true;
-        EquationUI.enabled = true;
-        StartingButton.enabled = true;
+        foreach (GameObject playerUI in playerUIs)
+    {
+        // Check if the GameObject has a Canvas component
+        Canvas canvasComponent = playerUI.GetComponent<Canvas>();
+        if (canvasComponent != null)
+        {
+            // Set the Canvas component to disabled
+            canvasComponent.enabled = true;
+        }
+    }
         // Check if the button has a parent GameObject
         if (transform.parent != null)
         {

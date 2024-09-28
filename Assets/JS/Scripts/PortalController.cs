@@ -208,7 +208,7 @@ public class PortalController : MonoBehaviour
             player.transform.position = Vector3.MoveTowards(currentPosition, targetPoint, player.GetComponent<SpaceshipController>().speed * Time.deltaTime);
 
             // Use a reasonable threshold to determine if the spaceship is "close enough" to the point
-            float distanceThreshold = 0.05f;
+            float distanceThreshold = 0.2f;
 
             // Check if the spaceship has reached the target point
             if (Vector3.Distance(player.transform.position, targetPoint) < distanceThreshold)
@@ -228,6 +228,7 @@ public class PortalController : MonoBehaviour
 
             if (distanceToLastPoint < 1.0f)  // Change 1.0f to whatever distance you want
             {
+                Debug.Log("player is close to the last point");
                 playerRb.simulated = false;  // Disable physics when close to the last point
             }
         }

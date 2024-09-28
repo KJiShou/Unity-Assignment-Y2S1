@@ -75,6 +75,7 @@ public class QuadraticLineRenderer : MonoBehaviour
 
     public void DrawQuadraticEquation()
     {
+        AdjustPointsBasedOnLineLength();
         positions = new Vector3[numPoints];
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
@@ -173,5 +174,27 @@ public class QuadraticLineRenderer : MonoBehaviour
             Destroy(lineRenderer); // Completely remove the LineRenderer component
             lineRenderer = null;
         }
+    }
+
+    private void AdjustPointsBasedOnLineLength()
+    {
+        float distance = Mathf.Abs(xEnd - xStart);
+
+        // Define thresholds for changing the number of points
+        if (distance < 10f)
+        {
+            numPoints = 50;
+        }
+        else if (distance > 30f)
+        {
+            numPoints = 500;
+        }
+        else
+        {
+            numPoints = 200;  // Default number of points
+        }
+
+        // Update the position count of the line renderer
+        lineRenderer.positionCount = numPoints;
     }
 }

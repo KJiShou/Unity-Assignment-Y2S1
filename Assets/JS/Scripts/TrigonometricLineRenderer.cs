@@ -79,7 +79,7 @@ public class TrigonometricLineRenderer : MonoBehaviour
 
     public void DrawTrigEquation()
     {
-        
+        AdjustPointsBasedOnLineLength();
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
         for (int i = 0; i < numPoints; i++)
@@ -192,5 +192,27 @@ public class TrigonometricLineRenderer : MonoBehaviour
             Destroy(lineRenderer); // Completely remove the LineRenderer component
             lineRenderer = null;
         }
+    }
+
+    private void AdjustPointsBasedOnLineLength()
+    {
+        float distance = Mathf.Abs(xEnd - xStart);
+
+        // Define thresholds for changing the number of points
+        if (distance < 10f)
+        {
+            numPoints = 50;
+        }
+        else if (distance > 30f)
+        {
+            numPoints = 500;
+        }
+        else
+        {
+            numPoints = 200;  // Default number of points
+        }
+
+        // Update the position count of the line renderer
+        lineRenderer.positionCount = numPoints;
     }
 }

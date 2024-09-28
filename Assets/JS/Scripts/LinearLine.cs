@@ -5,7 +5,7 @@ using UnityEngine;
 public class LineRendererLinear : MonoBehaviour
 {
     public LineRenderer lineRenderer;
-    public int numPoints = 50;
+    public int numPoints = 50;  // Number of points to display on the line
     public float xStart = -10f;
     public float xEnd = 10f;
     public float m = 1f;  // Slope of the line
@@ -35,7 +35,6 @@ public class LineRendererLinear : MonoBehaviour
     void Start()
     {
         lineID = GetInstanceID();
-        lineRenderer.positionCount = numPoints;
 
         // Create a container for portals
         portalContainer = new GameObject("PortalContainer");
@@ -73,6 +72,9 @@ public class LineRendererLinear : MonoBehaviour
 
     public void DrawLinearEquation()
     {
+        // Adjust the number of points based on the length of the line
+        AdjustPointsBasedOnLineLength();
+
         linePoints = new Vector3[numPoints];  // Initialize the array to store line points
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
@@ -123,6 +125,28 @@ public class LineRendererLinear : MonoBehaviour
     {
         xStart = min;
         xEnd = max;
+    }
+
+    private void AdjustPointsBasedOnLineLength()
+    {
+        float distance = Mathf.Abs(xEnd - xStart);
+
+        // Define thresholds for changing the number of points
+        if (distance < 10f)
+        {
+            numPoints = 50;
+        }
+        else if (distance > 30f)
+        {
+            numPoints = 500;
+        }
+        else
+        {
+            numPoints = 200;  // Default number of points
+        }
+
+        // Update the position count of the line renderer
+        lineRenderer.positionCount = numPoints;
     }
 
     public void DestroyEquationAndPortals()

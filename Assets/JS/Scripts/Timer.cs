@@ -30,14 +30,14 @@ public class Timer : MonoBehaviour
         }
         else if (GameManager.Instance.difficulty == 3)
         {
-            minutes = 1f;
-            seconds = 0f;
+            minutes = 0f;
+            seconds = 10f;
         }
 
         // Find LoseManager in the scene if not assigned manually
         if (loseManager == null)
         {
-            loseManager = FindObjectOfType<LoseManager>();
+            loseManager = GetComponent<LoseManager>();
         }
     }
 
@@ -54,7 +54,7 @@ public class Timer : MonoBehaviour
                 seconds = 59;
                 minutes -= 1;
             }
-            if (seconds == 30 && minutes ==0)
+            if (seconds <= 30 && minutes ==0)
                 countdownText.color = Color.red;
             // Update the UI text with the remaining time in MM:SS format
             countdownText.text = Mathf.Floor(minutes).ToString("00") + " : " + Mathf.Ceil(seconds).ToString("00");
