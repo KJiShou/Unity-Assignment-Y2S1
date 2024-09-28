@@ -66,6 +66,6 @@ public class LevelButtonManager : MonoBehaviour
 
         // Set button to gray to indicate it's locked
         Image buttonImage = levelButton.GetComponent<Image>();
-        buttonImage.color = new Color(0.3f, 0.3f, 0.3f, 1f);
+        buttonImage.color = new Color(0.2f, 0.2f, 0.2f, 1f);
     }
 }
