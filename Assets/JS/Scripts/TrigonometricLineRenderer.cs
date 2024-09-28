@@ -80,6 +80,7 @@ public class TrigonometricLineRenderer : MonoBehaviour
     public void DrawTrigEquation()
     {
         AdjustPointsBasedOnLineLength();
+        positions = new Vector3[numPoints];
         float xStep = (xEnd - xStart) / (numPoints - 1);
 
         for (int i = 0; i < numPoints; i++)

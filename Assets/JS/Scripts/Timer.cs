@@ -30,8 +30,8 @@ public class Timer : MonoBehaviour
         }
         else if (GameManager.Instance.difficulty == 3)
         {
-            minutes = 0f;
-            seconds = 10f;
+            minutes = 3f;
+            seconds = 0f;
         }
 
         // Find LoseManager in the scene if not assigned manually
