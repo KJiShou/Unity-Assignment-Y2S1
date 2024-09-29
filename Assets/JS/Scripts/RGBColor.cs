@@ -52,6 +52,7 @@ public class RGBColor : MonoBehaviour
         // Assign the new color to the Image component
         GameManager.Instance.spaceshipColor = new Color(r, g, b);
         spaceship.color = GameManager.Instance.spaceshipColor;
+        GameManager.Instance.SavePlayerData();
     }
 
     private IEnumerator PlaySliderSFXSmoothly()
