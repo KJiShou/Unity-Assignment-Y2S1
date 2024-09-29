@@ -15,8 +15,8 @@ public class PauseGameButton : MonoBehaviour
     {
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
 
-        // Find all game objects with the tag "PlayerUI"
-        playerUIs = GameObject.FindGameObjectsWithTag("PlayerUIs");
+        
+        
         if (generateButton != null)
         {
             // Add listener to call GenerateCanvas() when the button is clicked
@@ -31,6 +31,8 @@ public class PauseGameButton : MonoBehaviour
     // Method to generate the Canvas from a prefab
     void GenerateCanvas()
     {
+        // Find all game objects with the tag "PlayerUI"
+        playerUIs = GameObject.FindGameObjectsWithTag("PlayerUIs");
         audioManager.musicSource.Stop();
         audioManager.PlaySFX(audioManager.pauseMenuStop);
 

@@ -42,15 +42,15 @@ public class ResumeButton : MonoBehaviour
 
         timer.ContinueCountdown();
         foreach (GameObject playerUI in playerUIs)
-    {
-        // Check if the GameObject has a Canvas component
-        Canvas canvasComponent = playerUI.GetComponent<Canvas>();
-        if (canvasComponent != null)
         {
-            // Set the Canvas component to disabled
-            canvasComponent.enabled = true;
+            // Check if the GameObject has a Canvas component
+            Canvas canvasComponent = playerUI.GetComponent<Canvas>();
+            if (canvasComponent != null)
+            {
+                // Set the Canvas component to disabled
+                canvasComponent.enabled = true;
+            }
         }
-    }
         // Check if the button has a parent GameObject
         if (transform.parent != null)
         {
